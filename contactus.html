@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,65 +8,187 @@
   <link rel="icon" type="image/png" href="fav.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <style>
     :root {
-      --primary: #000080;
-      --primary-light: #1a65b5;
-      --dark: #04244C;
-      --teal: #009C9C;
-      --teal-light: #00b8b8;
-      --orange: #FF6B35;
-      --yellow: #FFB700;
-      --bg: #F7F9FC;
-      --white: #ffffff;
-      --text: #1a2340;
-      --text-soft: #5a6a8a;
-      --border: #e2e8f0;
+      --primary: #1627E7;
+      --primary-light: #1627E7;
+      --dark: #141148;
+      --teal: #1627E7;
+      --teal-light: #3a50ff;
+      --orange: #141148;
+      --yellow: #1627E7;
+      --bg: #f4f5ff;
+      --white: #FFFFFF;
+      --text: #141148;
+      --text-soft: rgba(20, 17, 72, 0.6);
+      --border: rgba(22, 39, 231, 0.15);
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.6; }
-    h1, h2, h3, h4, h5 { font-family: 'Nunito', sans-serif; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    /* ── NAV ── */
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); box-shadow: 0 2px 20px rgba(4,36,76,0.06); }
-    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo-text { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 22px; color: var(--dark); letter-spacing: -0.5px; }
-    .nav-logo-text span { color: var(--teal); }
-    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
-    .nav-links a { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 14px; color: var(--text-soft); text-decoration: none; padding: 8px 14px; border-radius: 8px; transition: all 0.2s; }
-    .nav-links a:hover { color: var(--primary); background: rgba(4,76,156,0.06); }
-    .nav-links a.active { color: var(--primary); }
-    .nav-cta { background: var(--primary); color: white !important; padding: 10px 20px !important; border-radius: 10px !important; font-weight: 800 !important; }
-    .nav-cta:hover { background: var(--dark) !important; }
-    .hamburger { display: none; border: none; background: none; cursor: pointer; padding: 6px; }
-    .hamburger span { display: block; width: 24px; height: 2.5px; background: var(--dark); border-radius: 2px; margin: 5px 0; }
-    .mobile-nav { display: none; position: fixed; top: 72px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--border); padding: 16px 24px 24px; z-index: 99; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
-    .mobile-nav.open { display: block; }
-    .mobile-nav a { display: block; padding: 13px 0; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 15px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
-    .mobile-nav a:last-child { border-bottom: none; }
-    .mobile-nav .m-cta { margin-top: 16px; display: block; text-align: center; background: var(--primary); color: white !important; padding: 14px !important; border-radius: 12px; border-bottom: none !important; }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: 'Nunito', sans-serif;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /* ── PAGE HERO ── */
     .page-hero {
-      background: linear-gradient(135deg, var(--dark) 0%, #073a80 55%, #0a4a9a 100%);
+      background: linear-gradient(135deg, var(--dark) 0%, #141148 55%, #1627E7 100%);
       padding: 80px 24px 100px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-    .page-hero::before { content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: rgba(0,156,156,0.08); top: -180px; right: -80px; pointer-events: none; }
-    .page-hero::after { content: ''; position: absolute; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.03); bottom: -100px; left: -60px; pointer-events: none; }
-    .page-hero-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 2; }
-    .page-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,156,156,0.2); border: 1px solid rgba(0,156,156,0.4); color: #7df0f0; font-family: 'Nunito', sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 24px; }
-    .page-badge span { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; animation: blink 2s infinite; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-    .page-hero h1 { font-size: clamp(34px, 5vw, 54px); font-weight: 900; color: white; letter-spacing: -1px; margin-bottom: 18px; line-height: 1.1; }
-    .page-hero h1 span { background: linear-gradient(90deg, #00d4d4, #7de8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .page-hero p { font-size: 16px; color: rgba(255,255,255,0.72); line-height: 1.7; }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(22, 39, 231, 0.08);
+      top: -180px;
+      right: -80px;
+      pointer-events: none;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+      bottom: -100px;
+      left: -60px;
+      pointer-events: none;
+    }
+
+    .page-hero-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(22, 39, 231, 0.2);
+      border: 1px solid rgba(22, 39, 231, 0.4);
+      color: #a0aaff;
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .page-badge span {
+      width: 7px;
+      height: 7px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.3
+      }
+    }
+
+    .page-hero h1 {
+      font-size: clamp(34px, 5vw, 54px);
+      font-weight: 900;
+      color: white;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+      line-height: 1.1;
+    }
+
+    .page-hero h1 span {
+      background: linear-gradient(90deg, #1627E7, #a0aaff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .page-hero p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.7;
+    }
 
     /* ── QUICK CONTACT PILLS ── */
     .quick-contact {
@@ -74,11 +197,16 @@
       position: relative;
       z-index: 5;
     }
+
     .quick-contact-inner {
-      max-width: 1000px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
       transform: translateY(-48px);
     }
+
     .quick-pill {
       background: white;
       border: 1.5px solid var(--border);
@@ -87,538 +215,1447 @@
       text-align: center;
       text-decoration: none;
       transition: all 0.3s;
-      display: flex; flex-direction: column; align-items: center; gap: 12px;
-      box-shadow: 0 8px 32px rgba(4,36,76,0.08);
-      position: relative; overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 32px rgba(20, 17, 72, 0.08);
+      position: relative;
+      overflow: hidden;
     }
-    .quick-pill::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
-    .quick-pill.phone::before { background: linear-gradient(90deg, var(--primary), var(--primary-light)); }
-    .quick-pill.whatsapp::before { background: linear-gradient(90deg, #25d366, #1fba58); }
-    .quick-pill.email::before { background: linear-gradient(90deg, var(--teal), var(--teal-light)); }
-    .quick-pill:hover { transform: translateY(-4px); border-color: transparent; box-shadow: 0 16px 48px rgba(4,36,76,0.14); }
-    .quick-pill:hover::before { transform: scaleX(1); }
-    .quick-pill-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 26px; }
-    .quick-pill-icon.blue { background: rgba(4,76,156,0.1); }
-    .quick-pill-icon.green { background: rgba(37,211,102,0.12); }
-    .quick-pill-icon.teal { background: rgba(0,156,156,0.1); }
-    .quick-pill-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-soft); }
-    .quick-pill-value { font-family: 'Nunito', sans-serif; font-size: 17px; font-weight: 800; color: var(--dark); line-height: 1.2; }
-    .quick-pill-sub { font-size: 12px; color: var(--text-soft); }
+
+    .quick-pill::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .quick-pill.phone::before {
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    }
+
+    .quick-pill.whatsapp::before {
+      background: linear-gradient(90deg, #25d366, #1fba58);
+    }
+
+    .quick-pill.email::before {
+      background: linear-gradient(90deg, var(--teal), var(--teal-light));
+    }
+
+    .quick-pill:hover {
+      transform: translateY(-4px);
+      border-color: transparent;
+      box-shadow: 0 16px 48px rgba(20, 17, 72, 0.14);
+    }
+
+    .quick-pill:hover::before {
+      transform: scaleX(1);
+    }
+
+    .quick-pill-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+    }
+
+    .quick-pill-icon.blue {
+      background: rgba(22, 39, 231, 0.1);
+    }
+
+    .quick-pill-icon.green {
+      background: rgba(37, 211, 102, 0.12);
+    }
+
+    .quick-pill-icon.teal {
+      background: rgba(22, 39, 231, 0.1);
+    }
+
+    .quick-pill-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-soft);
+    }
+
+    .quick-pill-value {
+      font-family: 'Nunito', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .quick-pill-sub {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
 
     /* ── MAIN CONTACT SECTION ── */
-    .contact-main { padding: 0 24px 80px; background: white; }
-    .contact-main-inner { max-width: 1200px; margin: 0 auto; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; }
+    .contact-main {
+      padding: 0 24px 80px;
+      background: white;
+    }
+
+    .contact-main-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 60px;
+      align-items: start;
+    }
 
     /* Left info */
-    .contact-info { }
-    .section-tag { display: inline-block; background: rgba(4,76,156,0.08); color: var(--primary); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; padding: 5px 14px; border-radius: 20px; margin-bottom: 12px; }
-    .section-tag.teal { background: rgba(0,156,156,0.1); color: var(--teal); }
-    .contact-info h2 { font-size: clamp(24px, 3vw, 36px); font-weight: 900; color: var(--dark); line-height: 1.2; margin-bottom: 14px; }
-    .contact-info > p { font-size: 14px; color: var(--text-soft); line-height: 1.75; margin-bottom: 36px; }
+    .contact-info {}
 
-    .info-cards { display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px; }
-    .info-card { display: flex; gap: 16px; align-items: flex-start; background: var(--bg); border: 1.5px solid var(--border); border-radius: 14px; padding: 18px 20px; transition: all 0.25s; }
-    .info-card:hover { border-color: var(--primary); background: white; box-shadow: 0 4px 16px rgba(4,36,76,0.06); }
-    .info-card-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-    .info-card-icon.blue { background: rgba(4,76,156,0.1); }
-    .info-card-icon.teal { background: rgba(0,156,156,0.1); }
-    .info-card-icon.orange { background: rgba(255,107,53,0.1); }
-    .info-card-icon.green { background: rgba(37,211,102,0.1); }
-    .info-card-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-soft); margin-bottom: 3px; }
-    .info-card-value { font-size: 14px; font-weight: 700; color: var(--dark); line-height: 1.4; }
-    .info-card-sub { font-size: 12px; color: var(--text-soft); margin-top: 2px; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(22, 39, 231, 0.08);
+      color: var(--primary);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
 
-    .hours-card { background: linear-gradient(135deg, rgba(4,76,156,0.06), rgba(0,156,156,0.06)); border: 1.5px solid rgba(4,76,156,0.12); border-radius: 16px; padding: 22px 24px; }
-    .hours-card h4 { font-size: 14px; font-weight: 800; color: var(--dark); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-    .hours-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid rgba(4,36,76,0.06); font-size: 13px; }
-    .hours-row:last-child { border-bottom: none; }
-    .hours-row .day { color: var(--text-soft); font-weight: 500; }
-    .hours-row .time { color: var(--dark); font-weight: 700; }
-    .hours-row .time.open { color: #10b981; }
-    .hours-row .time.closed { color: #ef4444; }
+    .section-tag.teal {
+      background: rgba(22, 39, 231, 0.1);
+      color: var(--teal);
+    }
+
+    .contact-info h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .contact-info>p {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    .info-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .info-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      transition: all 0.25s;
+    }
+
+    .info-card:hover {
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 4px 16px rgba(20, 17, 72, 0.06);
+    }
+
+    .info-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .info-card-icon.blue {
+      background: rgba(22, 39, 231, 0.1);
+    }
+
+    .info-card-icon.teal {
+      background: rgba(22, 39, 231, 0.1);
+    }
+
+    .info-card-icon.orange {
+      background: rgba(255, 107, 53, 0.1);
+    }
+
+    .info-card-icon.green {
+      background: rgba(37, 211, 102, 0.1);
+    }
+
+    .info-card-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-soft);
+      margin-bottom: 3px;
+    }
+
+    .info-card-value {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.4;
+    }
+
+    .info-card-sub {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 2px;
+    }
+
+    .hours-card {
+      background: linear-gradient(135deg, rgba(22, 39, 231, 0.06), rgba(22, 39, 231, 0.06));
+      border: 1.5px solid rgba(22, 39, 231, 0.12);
+      border-radius: 16px;
+      padding: 22px 24px;
+    }
+
+    .hours-card h4 {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(20, 17, 72, 0.06);
+      font-size: 13px;
+    }
+
+    .hours-row:last-child {
+      border-bottom: none;
+    }
+
+    .hours-row .day {
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    .hours-row .time {
+      color: var(--dark);
+      font-weight: 700;
+    }
+
+    .hours-row .time.open {
+      color: #10b981;
+    }
+
+    .hours-row .time.closed {
+      color: #ef4444;
+    }
 
     /* Right form */
-    .contact-form-wrap { background: var(--bg); border: 1.5px solid var(--border); border-radius: 24px; padding: 40px; }
-    .contact-form-wrap h3 { font-size: 22px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
-    .contact-form-wrap > p { font-size: 13px; color: var(--text-soft); margin-bottom: 28px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-    .form-field { margin-bottom: 16px; }
-    .form-field.no-mb { margin-bottom: 0; }
-    .form-field label { display: block; font-size: 11px; font-weight: 700; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 7px; }
+    .contact-form-wrap {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+    }
+
+    .contact-form-wrap h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .contact-form-wrap>p {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 28px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-field {
+      margin-bottom: 16px;
+    }
+
+    .form-field.no-mb {
+      margin-bottom: 0;
+    }
+
+    .form-field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 7px;
+    }
+
     .form-field input,
     .form-field select,
     .form-field textarea {
-      width: 100%; padding: 12px 14px;
+      width: 100%;
+      padding: 12px 14px;
       border: 1.5px solid var(--border);
       border-radius: 10px;
-      font-family: 'Inter', sans-serif; font-size: 14px; color: var(--text);
-      background: white; outline: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: white;
+      outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
+
     .form-field input:focus,
     .form-field select:focus,
-    .form-field textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(4,76,156,0.08); }
-    .form-field textarea { resize: vertical; min-height: 110px; }
-    .form-field select { cursor: pointer; }
+    .form-field textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(22, 39, 231, 0.08);
+    }
+
+    .form-field textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-field select {
+      cursor: pointer;
+    }
 
     .form-submit {
-      width: 100%; padding: 15px;
-      background: var(--primary); color: white;
-      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px;
-      border: none; border-radius: 12px; cursor: pointer;
-      transition: all 0.25s; margin-top: 8px;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%;
+      padding: 15px;
+      background: var(--primary);
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.25s;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
-    .form-submit:hover { background: var(--dark); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(4,36,76,0.25); }
-    #formMsg { font-size: 13px; color: #10b981; margin-top: 12px; text-align: center; font-weight: 600; display: none; }
-    #formMsg.show { display: block; }
 
-    .form-note { font-size: 12px; color: var(--text-soft); text-align: center; margin-top: 14px; }
+    .form-submit:hover {
+      background: var(--dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(20, 17, 72, 0.25);
+    }
+
+    #formMsg {
+      font-size: 13px;
+      color: #10b981;
+      margin-top: 12px;
+      text-align: center;
+      font-weight: 600;
+      display: none;
+    }
+
+    #formMsg.show {
+      display: block;
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--text-soft);
+      text-align: center;
+      margin-top: 14px;
+    }
 
     /* ── MAP SECTION ── */
-    .map-section { padding: 0 24px 80px; background: white; }
-    .map-section-inner { max-width: 1200px; margin: 0 auto; }
-    .map-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; flex-wrap: wrap; gap: 16px; }
-    .map-header h3 { font-size: 24px; font-weight: 900; color: var(--dark); }
-    .map-header p { font-size: 13px; color: var(--text-soft); margin-top: 4px; }
-    .map-link { display: inline-flex; align-items: center; gap: 8px; background: var(--primary); color: white; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 13px; padding: 10px 18px; border-radius: 10px; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
-    .map-link:hover { background: var(--dark); }
-    .map-frame { border-radius: 20px; overflow: hidden; border: 1.5px solid var(--border); box-shadow: 0 8px 32px rgba(4,36,76,0.08); }
-    .map-frame iframe { display: block; width: 100%; height: 420px; border: none; }
+    .map-section {
+      padding: 0 24px 80px;
+      background: white;
+    }
+
+    .map-section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .map-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .map-header h3 {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--dark);
+    }
+
+    .map-header p {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-top: 4px;
+    }
+
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .map-link:hover {
+      background: var(--dark);
+    }
+
+    .map-frame {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 8px 32px rgba(20, 17, 72, 0.08);
+    }
+
+    .map-frame iframe {
+      display: block;
+      width: 100%;
+      height: 420px;
+      border: none;
+    }
 
     /* ── CHANNELS ── */
-    .channels-section { padding: 80px 24px; background: var(--bg); }
-    .channels-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
-    .channels-inner h2 { font-size: clamp(24px, 3vw, 36px); font-weight: 900; color: var(--dark); margin-bottom: 10px; }
-    .channels-inner > p { font-size: 15px; color: var(--text-soft); max-width: 480px; margin: 0 auto 48px; }
-    .channels-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-    .channel-card { background: white; border: 1.5px solid var(--border); border-radius: 16px; padding: 28px 20px; text-decoration: none; transition: all 0.3s; display: flex; flex-direction: column; align-items: center; gap: 14px; }
-    .channel-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(4,36,76,0.1); border-color: transparent; }
-    .channel-icon { width: 64px; height: 64px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 30px; }
-    .channel-icon.wa { background: rgba(37,211,102,0.12); }
-    .channel-icon.ph { background: rgba(4,76,156,0.1); }
-    .channel-icon.em { background: rgba(0,156,156,0.1); }
-    .channel-icon.vi { background: rgba(255,107,53,0.1); }
-    .channel-card h4 { font-size: 15px; font-weight: 800; color: var(--dark); }
-    .channel-card p { font-size: 12px; color: var(--text-soft); line-height: 1.6; text-align: center; }
-    .channel-badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 12px; border-radius: 20px; }
-    .channel-badge.fast { background: rgba(37,211,102,0.12); color: #10b981; }
-    .channel-badge.call { background: rgba(4,76,156,0.1); color: var(--primary); }
-    .channel-badge.mail { background: rgba(0,156,156,0.1); color: var(--teal); }
-    .channel-badge.walk { background: rgba(255,107,53,0.1); color: var(--orange); }
+    .channels-section {
+      padding: 80px 24px;
+      background: var(--bg);
+    }
+
+    .channels-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .channels-inner h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .channels-inner>p {
+      font-size: 15px;
+      color: var(--text-soft);
+      max-width: 480px;
+      margin: 0 auto 48px;
+    }
+
+    .channels-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .channel-card {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .channel-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(20, 17, 72, 0.1);
+      border-color: transparent;
+    }
+
+    .channel-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+    }
+
+    .channel-icon.wa {
+      background: rgba(37, 211, 102, 0.12);
+    }
+
+    .channel-icon.ph {
+      background: rgba(22, 39, 231, 0.1);
+    }
+
+    .channel-icon.em {
+      background: rgba(22, 39, 231, 0.1);
+    }
+
+    .channel-icon.vi {
+      background: rgba(255, 107, 53, 0.1);
+    }
+
+    .channel-card h4 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .channel-card p {
+      font-size: 12px;
+      color: var(--text-soft);
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .channel-badge {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .channel-badge.fast {
+      background: rgba(37, 211, 102, 0.12);
+      color: #10b981;
+    }
+
+    .channel-badge.call {
+      background: rgba(22, 39, 231, 0.1);
+      color: var(--primary);
+    }
+
+    .channel-badge.mail {
+      background: rgba(22, 39, 231, 0.1);
+      color: var(--teal);
+    }
+
+    .channel-badge.walk {
+      background: rgba(255, 107, 53, 0.1);
+      color: var(--orange);
+    }
 
     /* ── CTA BANNER ── */
-    .cta-banner { background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); padding: 80px 24px; text-align: center; position: relative; overflow: hidden; }
-    .cta-banner::before { content: ''; position: absolute; width: 400px; height: 400px; border-radius: 50%; background: rgba(0,156,156,0.15); top: -120px; right: -80px; }
-    .cta-banner::after { content: ''; position: absolute; width: 250px; height: 250px; border-radius: 50%; background: rgba(255,255,255,0.04); bottom: -80px; left: -60px; }
-    .cta-banner h2 { font-size: clamp(26px, 4vw, 44px); font-weight: 900; color: white; margin-bottom: 14px; position: relative; z-index: 1; }
-    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.72); max-width: 440px; margin: 0 auto 32px; position: relative; z-index: 1; line-height: 1.7; }
-    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
-    .btn-white { background: white; color: var(--primary); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px; padding: 14px 28px; border-radius: 12px; text-decoration: none; transition: all 0.25s; }
-    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
-    .btn-ghost { border: 2px solid rgba(255,255,255,0.4); color: white; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 15px; padding: 13px 24px; border-radius: 12px; text-decoration: none; transition: all 0.25s; }
-    .btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(22, 39, 231, 0.15);
+      top: -120px;
+      right: -80px;
+    }
+
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      bottom: -80px;
+      left: -60px;
+    }
+
+    .cta-banner h2 {
+      font-size: clamp(26px, 4vw, 44px);
+      font-weight: 900;
+      color: white;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-banner p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.72);
+      max-width: 440px;
+      margin: 0 auto 32px;
+      position: relative;
+      z-index: 1;
+      line-height: 1.7;
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--primary);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-ghost {
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.7);
+    }
 
     /* ── FOOTER ── */
-    footer { background: var(--dark); color: rgba(255,255,255,0.6); padding: 64px 24px 32px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer-brand { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.5); margin-top: 14px; max-width: 280px; }
-    .footer-logo-text { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 20px; color: white; letter-spacing: -0.5px; }
-    .footer-logo-text span { color: var(--teal); }
-    .footer-col h4 { font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.9); margin-bottom: 16px; }
-    .footer-col ul { list-style: none; }
-    .footer-col li { margin-bottom: 10px; }
-    .footer-col a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
-    .footer-col a:hover { color: white; }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); font-family: 'Nunito', sans-serif; }
+    footer {
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 64px 24px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 14px;
+      max-width: 280px;
+    }
+
+    .footer-logo-text {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      color: white;
+      letter-spacing: -0.5px;
+    }
+
+    .footer-logo-text span {
+      color: var(--teal);
+    }
+
+    .footer-col h4 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.3);
+      font-family: 'Nunito', sans-serif;
+    }
 
     /* ── WHATSAPP ── */
-    .whatsapp-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 56px; height: 56px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,0.5); text-decoration: none; transition: transform 0.2s; animation: pop 0.5s ease; }
-    .whatsapp-float:hover { transform: scale(1.1); }
-    @keyframes pop { 0%{transform:scale(0)} 80%{transform:scale(1.1)} 100%{transform:scale(1)} }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+      text-decoration: none;
+      transition: transform 0.2s;
+      animation: pop 0.5s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0)
+      }
+
+      80% {
+        transform: scale(1.1)
+      }
+
+      100% {
+        transform: scale(1)
+      }
+    }
 
     /* ── REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1); }
-    .reveal.show { opacity: 1; transform: translateY(0); }
-    .reveal-d1 { transition-delay: 0.1s; }
-    .reveal-d2 { transition-delay: 0.2s; }
-    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-d2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-d3 {
+      transition-delay: 0.3s;
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .channels-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .channels-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
+
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: block; }
-      .quick-contact-inner { grid-template-columns: 1fr; transform: translateY(-32px); }
-      .form-row { grid-template-columns: 1fr; }
-      .channels-grid { grid-template-columns: 1fr 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .contact-form-wrap { padding: 28px 20px; }
-      .map-frame iframe { height: 300px; }
+
+
+
+
+      .quick-contact-inner {
+        grid-template-columns: 1fr;
+        transform: translateY(-32px);
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .channels-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .contact-form-wrap {
+        padding: 28px 20px;
+      }
+
+      .map-frame iframe {
+        height: 300px;
+      }
     }
+
     @media (max-width: 480px) {
-      .channels-grid { grid-template-columns: 1fr; }
+      .channels-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
+  <style>
+    /* ── BRAND COLORS ── */
+    :root {
+      --primary: #1627E7;
+      --dark: #141148;
+      --white: #FFFFFF;
+      --black: #000000;
+      --border: rgba(22, 39, 231, 0.15);
+      --text: #141148;
+      --text-soft: rgba(20, 17, 72, 0.6);
+      --bg: #f4f5ff;
+    }
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <span class="nav-logo-text">Xynera <span>Global</span></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#courses">Courses</a></li>
-      <li><a href="index.html#universities">Universities</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="service.html">Services</a></li>
-      <li><a href="contact.html" class="nav-cta active" style="background: var(--teal);">Free Counselling</a></li>
-    </ul>
-    <button class="hamburger" id="menuBtn" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    /* ── NAV CONTAINER ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 20px rgba(20, 17, 72, 0.08);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 254px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-logo img:hover {
+      transform: scale(1.02);
+    }
+
+    /* ── DESKTOP LINKS ── */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text-soft);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      background: rgba(22, 39, 231, 0.07);
+    }
+
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: var(--primary) !important;
+      color: var(--white) !important;
+      padding: 10px 20px !important;
+      border-radius: 10px !important;
+      font-weight: 800 !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--dark) !important;
+      color: var(--white) !important;
+    }
+
+    /* ── HAMBURGER BUTTON ── */
+    .hamburger {
+      display: none;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 6px;
+      z-index: 101;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: var(--dark);
+      border-radius: 2px;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    /* ── MOBILE NAV DRAWER ── */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px 24px;
+      z-index: 99;
+      box-shadow: 0 8px 30px rgba(20, 17, 72, 0.12);
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .mobile-nav.open {
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 13px 0;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mobile-nav a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-nav .m-cta {
+      margin-top: 16px;
+      display: block;
+      text-align: center;
+      background: var(--primary);
+      color: var(--white) !important;
+      padding: 14px !important;
+      border-radius: 12px;
+      border-bottom: none !important;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+  </style>
+
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo2.png" alt="Xynera Global Education" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="index.html#universities">Universities</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="contactus.html" class="nav-cta">Free Counselling</a></li>
+      </ul>
+
+      <button class="hamburger" id="menuBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="index.html#universities">Universities</a>
+    <a href="about.html">About Us</a>
+    <a href="service.html">Services</a>
+    <a href="contactus.html" class="m-cta">📞 Free Counselling</a>
   </div>
-</nav>
 
-<div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="index.html#courses">Courses</a>
-  <a href="index.html#universities">Universities</a>
-  <a href="about.html">About Us</a>
-  <a href="service.html">Services</a>
-  <a href="contact.html" class="m-cta">📞 Free Counselling</a>
-</div>
+  <script>
+    (function () {
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      if (menuBtn && mobileNav) {
+        menuBtn.addEventListener('click', () => {
+          menuBtn.classList.toggle('active');
+          mobileNav.classList.toggle('open');
+        });
+        mobileNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            menuBtn.classList.remove('active');
+            mobileNav.classList.remove('open');
+          });
+        });
+      }
+    })();
+  </script>
 
-<!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div class="page-badge"><span></span> We're Available Now</div>
-    <h1>Let's Find Your <span>Perfect College</span> Together</h1>
-    <p>Reach out for a free, no-pressure counselling session. Our team in Mannarkkad responds within a few hours — often within minutes.</p>
+
+
+  <!-- NAV -->
+
+
+
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-badge"><span></span> We're Available Now</div>
+      <h1>Let's Find Your <span>Perfect College</span> Together</h1>
+      <p>Reach out for a free, no-pressure counselling session. Our team in Mannarkkad responds within a few hours —
+        often within minutes.</p>
+    </div>
   </div>
-</div>
 
-<!-- QUICK CONTACT PILLS -->
-<div class="quick-contact">
-  <div class="quick-contact-inner">
-    <a href="tel:+918590101284" class="quick-pill phone reveal">
-      <div class="quick-pill-icon blue">📞</div>
-      <div class="quick-pill-label">Call Us Directly</div>
-      <div class="quick-pill-value">+91 85901 01284</div>
-      <div class="quick-pill-sub">Mon–Sat, 9 AM – 7 PM</div>
-    </a>
-    <a href="https://wa.me/918590101284" target="_blank" class="quick-pill whatsapp reveal reveal-d1">
-      <div class="quick-pill-icon green">💬</div>
-      <div class="quick-pill-label">WhatsApp</div>
-      <div class="quick-pill-value">Chat Instantly</div>
-      <div class="quick-pill-sub">Fastest response — usually &lt; 30 min</div>
-    </a>
-    <a href="mailto:hello@xyneraglobal.in" class="quick-pill email reveal reveal-d2">
-      <div class="quick-pill-icon teal">✉️</div>
-      <div class="quick-pill-label">Email Us</div>
-      <div class="quick-pill-value">hello@xyneraglobal.in</div>
-      <div class="quick-pill-sub">Reply within 24 hours</div>
-    </a>
+  <!-- QUICK CONTACT PILLS -->
+  <div class="quick-contact">
+    <div class="quick-contact-inner">
+      <a href="tel:+918590101284" class="quick-pill phone reveal">
+        <div class="quick-pill-icon blue">📞</div>
+        <div class="quick-pill-label">Call Us Directly</div>
+        <div class="quick-pill-value">+91 85901 01284</div>
+        <div class="quick-pill-sub">Mon–Sat, 9 AM – 7 PM</div>
+      </a>
+      <a href="https://wa.me/918590101284" target="_blank" class="quick-pill whatsapp reveal reveal-d1">
+        <div class="quick-pill-icon green">💬</div>
+        <div class="quick-pill-label">WhatsApp</div>
+        <div class="quick-pill-value">Chat Instantly</div>
+        <div class="quick-pill-sub">Fastest response — usually &lt; 30 min</div>
+      </a>
+      <a href="mailto:info@xynera.in" class="quick-pill email reveal reveal-d2">
+        <div class="quick-pill-icon teal">✉️</div>
+        <div class="quick-pill-label">Email Us</div>
+        <div class="quick-pill-value">info@xynera.in</div>
+        <div class="quick-pill-sub">Reply within 24 hours</div>
+      </a>
+    </div>
   </div>
-</div>
 
-<!-- MAIN CONTACT -->
-<div class="contact-main">
-  <div class="contact-main-inner">
-    <div class="contact-grid">
+  <!-- MAIN CONTACT -->
+  <div class="contact-main">
+    <div class="contact-main-inner">
+      <div class="contact-grid">
 
-      <!-- LEFT: Info -->
-      <div class="contact-info reveal">
-        <div class="section-tag">Get In Touch</div>
-        <h2>Visit Us or Send a Message</h2>
-        <p>Walk into our office in Mannarkkad, call us, WhatsApp us, or fill the form — whichever way works for you. We're here to help.</p>
+        <!-- LEFT: Info -->
+        <div class="contact-info reveal">
+          <div class="section-tag">Get In Touch</div>
+          <h2>Visit Us or Send a Message</h2>
+          <p>Walk into our office in Mannarkkad, call us, WhatsApp us, or fill the form — whichever way works for you.
+            We're here to help.</p>
 
-        <div class="info-cards">
-          <div class="info-card">
-            <div class="info-card-icon blue">📍</div>
-            <div>
-              <div class="info-card-label">Office Address</div>
-              <div class="info-card-value">Xynera Global Education</div>
-              <div class="info-card-sub">Mannarkkad, Palakkad District, Kerala — 678 582</div>
+          <div class="info-cards">
+            <div class="info-card">
+              <div class="info-card-icon blue">📍</div>
+              <div>
+                <div class="info-card-label">Office Address</div>
+                <div class="info-card-value">Xynera Global Education</div>
+                <div class="info-card-sub">Mannarkkad, Palakkad District, Kerala — 678 582</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-icon blue">📞</div>
+              <div>
+                <div class="info-card-label">Phone</div>
+                <div class="info-card-value">+91 85901 01284</div>
+                <div class="info-card-sub">Mon – Sat &nbsp;|&nbsp; 9:00 AM – 7:00 PM</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-icon green">💬</div>
+              <div>
+                <div class="info-card-label">WhatsApp</div>
+                <div class="info-card-value">+91 85901 01284</div>
+                <div class="info-card-sub">Fastest way to reach us — reply in minutes</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-icon teal">✉️</div>
+              <div>
+                <div class="info-card-label">Email</div>
+                <div class="info-card-value">info@xynera.in</div>
+                <div class="info-card-sub">We reply within 24 hours</div>
+              </div>
             </div>
           </div>
-          <div class="info-card">
-            <div class="info-card-icon blue">📞</div>
-            <div>
-              <div class="info-card-label">Phone</div>
-              <div class="info-card-value">+91 85901 01284</div>
-              <div class="info-card-sub">Mon – Sat &nbsp;|&nbsp; 9:00 AM – 7:00 PM</div>
+
+          <div class="hours-card">
+            <h4>🕐 Office Hours</h4>
+            <div class="hours-row"><span class="day">Monday – Friday</span><span class="time open">9:00 AM – 7:00
+                PM</span></div>
+            <div class="hours-row"><span class="day">Saturday</span><span class="time open">9:00 AM – 5:00 PM</span>
             </div>
-          </div>
-          <div class="info-card">
-            <div class="info-card-icon green">💬</div>
-            <div>
-              <div class="info-card-label">WhatsApp</div>
-              <div class="info-card-value">+91 85901 01284</div>
-              <div class="info-card-sub">Fastest way to reach us — reply in minutes</div>
-            </div>
-          </div>
-          <div class="info-card">
-            <div class="info-card-icon teal">✉️</div>
-            <div>
-              <div class="info-card-label">Email</div>
-              <div class="info-card-value">hello@xyneraglobal.in</div>
-              <div class="info-card-sub">We reply within 24 hours</div>
+            <div class="hours-row"><span class="day">Sunday</span><span class="time closed">Closed</span></div>
+            <div class="hours-row"><span class="day">WhatsApp Support</span><span class="time open">7 Days / Week</span>
             </div>
           </div>
         </div>
 
-        <div class="hours-card">
-          <h4>🕐 Office Hours</h4>
-          <div class="hours-row"><span class="day">Monday – Friday</span><span class="time open">9:00 AM – 7:00 PM</span></div>
-          <div class="hours-row"><span class="day">Saturday</span><span class="time open">9:00 AM – 5:00 PM</span></div>
-          <div class="hours-row"><span class="day">Sunday</span><span class="time closed">Closed</span></div>
-          <div class="hours-row"><span class="day">WhatsApp Support</span><span class="time open">7 Days / Week</span></div>
-        </div>
-      </div>
+        <!-- RIGHT: Form -->
+        <div class="contact-form-wrap reveal reveal-d1">
+          <h3>📋 Book a Free Counselling Session</h3>
+          <p>Fill in your details and our counsellor will call you back — usually within a few hours.</p>
 
-      <!-- RIGHT: Form -->
-      <div class="contact-form-wrap reveal reveal-d1">
-        <h3>📋 Book a Free Counselling Session</h3>
-        <p>Fill in your details and our counsellor will call you back — usually within a few hours.</p>
-
-        <form onsubmit="submitForm(event)" id="mainForm">
-          <div class="form-row">
-            <div class="form-field no-mb">
-              <label>First Name *</label>
-              <input type="text" placeholder="Arjun" required />
+          <form onsubmit="submitForm(event)" id="mainForm">
+            <div class="form-row">
+              <div class="form-field no-mb">
+                <label>First Name *</label>
+                <input type="text" placeholder="Arjun" required />
+              </div>
+              <div class="form-field no-mb">
+                <label>Last Name</label>
+                <input type="text" placeholder="Nair" />
+              </div>
             </div>
-            <div class="form-field no-mb">
-              <label>Last Name</label>
-              <input type="text" placeholder="Nair" />
-            </div>
-          </div>
 
-          <div class="form-row">
-            <div class="form-field no-mb">
-              <label>Phone Number *</label>
-              <input type="tel" placeholder="+91 98765 43210" required />
+            <div class="form-row">
+              <div class="form-field no-mb">
+                <label>Phone Number *</label>
+                <input type="tel" placeholder="+91 98765 43210" required />
+              </div>
+              <div class="form-field no-mb">
+                <label>WhatsApp Number</label>
+                <input type="tel" placeholder="Same as above" />
+              </div>
             </div>
-            <div class="form-field no-mb">
-              <label>WhatsApp Number</label>
-              <input type="tel" placeholder="Same as above" />
+
+            <div class="form-field">
+              <label>Email Address</label>
+              <input type="email" placeholder="you@email.com" />
             </div>
-          </div>
 
-          <div class="form-field">
-            <label>Email Address</label>
-            <input type="email" placeholder="you@email.com" />
-          </div>
+            <div class="form-row">
+              <div class="form-field no-mb">
+                <label>Current Qualification *</label>
+                <select required>
+                  <option value="" disabled selected>Select level</option>
+                  <option>10th Pass / Appeared</option>
+                  <option>12th Pass / Appeared</option>
+                  <option>Degree / Graduation</option>
+                  <option>Post Graduation</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-field no-mb">
+                <label>Interested Stream *</label>
+                <select required>
+                  <option value="" disabled selected>Select stream</option>
+                  <option>BCA Specializations</option>
+                  <option>B.Ed / M.Ed / Education</option>
+                  <option>MBA / BBA / Management</option>
+                  <option>MCA / B.Sc Computer Science</option>
+                  <option>B.Com / M.Com</option>
+                  <option>BA / MA / Arts</option>
+                  <option>NIOS (10th / 12th)</option>
+                  <option>Not decided yet</option>
+                </select>
+              </div>
+            </div>
 
-          <div class="form-row">
-            <div class="form-field no-mb">
-              <label>Current Qualification *</label>
-              <select required>
-                <option value="" disabled selected>Select level</option>
-                <option>10th Pass / Appeared</option>
-                <option>12th Pass / Appeared</option>
-                <option>Degree / Graduation</option>
-                <option>Post Graduation</option>
+            <div class="form-field">
+              <label>Preferred University (optional)</label>
+              <select>
+                <option value="" selected>No preference / Help me choose</option>
+                <option>Manipal University</option>
+                <option>Amity University</option>
+                <option>LPU (Lovely Professional)</option>
+                <option>Jain University</option>
+                <option>Symbiosis University</option>
+                <option>Chandigarh University</option>
+                <option>IGNOU</option>
+                <option>Kerala University</option>
+                <option>MG University</option>
+                <option>Calicut University</option>
                 <option>Other</option>
               </select>
             </div>
-            <div class="form-field no-mb">
-              <label>Interested Stream *</label>
-              <select required>
-                <option value="" disabled selected>Select stream</option>
-                <option>BCA Specializations</option>
-                <option>B.Ed / M.Ed / Education</option>
-                <option>MBA / BBA / Management</option>
-                <option>MCA / B.Sc Computer Science</option>
-                <option>B.Com / M.Com</option>
-                <option>BA / MA / Arts</option>
-                <option>NIOS (10th / 12th)</option>
-                <option>Not decided yet</option>
-              </select>
+
+            <div class="form-field">
+              <label>Your Message / Questions</label>
+              <textarea
+                placeholder="Tell us anything — your marks, what subjects you like, career goals, or any doubts you have. We'll give you honest advice."></textarea>
             </div>
-          </div>
 
-          <div class="form-field">
-            <label>Preferred University (optional)</label>
-            <select>
-              <option value="" selected>No preference / Help me choose</option>
-              <option>Manipal University</option>
-              <option>Amity University</option>
-              <option>LPU (Lovely Professional)</option>
-              <option>Jain University</option>
-              <option>Symbiosis University</option>
-              <option>Chandigarh University</option>
-              <option>IGNOU</option>
-              <option>Kerala University</option>
-              <option>MG University</option>
-              <option>Calicut University</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div class="form-field">
-            <label>Your Message / Questions</label>
-            <textarea placeholder="Tell us anything — your marks, what subjects you like, career goals, or any doubts you have. We'll give you honest advice."></textarea>
-          </div>
-
-          <button type="submit" class="form-submit">
-            <span>📨</span> Send My Details & Book Counselling
-          </button>
-          <div id="formMsg">✅ Thank you! Our counsellor will call you within 24 hours. You can also WhatsApp us for a faster response.</div>
-          <p class="form-note">🔒 Your details are private. We never share your information with third parties.</p>
-        </form>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- MAP -->
-<div class="map-section">
-  <div class="map-section-inner">
-    <div class="map-header reveal">
-      <div>
-        <h3>📍 Find Our Office</h3>
-        <p>Mannarkkad, Palakkad District, Kerala</p>
-      </div>
-      <a href="https://maps.google.com/?q=Mannarkkad,Palakkad,Kerala" target="_blank" class="map-link">
-        🗺️ Open in Google Maps
-      </a>
-    </div>
-    <div class="map-frame reveal">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31365.5!2d76.455!3d10.997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c3b1b1b1b1b1%3A0x1!2sMannarkkad%2C+Kerala!5e0!3m2!1sen!2sin!4v1"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </div>
-</div>
-
-<!-- CHANNELS -->
-<section class="channels-section">
-  <div class="channels-inner">
-    <div class="section-tag teal reveal">All Ways to Reach Us</div>
-    <h2 class="reveal reveal-d1">Pick How You Want to Connect</h2>
-    <p class="reveal reveal-d2">Whether you're comfortable calling, chatting, emailing, or walking in — we're here for you.</p>
-    <div class="channels-grid">
-      <a href="https://wa.me/918590101284" target="_blank" class="channel-card reveal">
-        <div class="channel-icon wa">💬</div>
-        <h4>WhatsApp</h4>
-        <p>Send a message anytime. Our team replies 7 days a week, usually within 30 minutes.</p>
-        <span class="channel-badge fast">⚡ Fastest</span>
-      </a>
-      <a href="tel:+918590101284" class="channel-card reveal reveal-d1">
-        <div class="channel-icon ph">📞</div>
-        <h4>Phone Call</h4>
-        <p>Talk directly with a counsellor. Available Monday to Saturday, 9 AM to 7 PM.</p>
-        <span class="channel-badge call">📞 Direct Talk</span>
-      </a>
-      <a href="mailto:hello@xyneraglobal.in" class="channel-card reveal reveal-d2">
-        <div class="channel-icon em">✉️</div>
-        <h4>Email</h4>
-        <p>Send us your details and questions. We'll respond with a detailed, personalised reply within 24 hours.</p>
-        <span class="channel-badge mail">📧 Detailed Reply</span>
-      </a>
-      <a href="https://maps.google.com/?q=Mannarkkad,Palakkad,Kerala" target="_blank" class="channel-card reveal reveal-d3">
-        <div class="channel-icon vi">🏢</div>
-        <h4>Walk In</h4>
-        <p>Visit our office in Mannarkkad, Palakkad. No appointment needed — just come in during office hours.</p>
-        <span class="channel-badge walk">🚶 Walk-In Welcome</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<div class="cta-banner">
-  <h2>Not Sure What to Study?</h2>
-  <p>That's exactly what we're here for. A free 15-minute call can change everything — let's talk.</p>
-  <div class="cta-btns">
-    <a href="tel:+918590101284" class="btn-white">📞 Call +91 85901 01284</a>
-    <a href="https://wa.me/918590101284" target="_blank" class="btn-ghost">💬 Open WhatsApp</a>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-        <div class="footer-inner">
-            <div class="footer-grid">
-                <div class="-mt-20">
-                    <img src="logo1.png" alt="Xynera Global & Ozone Education Network Logo"
-                        class="h-34 w-auto object-contain opacity-95 transition-opacity duration-300" />
-                    <p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the
-                        right universities since 2020. 5000+ success stories and counting.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Navigate</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#courses">Courses</a></li>
-                        <li><a href="index.html#universities">Universities</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="service.html">Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Programs</h4>
-                    <ul>
-                        <li><a href="index.html#courses">BCA Programs</a></li>
-                        <li><a href="index.html#courses">B.Ed / M.Ed</a></li>
-                        <li><a href="index.html#courses">MBA / MCA</a></li>
-                        <li><a href="index.html#courses">NIOS Programs</a></li>
-                        <li><a href="index.html#courses">Distance Learning</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="tel:+918590101284">+91 85901 01284</a></li>
-                        <li><a href="mailto:hello@xyneraglobal.in">hello@xyneraglobal.in</a></li>
-                        <li><a href="#">Mannarkkad, Palakkad</a></li>
-                        <li><a href="#">Kerala, India</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span class="footer-copy">© 2026 Xynera Global Education & Ozone Education Network. All rights
-                    reserved.</span>
-                <span class="footer-copy">Made with ❤️ in Kerala</span>
-            </div>
+            <button type="submit" class="form-submit">
+              <span>📨</span> Send My Details & Book Counselling
+            </button>
+            <div id="formMsg">✅ Thank you! Our counsellor will call you within 24 hours. You can also WhatsApp us for a
+              faster response.</div>
+            <p class="form-note">🔒 Your details are private. We never share your information with third parties.</p>
+          </form>
         </div>
-    </footer>
 
-<a href="https://wa.me/918590101284" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+      </div>
+    </div>
+  </div>
 
-<script>
-  document.getElementById('menuBtn').onclick = () => document.getElementById('mobileNav').classList.toggle('open');
-  document.querySelectorAll('.mobile-nav a').forEach(a => a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open')));
+  <!-- MAP -->
+  <div class="map-section">
+    <div class="map-section-inner">
+      <div class="map-header reveal">
+        <div>
+          <h3>📍 Find Our Office</h3>
+          <p>Mannarkkad, Palakkad District, Kerala</p>
+        </div>
+        <a href="https://maps.google.com/?q=Mannarkkad,Palakkad,Kerala" target="_blank" class="map-link">
+          🗺️ Open in Google Maps
+        </a>
+      </div>
+      <div class="map-frame reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31365.5!2d76.455!3d10.997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c3b1b1b1b1b1%3A0x1!2sMannarkkad%2C+Kerala!5e0!3m2!1sen!2sin!4v1"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
 
-  function submitForm(e) {
-    e.preventDefault();
-    const msg = document.getElementById('formMsg');
-    msg.classList.add('show');
-    e.target.querySelector('.form-submit').textContent = '✅ Submitted!';
-    e.target.querySelector('.form-submit').style.background = '#10b981';
-    setTimeout(() => { e.target.reset(); }, 500);
-  }
+  <!-- CHANNELS -->
+  <section class="channels-section">
+    <div class="channels-inner">
+      <div class="section-tag teal reveal">All Ways to Reach Us</div>
+      <h2 class="reveal reveal-d1">Pick How You Want to Connect</h2>
+      <p class="reveal reveal-d2">Whether you're comfortable calling, chatting, emailing, or walking in — we're here for
+        you.</p>
+      <div class="channels-grid">
+        <a href="https://wa.me/918590101284" target="_blank" class="channel-card reveal">
+          <div class="channel-icon wa">💬</div>
+          <h4>WhatsApp</h4>
+          <p>Send a message anytime. Our team replies 7 days a week, usually within 30 minutes.</p>
+          <span class="channel-badge fast">⚡ Fastest</span>
+        </a>
+        <a href="tel:+918590101284" class="channel-card reveal reveal-d1">
+          <div class="channel-icon ph">📞</div>
+          <h4>Phone Call</h4>
+          <p>Talk directly with a counsellor. Available Monday to Saturday, 9 AM to 7 PM.</p>
+          <span class="channel-badge call">📞 Direct Talk</span>
+        </a>
+        <a href="mailto:info@xynera.in" class="channel-card reveal reveal-d2">
+          <div class="channel-icon em">✉️</div>
+          <h4>Email</h4>
+          <p>Send us your details and questions. We'll respond with a detailed, personalised reply within 24 hours.</p>
+          <span class="channel-badge mail">📧 Detailed Reply</span>
+        </a>
+        <a href="https://maps.google.com/?q=Mannarkkad,Palakkad,Kerala" target="_blank"
+          class="channel-card reveal reveal-d3">
+          <div class="channel-icon vi">🏢</div>
+          <h4>Walk In</h4>
+          <p>Visit our office in Mannarkkad, Palakkad. No appointment needed — just come in during office hours.</p>
+          <span class="channel-badge walk">🚶 Walk-In Welcome</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-  const observer = new IntersectionObserver(entries => entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('show'); }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+  <!-- CTA -->
+  <div class="cta-banner">
+    <h2>Not Sure What to Study?</h2>
+    <p>That's exactly what we're here for. A free 15-minute call can change everything — let's talk.</p>
+    <div class="cta-btns">
+      <a href="tel:+918590101284" class="btn-white">📞 Call +91 85901 01284</a>
+      <a href="https://wa.me/918590101284" target="_blank" class="btn-ghost">💬 Open WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="">
+          <img src="logo1.png" alt="Xynera Global & Ozone Education Network Logo"
+            class="h-34 w-auto object-contain opacity-95 transition-opacity duration-300" />
+          <p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the
+            right universities since 2020. 5000+ success stories and counting.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="index.html#universities">Universities</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="courses.html">BCA Programs</a></li>
+            <li><a href="courses.html">B.Ed / M.Ed</a></li>
+            <li><a href="courses.html">MBA / MCA</a></li>
+            <li><a href="courses.html">NIOS Programs</a></li>
+            <li><a href="courses.html">Distance Learning</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+918590101284">+91 85901 01284</a></li>
+            <li><a href="mailto:info@xynera.in">info@xynera.in</a></li>
+            <li><a href="#">Mannarkkad, Palakkad</a></li>
+            <li><a href="#">Kerala, India</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Xynera Global Education & Ozone Education Network. All rights
+          reserved.</span>
+        <span class="footer-copy">Made with ❤️ in Kerala</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/918590101284" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <script>
+
+
+    function submitForm(e) {
+      e.preventDefault();
+      const msg = document.getElementById('formMsg');
+      msg.classList.add('show');
+      e.target.querySelector('.form-submit').textContent = '✅ Submitted!';
+      e.target.querySelector('.form-submit').style.background = '#10b981';
+      setTimeout(() => { e.target.reset(); }, 500);
+    }
+
+    const observer = new IntersectionObserver(entries => entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('show'); }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
+
 </html>

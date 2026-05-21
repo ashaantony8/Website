@@ -13,18 +13,18 @@
         rel="stylesheet" />
     <style>
         :root {
-            --primary: #000080;
-            --primary-light: #1a65b5;
-            --dark: #04244C;
-            --teal: #009C9C;
-            --teal-light: #00b8b8;
-            --orange: #FF6B35;
-            --yellow: #FFB700;
-            --bg: #F7F9FC;
-            --white: #ffffff;
-            --text: #1a2340;
-            --text-soft: #5a6a8a;
-            --border: #e2e8f0;
+            --primary: #1627E7;
+            --primary-light: #1627E7;
+            --dark: #141148;
+            --teal: #1627E7;
+            --teal-light: #3a50ff;
+            --orange: #141148;
+            --yellow: #1627E7;
+            --bg: #f4f5ff;
+            --white: #FFFFFF;
+            --text: #141148;
+            --text-soft: rgba(20, 17, 72, 0.6);
+            --border: rgba(22, 39, 231, 0.15);
         }
 
         *,
@@ -56,155 +56,18 @@
             font-family: 'Nunito', sans-serif;
         }
 
-        /* ── NAV ── */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 2px 20px rgba(4, 36, 76, 0.06);
-        }
 
-        .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
 
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
 
-        .nav-logo img {
-            height: 44px;
-            width: auto;
-        }
 
-        .nav-logo-text {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 900;
-            font-size: 22px;
-            color: var(--dark);
-            letter-spacing: -0.5px;
-        }
 
-        .nav-logo-text span {
-            color: var(--teal);
-        }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            color: var(--text-soft);
-            text-decoration: none;
-            padding: 8px 14px;
-            border-radius: 8px;
-            transition: all 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-            background: rgba(4, 76, 156, 0.06);
-        }
-
-        .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .nav-cta {
-            background: var(--primary);
-            color: white !important;
-            padding: 10px 20px !important;
-            border-radius: 10px !important;
-            font-weight: 800 !important;
-        }
-
-        .nav-cta:hover {
-            background: var(--dark) !important;
-            color: white !important;
-        }
-
-        .hamburger {
-            display: none;
-            border: none;
-            background: none;
-            cursor: pointer;
-            padding: 6px;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 24px;
-            height: 2.5px;
-            background: var(--dark);
-            border-radius: 2px;
-            margin: 5px 0;
-            transition: all 0.3s;
-        }
-
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 72px;
-            left: 0;
-            right: 0;
-            background: white;
-            border-bottom: 1px solid var(--border);
-            padding: 16px 24px 24px;
-            z-index: 99;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .mobile-nav.open {
-            display: block;
-        }
-
-        .mobile-nav a {
-            display: block;
-            padding: 13px 0;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 15px;
-            color: var(--text);
-            text-decoration: none;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .mobile-nav a:last-child {
-            border-bottom: none;
-        }
-
-        .mobile-nav .m-cta {
-            margin-top: 16px;
-            display: block;
-            text-align: center;
-            background: var(--primary);
-            color: white !important;
-            padding: 14px !important;
-            border-radius: 12px;
-            border-bottom: none !important;
-        }
+        /* ── RESPONSIVE MEDIA QUERY ── */
+        @media (max-width: 768px) {}
 
         /* ── HERO ── */
         .hero {
-            background: linear-gradient(135deg, var(--dark) 0%, #073a80 55%, #0a4a9a 100%);
+            background: linear-gradient(135deg, var(--dark) 0%, #141148 55%, #1627E7 100%);
             position: relative;
             overflow: hidden;
             padding: 80px 24px 0;
@@ -243,9 +106,9 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 156, 156, 0.2);
-            border: 1px solid rgba(0, 156, 156, 0.4);
-            color: #7df0f0;
+            background: rgba(22, 39, 231, 0.2);
+            border: 1px solid rgba(22, 39, 231, 0.4);
+            color: #a0aaff;
             font-family: 'Nunito', sans-serif;
             font-size: 12px;
             font-weight: 800;
@@ -286,7 +149,7 @@
         }
 
         .hero h1 .highlight {
-            background: linear-gradient(90deg, #00d4d4, #7de8ff);
+            background: linear-gradient(90deg, #1627E7, #a0aaff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -319,13 +182,13 @@
             transition: all 0.25s;
             border: none;
             cursor: pointer;
-            box-shadow: 0 8px 24px rgba(0, 156, 156, 0.4);
+            box-shadow: 0 8px 24px rgba(22, 39, 231, 0.4);
         }
 
         .btn-hero-primary:hover {
             background: var(--teal-light);
             transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(0, 156, 156, 0.5);
+            box-shadow: 0 12px 32px rgba(22, 39, 231, 0.5);
         }
 
         .btn-hero-secondary {
@@ -371,7 +234,7 @@
             background: white;
             border-radius: 20px;
             padding: 32px;
-            box-shadow: 0 24px 60px rgba(4, 36, 76, 0.25);
+            box-shadow: 0 24px 60px rgba(20, 17, 72, 0.25);
         }
 
         .hero-form-card h3 {
@@ -443,7 +306,7 @@
         .form-submit:hover {
             background: var(--dark);
             transform: translateY(-1px);
-            box-shadow: 0 8px 20px rgba(4, 76, 156, 0.3);
+            box-shadow: 0 8px 20px rgba(22, 39, 231, 0.3);
         }
 
         #heroFormMsg {
@@ -520,7 +383,7 @@
 
         .section-tag {
             display: inline-block;
-            background: rgba(4, 76, 156, 0.08);
+            background: rgba(22, 39, 231, 0.08);
             color: var(--primary);
             font-family: 'Nunito', sans-serif;
             font-weight: 800;
@@ -533,7 +396,7 @@
         }
 
         .section-tag.teal {
-            background: rgba(0, 156, 156, 0.1);
+            background: rgba(22, 39, 231, 0.1);
             color: var(--teal);
         }
 
@@ -586,7 +449,7 @@
 
         .why-card:hover {
             border-color: transparent;
-            box-shadow: 0 12px 40px rgba(4, 36, 76, 0.12);
+            box-shadow: 0 12px 40px rgba(20, 17, 72, 0.12);
             transform: translateY(-4px);
         }
 
@@ -606,11 +469,11 @@
         }
 
         .why-icon.blue {
-            background: rgba(4, 76, 156, 0.1);
+            background: rgba(22, 39, 231, 0.1);
         }
 
         .why-icon.teal {
-            background: rgba(0, 156, 156, 0.1);
+            background: rgba(22, 39, 231, 0.1);
         }
 
         .why-icon.orange {
@@ -684,12 +547,12 @@
         .course-card:hover {
             border-color: var(--primary);
             background: white;
-            box-shadow: 0 8px 24px rgba(4, 36, 76, 0.08);
+            box-shadow: 0 8px 24px rgba(20, 17, 72, 0.08);
         }
 
         .course-badge {
             display: inline-block;
-            background: rgba(4, 76, 156, 0.08);
+            background: rgba(22, 39, 231, 0.08);
             color: var(--primary);
             font-size: 10px;
             font-weight: 700;
@@ -701,7 +564,7 @@
         }
 
         .course-badge.ug {
-            background: rgba(0, 156, 156, 0.1);
+            background: rgba(22, 39, 231, 0.1);
             color: var(--teal);
         }
 
@@ -783,7 +646,7 @@
 
         .uni-card:hover {
             border-color: var(--primary);
-            box-shadow: 0 6px 20px rgba(4, 36, 76, 0.08);
+            box-shadow: 0 6px 20px rgba(20, 17, 72, 0.08);
             transform: translateY(-2px);
         }
 
@@ -875,7 +738,7 @@
             background: white;
             border: 3px solid var(--primary);
             color: var(--primary);
-            box-shadow: 0 4px 16px rgba(4, 76, 156, 0.15);
+            box-shadow: 0 4px 16px rgba(22, 39, 231, 0.15);
         }
 
         .step-card:nth-child(2) .step-num {
@@ -924,12 +787,12 @@
             border-radius: 16px;
             padding: 28px;
             border: 1.5px solid var(--border);
-            box-shadow: 0 4px 16px rgba(4, 36, 76, 0.04);
+            box-shadow: 0 4px 16px rgba(20, 17, 72, 0.04);
             transition: box-shadow 0.25s;
         }
 
         .testi-card:hover {
-            box-shadow: 0 8px 32px rgba(4, 36, 76, 0.1);
+            box-shadow: 0 8px 32px rgba(20, 17, 72, 0.1);
         }
 
         .testi-stars {
@@ -998,7 +861,7 @@
             width: 400px;
             height: 400px;
             border-radius: 50%;
-            background: rgba(0, 156, 156, 0.15);
+            background: rgba(22, 39, 231, 0.15);
             top: -100px;
             right: -100px;
         }
@@ -1048,7 +911,7 @@
         }
 
         .btn-teal-outline {
-            border: 2px solid rgba(0, 156, 156, 0.6);
+            border: 2px solid rgba(22, 39, 231, 0.6);
             color: white;
             font-family: 'Nunito', sans-serif;
             font-weight: 700;
@@ -1060,7 +923,7 @@
         }
 
         .btn-teal-outline:hover {
-            background: rgba(0, 156, 156, 0.15);
+            background: rgba(22, 39, 231, 0.15);
             border-color: var(--teal);
         }
 
@@ -1088,7 +951,7 @@
             width: 46px;
             height: 46px;
             border-radius: 12px;
-            background: rgba(4, 76, 156, 0.08);
+            background: rgba(22, 39, 231, 0.08);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1335,13 +1198,9 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
 
-            .hamburger {
-                display: block;
-            }
+
+
 
             .hero {
                 padding: 60px 20px 40px;
@@ -1398,22 +1257,207 @@
 </head>
 
 <body>
+    <style>
+        /* ── BRAND COLORS ── */
+        :root {
+            --primary: #1627E7;
+            --dark: #141148;
+            --white: #FFFFFF;
+            --black: #000000;
+            --border: rgba(22, 39, 231, 0.15);
+            --text: #141148;
+            --text-soft: rgba(20, 17, 72, 0.6);
+            --bg: #f4f5ff;
+        }
 
-    <!-- NAV -->
+        /* ── NAV CONTAINER ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 20px rgba(20, 17, 72, 0.08);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 254px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo img:hover {
+            transform: scale(1.02);
+        }
+
+        /* ── DESKTOP LINKS ── */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-soft);
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background: rgba(22, 39, 231, 0.07);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary) !important;
+            color: var(--white) !important;
+            padding: 10px 20px !important;
+            border-radius: 10px !important;
+            font-weight: 800 !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--dark) !important;
+            color: var(--white) !important;
+        }
+
+        /* ── HAMBURGER BUTTON ── */
+        .hamburger {
+            display: none;
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 6px;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2.5px;
+            background: var(--dark);
+            border-radius: 2px;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(7.5px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-7.5px) rotate(-45deg);
+        }
+
+        /* ── MOBILE NAV DRAWER ── */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px 24px;
+            z-index: 99;
+            box-shadow: 0 8px 30px rgba(20, 17, 72, 0.12);
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .mobile-nav.open {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 13px 0;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav .m-cta {
+            margin-top: 16px;
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 14px !important;
+            border-radius: 12px;
+            border-bottom: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+
     <nav>
         <div class="nav-inner">
-             <a href="index.html">
-            <img src="logo2.png" alt="Ozone Network"
-              class="h-20 sm:h-4.5 w-auto object-contain ml-1.5 opacity-90 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0.5" />
-          </a>
+            <a href="index.html" class="nav-logo">
+                <img src="logo2.png" alt="Xynera Global Education" />
+            </a>
+
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#universities">Universities</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="index.html#universities">Universities</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="service.html">Services</a></li>
                 <li><a href="contactus.html" class="nav-cta">Free Counselling</a></li>
             </ul>
+
             <button class="hamburger" id="menuBtn" aria-label="Open menu">
                 <span></span><span></span><span></span>
             </button>
@@ -1422,18 +1466,26 @@
 
     <div class="mobile-nav" id="mobileNav">
         <a href="index.html">Home</a>
-        <a href="#courses">Courses</a>
-        <a href="#universities">Universities</a>
+        <a href="courses.html">Courses</a>
+        <a href="index.html#universities">Universities</a>
         <a href="about.html">About Us</a>
         <a href="service.html">Services</a>
         <a href="contactus.html" class="m-cta">📞 Free Counselling</a>
     </div>
 
+
+
+
+    <!-- NAV -->
+
+
+
+
     <!-- HERO -->
     <section class="hero">
         <div class="hero-bg-circles">
             <span style="width:500px;height:500px;top:-150px;right:-100px;"></span>
-            <span style="width:300px;height:300px;bottom:100px;left:-80px;background:rgba(0,156,156,0.05)"></span>
+            <span style="width:300px;height:300px;bottom:100px;left:-80px;background:rgba(22,39,231,0.05)"></span>
         </div>
         <div class="hero-inner">
             <div>
@@ -1499,7 +1551,7 @@
 
     <div class="wave-divider">
         <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,48 C360,0 1080,48 1440,12 L1440,0 L0,0 Z" fill="#073a80" />
+            <path d="M0,48 C360,0 1080,48 1440,12 L1440,0 L0,0 Z" fill="#141148" />
         </svg>
     </div>
 
@@ -1539,7 +1591,7 @@
             <div class="why-grid">
                 <div class="why-card reveal reveal-d1">
                     <div class="why-icon blue">🎯</div>
-                    <h4>Job Guarantee Letter</h4>
+                    <h4>placement support</h4>
                     <p>Get a Job Guarantee Letter at the time of admission itself. We stand by our students' career
                         outcomes from day one.</p>
                 </div>
@@ -1764,7 +1816,8 @@
 
             <div style="text-align:center; margin-top:36px;">
                 <p style="font-size:14px; color:var(--text-soft);">Looking for a course not listed here? We offer
-                    <strong style="color:var(--primary)">4× more courses</strong> than most consultancies.</p>
+                    <strong style="color:var(--primary)">4× more courses</strong> than most consultancies.
+                </p>
                 <a href="contactus.html"
                     style="display:inline-block; margin-top:12px; color:var(--primary); font-weight:700; font-size:14px; text-decoration:none;">Talk
                     to a counsellor →</a>
@@ -1853,7 +1906,7 @@
                     <div class="uni-type">Central University</div>
                 </div>
                 <div class="uni-card"
-                    style="background: linear-gradient(135deg, rgba(4,76,156,0.06), rgba(0,156,156,0.06)); border: 2px dashed var(--teal);">
+                    style="background: linear-gradient(135deg, rgba(22,39,231,0.06), rgba(22,39,231,0.06)); border: 2px dashed var(--teal);">
                     <div class="uni-icon">➕</div>
                     <div class="uni-name" style="color:var(--primary)">15+ More</div>
                     <div class="uni-type">Being added soon</div>
@@ -1987,8 +2040,8 @@
                         <div class="contact-info-icon">📧</div>
                         <div>
                             <div class="contact-info-label">Email</div>
-                            <div class="contact-info-value"><a href="mailto:hello@xyneraglobal.in"
-                                    style="color:var(--dark); text-decoration:none;">hello@xyneraglobal.in</a></div>
+                            <div class="contact-info-value"><a href="mailto:info@xynera.in"
+                                    style="color:var(--dark); text-decoration:none;">info@xynera.in</a></div>
                         </div>
                     </div>
                     <div class="contact-info-item">
@@ -2062,7 +2115,7 @@
     </section>
 
     <!-- FOOTER -->
-  <footer>
+    <footer>
         <div class="footer-inner">
             <div class="footer-grid">
                 <div class="-mt-20">
@@ -2075,7 +2128,7 @@
                     <h4>Navigate</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#courses">Courses</a></li>
+                        <li><a href="courses.html">Courses</a></li>
                         <li><a href="index.html#universities">Universities</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="service.html">Services</a></li>
@@ -2084,18 +2137,18 @@
                 <div class="footer-col">
                     <h4>Programs</h4>
                     <ul>
-                        <li><a href="index.html#courses">BCA Programs</a></li>
-                        <li><a href="index.html#courses">B.Ed / M.Ed</a></li>
-                        <li><a href="index.html#courses">MBA / MCA</a></li>
-                        <li><a href="index.html#courses">NIOS Programs</a></li>
-                        <li><a href="index.html#courses">Distance Learning</a></li>
+                        <li><a href="courses.html">BCA Programs</a></li>
+                        <li><a href="courses.html">B.Ed / M.Ed</a></li>
+                        <li><a href="courses.html">MBA / MCA</a></li>
+                        <li><a href="courses.html">NIOS Programs</a></li>
+                        <li><a href="courses.html">Distance Learning</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="tel:+918590101284">+91 85901 01284</a></li>
-                        <li><a href="mailto:hello@xyneraglobal.in">hello@xyneraglobal.in</a></li>
+                        <li><a href="mailto:info@xynera.in">info@xynera.in</a></li>
                         <li><a href="#">Mannarkkad, Palakkad</a></li>
                         <li><a href="#">Kerala, India</a></li>
                     </ul>
@@ -2119,11 +2172,19 @@
 
     <script>
         // Mobile menu
-        document.getElementById('menuBtn').onclick = () => {
-            document.getElementById('mobileNav').classList.toggle('open');
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+
+        menuBtn.onclick = () => {
+            menuBtn.classList.toggle('active');   // Toggles the 'X' shape animation
+            mobileNav.classList.toggle('open');   // Toggles the dropdown menu
         };
+
         document.querySelectorAll('.mobile-nav a').forEach(a => {
-            a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
+            a.addEventListener('click', () => {
+                menuBtn.classList.remove('active');  // Resets the hamburger button
+                mobileNav.classList.remove('open');   // Closes the menu
+            });
         });
 
         // Tab switching
