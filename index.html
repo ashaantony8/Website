@@ -1,0 +1,2157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xynera Global Education | Your Dream Admission, Our Expertise</title>
+    <link rel="icon" type="image/png" href="fav.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --primary: #000080;
+            --primary-light: #1a65b5;
+            --dark: #04244C;
+            --teal: #009C9C;
+            --teal-light: #00b8b8;
+            --orange: #FF6B35;
+            --yellow: #FFB700;
+            --bg: #F7F9FC;
+            --white: #ffffff;
+            --text: #1a2340;
+            --text-soft: #5a6a8a;
+            --border: #e2e8f0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .brand-font {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 20px rgba(4, 36, 76, 0.06);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 44px;
+            width: auto;
+        }
+
+        .nav-logo-text {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            font-size: 22px;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo-text span {
+            color: var(--teal);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-soft);
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background: rgba(4, 76, 156, 0.06);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white !important;
+            padding: 10px 20px !important;
+            border-radius: 10px !important;
+            font-weight: 800 !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--dark) !important;
+            color: white !important;
+        }
+
+        .hamburger {
+            display: none;
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 6px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2.5px;
+            background: var(--dark);
+            border-radius: 2px;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px 24px;
+            z-index: 99;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav.open {
+            display: block;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 13px 0;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav .m-cta {
+            margin-top: 16px;
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color: white !important;
+            padding: 14px !important;
+            border-radius: 12px;
+            border-bottom: none !important;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, #073a80 55%, #0a4a9a 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 80px 24px 0;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-bg-circles {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .hero-bg-circles span {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            padding-bottom: 80px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 156, 156, 0.2);
+            border: 1px solid rgba(0, 156, 156, 0.4);
+            color: #7df0f0;
+            font-family: 'Nunito', sans-serif;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+
+        .hero-badge span {
+            width: 7px;
+            height: 7px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0.3
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5vw, 64px);
+            font-weight: 900;
+            line-height: 1.1;
+            color: white;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(90deg, #00d4d4, #7de8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            max-width: 520px;
+            margin-bottom: 36px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .btn-hero-primary {
+            background: var(--teal);
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: 15px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.25s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(0, 156, 156, 0.4);
+        }
+
+        .btn-hero-primary:hover {
+            background: var(--teal-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 156, 156, 0.5);
+        }
+
+        .btn-hero-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.25s;
+        }
+
+        .btn-hero-secondary:hover {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 36px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat-num {
+            font-family: 'Nunito', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.55);
+            margin-top: 3px;
+        }
+
+        /* Hero Card Form */
+        .hero-form-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 24px 60px rgba(4, 36, 76, 0.25);
+        }
+
+        .hero-form-card h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .hero-form-card p {
+            font-size: 13px;
+            color: var(--text-soft);
+            margin-bottom: 24px;
+        }
+
+        .form-field {
+            margin-bottom: 16px;
+        }
+
+        .form-field label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-soft);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
+        }
+
+        .form-field input,
+        .form-field select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: var(--text);
+            background: var(--bg);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-field input:focus,
+        .form-field select:focus {
+            border-color: var(--primary);
+            background: white;
+        }
+
+        .form-field select {
+            cursor: pointer;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: 15px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s;
+            margin-top: 4px;
+        }
+
+        .form-submit:hover {
+            background: var(--dark);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(4, 76, 156, 0.3);
+        }
+
+        #heroFormMsg {
+            font-size: 13px;
+            color: #10b981;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Wave divider */
+        .wave-divider {
+            line-height: 0;
+        }
+
+        .wave-divider svg {
+            display: block;
+            width: 100%;
+        }
+
+        /* ── TICKER ── */
+        .ticker {
+            background: var(--primary);
+            padding: 14px 0;
+            overflow: hidden;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .ticker-inner {
+            display: flex;
+            width: max-content;
+            animation: ticker 30s linear infinite;
+            gap: 0;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 32px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.9);
+            white-space: nowrap;
+        }
+
+        .ticker-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--teal);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ── COMMON SECTION ── */
+        .section {
+            padding: 80px 24px;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(4, 76, 156, 0.08);
+            color: var(--primary);
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .section-tag.teal {
+            background: rgba(0, 156, 156, 0.1);
+            color: var(--teal);
+        }
+
+        .section-title {
+            font-size: clamp(26px, 3.5vw, 42px);
+            font-weight: 900;
+            color: var(--dark);
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+
+        .section-sub {
+            font-size: 15px;
+            color: var(--text-soft);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        /* ── WHY XYNERA ── */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .why-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            border: 1.5px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--teal));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .why-card:hover {
+            border-color: transparent;
+            box-shadow: 0 12px 40px rgba(4, 36, 76, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .why-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .why-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .why-icon.blue {
+            background: rgba(4, 76, 156, 0.1);
+        }
+
+        .why-icon.teal {
+            background: rgba(0, 156, 156, 0.1);
+        }
+
+        .why-icon.orange {
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .why-card h4 {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .why-card p {
+            font-size: 13px;
+            color: var(--text-soft);
+            line-height: 1.6;
+        }
+
+        /* ── COURSES ── */
+        .courses-section {
+            background: white;
+        }
+
+        .courses-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 32px 0 28px;
+        }
+
+        .tab-btn {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 9px 18px;
+            border-radius: 8px;
+            border: 1.5px solid var(--border);
+            background: white;
+            color: var(--text-soft);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .course-card {
+            background: var(--bg);
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 22px;
+            transition: all 0.25s;
+            cursor: pointer;
+        }
+
+        .course-card:hover {
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 8px 24px rgba(4, 36, 76, 0.08);
+        }
+
+        .course-badge {
+            display: inline-block;
+            background: rgba(4, 76, 156, 0.08);
+            color: var(--primary);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .course-badge.ug {
+            background: rgba(0, 156, 156, 0.1);
+            color: var(--teal);
+        }
+
+        .course-badge.pg {
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--orange);
+        }
+
+        .course-badge.cert {
+            background: rgba(255, 183, 0, 0.12);
+            color: #b07800;
+        }
+
+        .course-card h4 {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 6px;
+            line-height: 1.35;
+        }
+
+        .course-card p {
+            font-size: 12px;
+            color: var(--text-soft);
+            margin-bottom: 14px;
+        }
+
+        .course-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-duration {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-soft);
+        }
+
+        .course-apply {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .course-apply:hover {
+            color: var(--teal);
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        /* ── UNIVERSITIES ── */
+        .uni-section {
+            background: linear-gradient(180deg, var(--bg) 0%, white 100%);
+        }
+
+        .uni-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .uni-card {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 16px;
+            text-align: center;
+            transition: all 0.25s;
+        }
+
+        .uni-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 6px 20px rgba(4, 36, 76, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .uni-card .uni-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .uni-card .uni-name {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.35;
+        }
+
+        .uni-card .uni-type {
+            font-size: 10px;
+            color: var(--text-soft);
+            margin-top: 3px;
+        }
+
+        .uni-cta-wrap {
+            text-align: center;
+            margin-top: 36px;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: 14px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ── HOW IT WORKS ── */
+        .steps-section {
+            background: white;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-top: 48px;
+            position: relative;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--teal));
+            z-index: 0;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 20px 12px;
+        }
+
+        .step-num {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Nunito', sans-serif;
+            font-size: 22px;
+            font-weight: 900;
+            background: white;
+            border: 3px solid var(--primary);
+            color: var(--primary);
+            box-shadow: 0 4px 16px rgba(4, 76, 156, 0.15);
+        }
+
+        .step-card:nth-child(2) .step-num {
+            border-color: var(--teal);
+            color: var(--teal);
+        }
+
+        .step-card:nth-child(3) .step-num {
+            border-color: var(--orange);
+            color: var(--orange);
+        }
+
+        .step-card:nth-child(4) .step-num {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .step-card h4 {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .step-card p {
+            font-size: 12px;
+            color: var(--text-soft);
+            line-height: 1.55;
+        }
+
+        /* ── TESTIMONIALS ── */
+        .testimonials-section {
+            background: var(--bg);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .testi-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            border: 1.5px solid var(--border);
+            box-shadow: 0 4px 16px rgba(4, 36, 76, 0.04);
+            transition: box-shadow 0.25s;
+        }
+
+        .testi-card:hover {
+            box-shadow: 0 8px 32px rgba(4, 36, 76, 0.1);
+        }
+
+        .testi-stars {
+            color: #fbbf24;
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .testi-card p {
+            font-size: 14px;
+            color: var(--text-soft);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testi-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testi-avatar-placeholder {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--teal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        .testi-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .testi-course {
+            font-size: 12px;
+            color: var(--text-soft);
+        }
+
+        /* ── CTA BANNER ── */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            padding: 80px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(0, 156, 156, 0.15);
+            top: -100px;
+            right: -100px;
+        }
+
+        .cta-banner h2 {
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 900;
+            color: white;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 480px;
+            margin: 0 auto 36px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: 15px;
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-teal-outline {
+            border: 2px solid rgba(0, 156, 156, 0.6);
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 13px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .btn-teal-outline:hover {
+            background: rgba(0, 156, 156, 0.15);
+            border-color: var(--teal);
+        }
+
+        /* ── CONTACT ── */
+        .contact-section {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: start;
+            margin-top: 48px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 28px;
+        }
+
+        .contact-info-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: rgba(4, 76, 156, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-info-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-soft);
+            margin-bottom: 3px;
+        }
+
+        .contact-info-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .contact-form-card {
+            background: var(--bg);
+            border-radius: 20px;
+            padding: 36px;
+            border: 1.5px solid var(--border);
+        }
+
+        .contact-form-card h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 24px;
+        }
+
+        .contact-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .contact-submit {
+            background: var(--primary);
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: 15px;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .contact-submit:hover {
+            background: var(--dark);
+        }
+
+        contactus.htmlMsg {
+            font-size: 13px;
+            color: #10b981;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 64px 24px 32px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand {
+            font-size: 13px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 14px;
+            max-width: 280px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: gap;
+            gap: 12px;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.3);
+            font-family: 'Nunito', sans-serif;
+        }
+
+        /* ── WHATSAPP ── */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25d366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+            text-decoration: none;
+            animation: pop 0.5s ease;
+            transition: transform 0.2s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0)
+            }
+
+            80% {
+                transform: scale(1.1)
+            }
+
+            100% {
+                transform: scale(1)
+            }
+        }
+
+        /* ── ANIMATIONS ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-d1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-d2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-d3 {
+            transition-delay: 0.3s;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                max-width: 680px;
+            }
+
+            .hero-form-card {
+                display: none;
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .courses-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .uni-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps-grid::before {
+                display: none;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero {
+                padding: 60px 20px 40px;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .uni-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+             <a href="index.html">
+            <img src="logo2.png" alt="Ozone Network"
+              class="h-20 sm:h-4.5 w-auto object-contain ml-1.5 opacity-90 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0.5" />
+          </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#universities">Universities</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="contactus.html" class="nav-cta">Free Counselling</a></li>
+            </ul>
+            <button class="hamburger" id="menuBtn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#universities">Universities</a>
+        <a href="about.html">About Us</a>
+        <a href="service.html">Services</a>
+        <a href="contactus.html" class="m-cta">📞 Free Counselling</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg-circles">
+            <span style="width:500px;height:500px;top:-150px;right:-100px;"></span>
+            <span style="width:300px;height:300px;bottom:100px;left:-80px;background:rgba(0,156,156,0.05)"></span>
+        </div>
+        <div class="hero-inner">
+            <div>
+                <div class="hero-badge"><span></span> Admissions Open 2025–26</div>
+                <h1>Your Dream<br>Admission is<br><span class="highlight">One Step Away</span></h1>
+                <p class="hero-sub">Xynera Global Education connects aspiring students with the best Indian
+                    universities. Expert counselling, guaranteed admissions, scholarship support — all under one roof.
+                </p>
+                <div class="hero-btns">
+                    <a href="contactus.html" class="btn-hero-primary">📋 Get Free Counselling</a>
+                    <a href="#courses" class="btn-hero-secondary">Explore Courses →</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-num">5000+</div>
+                        <div class="hero-stat-label">Students Enrolled</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">30+</div>
+                        <div class="hero-stat-label">Partner Universities</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">98%</div>
+                        <div class="hero-stat-label">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticky form (desktop) -->
+            <div class="hero-form-card">
+                <h3>Get Free Counselling 🎓</h3>
+                <p>Talk to our expert advisors today — it's completely free!</p>
+                <form onsubmit="submitHeroForm(event)">
+                    <div class="form-field">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Your name" required />
+                    </div>
+                    <div class="form-field">
+                        <label>Mobile Number</label>
+                        <input type="tel" placeholder="+91 00000 00000" required />
+                    </div>
+                    <div class="form-field">
+                        <label>Course Interest</label>
+                        <select>
+                            <option value="">Select a course</option>
+                            <option>BCA — AI & Data Science</option>
+                            <option>BCA — AI & Machine Learning</option>
+                            <option>BCA — Cyber Security</option>
+                            <option>BCA — Cloud Computing</option>
+                            <option>B.Ed</option>
+                            <option>M.Ed</option>
+                            <option>B.P.Ed / M.P.Ed</option>
+                            <option>MBA / MCA</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="form-submit">Submit — It's Free!</button>
+                    <div id="heroFormMsg"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,48 C360,0 1080,48 1440,12 L1440,0 L0,0 Z" fill="#073a80" />
+        </svg>
+    </div>
+
+    <!-- TICKER -->
+    <div class="ticker">
+        <div class="ticker-inner">
+            <span class="ticker-item"><span class="ticker-dot"></span> Job Guarantee Letter at Admission</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> 90%+ Students Get Full Scholarship</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> 30+ Partner Universities</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Manipal, Amity, LPU & More</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Government University Admissions</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> NIOS Programs Available</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> B.Ed, M.Ed, BCA, MBA & More</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Free Career Counselling</span>
+            <!-- repeat -->
+            <span class="ticker-item"><span class="ticker-dot"></span> Job Guarantee Letter at Admission</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> 90%+ Students Get Full Scholarship</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> 30+ Partner Universities</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Manipal, Amity, LPU & More</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Government University Admissions</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> NIOS Programs Available</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> B.Ed, M.Ed, BCA, MBA & More</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Free Career Counselling</span>
+        </div>
+    </div>
+
+    <!-- WHY XYNERA -->
+    <section class="section">
+        <div class="section-inner">
+            <div style="text-align:center; max-width:600px; margin:0 auto;" class="reveal">
+                <div class="section-tag">Why Choose Us</div>
+                <h2 class="section-title">Why 5000+ Students Trust<br>Xynera Global Education</h2>
+                <p class="section-sub" style="margin:0 auto;">We don't just provide admissions — we build careers. Our
+                    end-to-end support ensures you get the best institution, the best scholarship, and the best start.
+                </p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card reveal reveal-d1">
+                    <div class="why-icon blue">🎯</div>
+                    <h4>Job Guarantee Letter</h4>
+                    <p>Get a Job Guarantee Letter at the time of admission itself. We stand by our students' career
+                        outcomes from day one.</p>
+                </div>
+                <div class="why-card reveal reveal-d2">
+                    <div class="why-icon teal">💰</div>
+                    <h4>Scholarship Up to 100%</h4>
+                    <p>Students scoring 90% and above receive full fee scholarships. We help you access every available
+                        financial benefit.</p>
+                </div>
+                <div class="why-card reveal reveal-d3">
+                    <div class="why-icon orange">🏛️</div>
+                    <h4>30+ Partner Universities</h4>
+                    <p>We are partnered with 30+ top universities including Manipal, Amity, LPU, government
+                        universities, and many more.</p>
+                </div>
+                <div class="why-card reveal reveal-d1">
+                    <div class="why-icon teal">🧑‍🎓</div>
+                    <h4>Student Development Programs</h4>
+                    <p>Arts, cultural, sports clubs, internships, and industrial visits ensure holistic development
+                        beyond the classroom.</p>
+                </div>
+                <div class="why-card reveal reveal-d2">
+                    <div class="why-icon blue">📝</div>
+                    <h4>NIOS & Open Education</h4>
+                    <p>Full support for NIOS programs alongside B.Ed, M.Ed, B.P.Ed, and M.P.Ed — covering every
+                        educational pathway.</p>
+                </div>
+                <div class="why-card reveal reveal-d3">
+                    <div class="why-icon orange">🚀</div>
+                    <h4>Placement Support</h4>
+                    <p>Excellent campus placement assistance with an industry network that helps students land their
+                        dream jobs after graduation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="section courses-section" id="courses">
+        <div class="section-inner">
+            <div class="reveal">
+                <div class="section-tag teal">Our Programs</div>
+                <h2 class="section-title">Explore Our Courses</h2>
+                <p class="section-sub">From technology to education — we offer a wide range of undergraduate,
+                    postgraduate, and professional programs across top Indian universities.</p>
+            </div>
+
+            <div class="courses-tabs reveal">
+                <button class="tab-btn active" onclick="switchTab(event, 'bca')">💻 BCA Programs</button>
+                <button class="tab-btn" onclick="switchTab(event, 'education')">📚 Education (B.Ed / M.Ed)</button>
+                <button class="tab-btn" onclick="switchTab(event, 'management')">📊 Management</button>
+                <button class="tab-btn" onclick="switchTab(event, 'nios')">🎓 NIOS & Open</button>
+            </div>
+
+            <div id="tab-bca" class="tab-panel active">
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <span class="course-badge ug">UG · 3 Years</span>
+                        <h4>BCA — Artificial Intelligence & Data Science</h4>
+                        <p>Hands-on training in AI models, data analytics, Python, and ML pipelines.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 3 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge ug">UG · 3 Years</span>
+                        <h4>BCA — Artificial Intelligence & Machine Learning</h4>
+                        <p>Deep learning, neural networks, computer vision, and real-world AI projects.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 3 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge ug">UG · 3 Years</span>
+                        <h4>BCA — Ethical Hacking & Cyber Security</h4>
+                        <p>Network security, penetration testing, ethical hacking, and digital forensics.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 3 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge ug">UG · 3 Years</span>
+                        <h4>BCA — Cyber Security & Digital Forensics</h4>
+                        <p>Advanced cyber defence, digital investigation techniques, and legal frameworks.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 3 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge ug">UG · 3 Years</span>
+                        <h4>BCA — Cloud Computing & Data Analytics</h4>
+                        <p>AWS, Azure, GCP cloud platforms with big data analytics and visualisation.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 3 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge ug">UG · 3 Years</span>
+                        <h4>BCA — General</h4>
+                        <p>Core computer applications, programming, databases, and software development.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 3 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-education" class="tab-panel">
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <span class="course-badge ug">UG · 2 Years</span>
+                        <h4>B.Ed — Bachelor of Education</h4>
+                        <p>Become a certified school teacher with comprehensive pedagogy training and practice teaching.
+                        </p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 2 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge pg">PG · 2 Years</span>
+                        <h4>M.Ed — Master of Education</h4>
+                        <p>Advanced educational research, curriculum development, and academic leadership training.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 2 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge ug">UG · 3 Years</span>
+                        <h4>B.P.Ed — Bachelor of Physical Education</h4>
+                        <p>Sports science, physical education theory, coaching skills, and fitness management.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 3 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge pg">PG · 2 Years</span>
+                        <h4>M.P.Ed — Master of Physical Education</h4>
+                        <p>Advanced sports management, research methodology, and high-performance coaching.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 2 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge cert">Certificate</span>
+                        <h4>D.El.Ed — Diploma in Elementary Education</h4>
+                        <p>Primary school teaching certification with child psychology and classroom management.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 2 Years</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-management" class="tab-panel">
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <span class="course-badge pg">PG · 2 Years</span>
+                        <h4>MBA — Master of Business Administration</h4>
+                        <p>Strategic management, marketing, finance, HR — with specializations in various domains.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 2 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge pg">PG · 2 Years</span>
+                        <h4>MCA — Master of Computer Applications</h4>
+                        <p>Advanced software development, cloud computing, and enterprise application building.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 2 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge ug">UG · 3 Years</span>
+                        <h4>BBA — Bachelor of Business Administration</h4>
+                        <p>Business fundamentals, entrepreneurship, and management skills for a corporate career.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 3 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge ug">UG · 3 Years</span>
+                        <h4>B.Com — Bachelor of Commerce</h4>
+                        <p>Accounting, taxation, finance, and business law for commerce and CA aspirants.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 3 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge pg">PG · 2 Years</span>
+                        <h4>M.Com — Master of Commerce</h4>
+                        <p>Advanced accounting, financial management, and research in commerce disciplines.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 2 Years · Full Time</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-nios" class="tab-panel">
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <span class="course-badge cert">NIOS · Open</span>
+                        <h4>NIOS Secondary (Class 10)</h4>
+                        <p>National Institute of Open Schooling — flexible Class 10 program for all age groups.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ Flexible Duration</span><a
+                                href="contactus.html" class="course-apply">Enquire →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge cert">NIOS · Open</span>
+                        <h4>NIOS Senior Secondary (Class 12)</h4>
+                        <p>Open schooling Class 12 with Arts, Science, Commerce streams — recognised nationally.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ Flexible Duration</span><a
+                                href="contactus.html" class="course-apply">Enquire →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge cert">Open · UG</span>
+                        <h4>BA / B.Sc / B.Com (Distance)</h4>
+                        <p>Recognised undergraduate degrees through distance and open learning universities.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 3 Years · Open</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge cert">Open · PG</span>
+                        <h4>MA / M.Sc / MBA (Distance)</h4>
+                        <p>Postgraduate programs through open universities for working professionals.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 2 Years · Open</span><a
+                                href="contactus.html" class="course-apply">Apply Now →</a></div>
+                    </div>
+                    <div class="course-card">
+                        <span class="course-badge cert">Certificate</span>
+                        <h4>Vocational & Skill Programs</h4>
+                        <p>NSDC-aligned skill development courses in IT, healthcare, retail, and more sectors.</p>
+                        <div class="course-card-footer"><span class="course-duration">⏱ 6–12 Months</span><a
+                                href="contactus.html" class="course-apply">Enquire →</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:36px;">
+                <p style="font-size:14px; color:var(--text-soft);">Looking for a course not listed here? We offer
+                    <strong style="color:var(--primary)">4× more courses</strong> than most consultancies.</p>
+                <a href="contactus.html"
+                    style="display:inline-block; margin-top:12px; color:var(--primary); font-weight:700; font-size:14px; text-decoration:none;">Talk
+                    to a counsellor →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNIVERSITIES -->
+    <section class="section uni-section" id="universities">
+        <div class="section-inner">
+            <div style="text-align:center; max-width:600px; margin:0 auto 0;" class="reveal">
+                <div class="section-tag">Our Partners</div>
+                <h2 class="section-title">Trusted by 30+ Top Universities</h2>
+                <p class="section-sub" style="margin:0 auto;">We facilitate admissions in leading private, deemed, and
+                    government universities across India. More universities being added continuously.</p>
+            </div>
+            <div class="uni-grid reveal">
+                <div class="uni-card">
+                    <div class="uni-icon">🏛️</div>
+                    <div class="uni-name">Manipal University</div>
+                    <div class="uni-type">Deemed University</div>
+                </div>
+                <div class="uni-card">
+                    <div class="uni-icon">🎓</div>
+                    <div class="uni-name">Amity University</div>
+                    <div class="uni-type">Private University</div>
+                </div>
+                <div class="uni-card">
+                    <div class="uni-icon">🏫</div>
+                    <div class="uni-name">LPU</div>
+                    <div class="uni-type">Lovely Professional Univ.</div>
+                </div>
+                <div class="uni-card">
+                    <div class="uni-icon">📚</div>
+                    <div class="uni-name">Jain University</div>
+                    <div class="uni-type">Deemed University</div>
+                </div>
+                <div class="uni-card">
+                    <div class="uni-icon">🔬</div>
+                    <div class="uni-name">Symbiosis</div>
+                    <div class="uni-type">Deemed University</div>
+                </div>
+                <div class="uni-card">
+                    <div class="uni-icon">🌟</div>
+                    <div class="uni-name">IGNOU</div>
+                    <div class="uni-type">Open University</div>
+                </div>
+                <div class="uni-card">
+                    <div class="uni-icon">🏆</div>
+                    <div class="uni-name">Chandigarh Univ.</div>
+                    <div class="uni-type">Private University</div>
+                </div>
+                <div class="uni-card">
+                    <div class="uni-icon">🎯</div>
+                    <div class="uni-name">SRM University</div>
+                    <div class="uni-type">Deemed University</div>
+                </div>
+                <div class="uni-card">
+                    <div class="uni-icon">💡</div>
+                    <div class="uni-name">VIT University</div>
+                    <div class="uni-type">Deemed University</div>
+                </div>
+                <div class="uni-card">
+                    <div class="uni-icon">🏛️</div>
+                    <div class="uni-name">Calicut University</div>
+                    <div class="uni-type">Government University</div>
+                </div>
+                <div class="uni-card">
+                    <div class="uni-icon">🌿</div>
+                    <div class="uni-name">MG University</div>
+                    <div class="uni-type">Government University</div>
+                </div>
+                <div class="uni-card">
+                    <div class="uni-icon">📖</div>
+                    <div class="uni-name">Kerala University</div>
+                    <div class="uni-type">Government University</div>
+                </div>
+                <div class="uni-card">
+                    <div class="uni-icon">🏫</div>
+                    <div class="uni-name">Kannur University</div>
+                    <div class="uni-type">Government University</div>
+                </div>
+                <div class="uni-card">
+                    <div class="uni-icon">🔭</div>
+                    <div class="uni-name">Pondicherry Univ.</div>
+                    <div class="uni-type">Central University</div>
+                </div>
+                <div class="uni-card"
+                    style="background: linear-gradient(135deg, rgba(4,76,156,0.06), rgba(0,156,156,0.06)); border: 2px dashed var(--teal);">
+                    <div class="uni-icon">➕</div>
+                    <div class="uni-name" style="color:var(--primary)">15+ More</div>
+                    <div class="uni-type">Being added soon</div>
+                </div>
+            </div>
+            <div class="uni-cta-wrap reveal">
+                <a href="contactus.html" class="btn-outline">View All Partner Universities →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section steps-section">
+        <div class="section-inner">
+            <div style="text-align:center; max-width:500px; margin:0 auto;" class="reveal">
+                <div class="section-tag">Simple Process</div>
+                <h2 class="section-title">Get Admitted in 4 Easy Steps</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card reveal reveal-d1">
+                    <div class="step-num">1</div>
+                    <h4>Free Counselling</h4>
+                    <p>Talk to our expert counsellors about your goals, interests, and eligible courses — completely
+                        free.</p>
+                </div>
+                <div class="step-card reveal reveal-d2">
+                    <div class="step-num">2</div>
+                    <h4>University Shortlisting</h4>
+                    <p>We match you with the best universities and programs from our 30+ partner network.</p>
+                </div>
+                <div class="step-card reveal reveal-d3">
+                    <div class="step-num">3</div>
+                    <h4>Application & Documents</h4>
+                    <p>We handle all application paperwork, scholarship applications, and document verification.</p>
+                </div>
+                <div class="step-card reveal">
+                    <div class="step-num">✓</div>
+                    <h4>Secure Your Admission</h4>
+                    <p>Get your offer letter and Job Guarantee Letter. Your future starts here!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials-section">
+        <div class="section-inner">
+            <div style="text-align:center; max-width:500px; margin:0 auto;" class="reveal">
+                <div class="section-tag">Student Stories</div>
+                <h2 class="section-title">What Our Students Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testi-card reveal reveal-d1">
+                    <div class="testi-stars">★★★★★</div>
+                    <p>"Xynera made my admission to Manipal University so smooth! They helped me get a scholarship and
+                        guided me through every document. Couldn't have done it without them."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar-placeholder">A</div>
+                        <div>
+                            <div class="testi-name">Anjali Mukundan</div>
+                            <div class="testi-course">BCA – AI & Data Science, Manipal</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card reveal reveal-d2">
+                    <div class="testi-stars">★★★★★</div>
+                    <p>"I was confused between multiple colleges. The counsellor at Xynera listened to me and helped me
+                        choose the perfect B.Ed program. Got 50% scholarship too!"</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar-placeholder">R</div>
+                        <div>
+                            <div class="testi-name">Rahul Krishnan</div>
+                            <div class="testi-course">B.Ed, Calicut University</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card reveal reveal-d3">
+                    <div class="testi-stars">★★★★★</div>
+                    <p>"The entire process from counselling to getting my admission letter took less than 2 weeks.
+                        Xynera is truly professional and caring. Very recommended!"</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar-placeholder">S</div>
+                        <div>
+                            <div class="testi-name">Sneha Nair</div>
+                            <div class="testi-course">MBA, Amity University</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <div class="cta-banner">
+        <h2>Ready to Start Your<br>Academic Journey? 🚀</h2>
+        <p>Join 5000+ students who trusted Xynera Global Education to shape their future. Admissions open now!</p>
+        <div class="cta-banner-btns">
+            <a href="contactus.html" class="btn-white">📋 Book Free Counselling</a>
+            <a href="tel:+918590101284" class="btn-teal-outline">📞 Call Us Now</a>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+        <div class="section-inner">
+            <div class="reveal">
+                <div class="section-tag">Contact Us</div>
+                <h2 class="section-title">Let's Talk About Your Future</h2>
+                <p class="section-sub">Our counsellors are available Mon–Sat, 9 AM – 6 PM. Reach out — it's completely
+                    free.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="reveal">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📍</div>
+                        <div>
+                            <div class="contact-info-label">Our Office</div>
+                            <div class="contact-info-value">Avenue Plaza, Near MES Kalladi College,<br>Mannarkkad,
+                                Palakkad, Kerala</div>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📞</div>
+                        <div>
+                            <div class="contact-info-label">Call / WhatsApp</div>
+                            <div class="contact-info-value"><a href="tel:+918590101284"
+                                    style="color:var(--dark); text-decoration:none;">+91 85901 01284</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📧</div>
+                        <div>
+                            <div class="contact-info-label">Email</div>
+                            <div class="contact-info-value"><a href="mailto:hello@xyneraglobal.in"
+                                    style="color:var(--dark); text-decoration:none;">hello@xyneraglobal.in</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">🕘</div>
+                        <div>
+                            <div class="contact-info-label">Working Hours</div>
+                            <div class="contact-info-value">Monday – Saturday<br>9:00 AM – 6:00 PM IST</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:8px;">
+                        <a href="https://wa.me/918590101284" target="_blank"
+                            style="display:inline-flex; align-items:center; gap:10px; background:#25d366; color:white; font-family:'Nunito',sans-serif; font-weight:800; font-size:14px; padding:13px 22px; border-radius:12px; text-decoration:none; transition:all 0.25s;"
+                            onmouseover="this.style.background='#1ea855'" onmouseout="this.style.background='#25d366'">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
+                            Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-card reveal">
+                    <h3>Send Us a Message 📩</h3>
+                    <form onsubmit="submitContact(event)">
+                        <div class="contact-form-grid">
+                            <div class="form-field">
+                                <label>Full Name</label>
+                                <input type="text" placeholder="Your name" required />
+                            </div>
+                            <div class="form-field">
+                                <label>Mobile Number</label>
+                                <input type="tel" placeholder="+91 00000 00000" required />
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label>Email (Optional)</label>
+                            <input type="email" placeholder="your@email.com" />
+                        </div>
+                        <div class="form-field">
+                            <label>Course / Program Interest</label>
+                            <select>
+                                <option value="">Select a course</option>
+                                <option>BCA — AI & Data Science</option>
+                                <option>BCA — AI & ML</option>
+                                <option>BCA — Cyber Security</option>
+                                <option>BCA — Cloud Computing</option>
+                                <option>B.Ed</option>
+                                <option>M.Ed</option>
+                                <option>B.P.Ed / M.P.Ed</option>
+                                <option>MBA / MCA</option>
+                                <option>NIOS</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label>Message (Optional)</label>
+                            <textarea
+                                style="width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);background:white;outline:none;resize:vertical;min-height:90px;transition:border-color 0.2s;"
+                                onfocus="this.style.borderColor='var(--primary)'"
+                                onblur="this.style.borderColor='var(--border)'"
+                                placeholder="Tell us about your academic background or any questions..."></textarea>
+                        </div>
+                        <button type="submit" class="contact-submit">Send Message — We'll Reply Within 24hrs 🚀</button>
+                        <div id="contactMsg"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+  <footer>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="-mt-20">
+                    <img src="logo1.png" alt="Xynera Global & Ozone Education Network Logo"
+                        class="h-34 w-auto object-contain opacity-95 transition-opacity duration-300" />
+                    <p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the
+                        right universities since 2020. 5000+ success stories and counting.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#courses">Courses</a></li>
+                        <li><a href="index.html#universities">Universities</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="index.html#courses">BCA Programs</a></li>
+                        <li><a href="index.html#courses">B.Ed / M.Ed</a></li>
+                        <li><a href="index.html#courses">MBA / MCA</a></li>
+                        <li><a href="index.html#courses">NIOS Programs</a></li>
+                        <li><a href="index.html#courses">Distance Learning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+918590101284">+91 85901 01284</a></li>
+                        <li><a href="mailto:hello@xyneraglobal.in">hello@xyneraglobal.in</a></li>
+                        <li><a href="#">Mannarkkad, Palakkad</a></li>
+                        <li><a href="#">Kerala, India</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-copy">© 2026 Xynera Global Education & Ozone Education Network. All rights
+                    reserved.</span>
+                <span class="footer-copy">Made with ❤️ in Kerala</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/918590101284" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <script>
+        // Mobile menu
+        document.getElementById('menuBtn').onclick = () => {
+            document.getElementById('mobileNav').classList.toggle('open');
+        };
+        document.querySelectorAll('.mobile-nav a').forEach(a => {
+            a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
+        });
+
+        // Tab switching
+        function switchTab(e, id) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            e.target.classList.add('active');
+            document.getElementById('tab-' + id).classList.add('active');
+        }
+
+        // Form submissions
+        function submitHeroForm(e) {
+            e.preventDefault();
+            document.getElementById('heroFormMsg').textContent = '✅ Thank you! Our counsellor will call you within 24 hours.';
+            e.target.reset();
+        }
+        function submitContact(e) {
+            e.preventDefault();
+            document.getElementById('contactMsg').textContent = '✅ Message received! We\'ll get back to you soon.';
+            e.target.reset();
+        }
+
+        // Scroll reveal
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('show'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
