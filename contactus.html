@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Contact Us | Xynera Global Education</title>
   <link rel="icon" type="image/png" href="fav.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,42 +54,6 @@
     h5 {
       font-family: 'Nunito', sans-serif;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /* ── PAGE HERO ── */
     .page-hero {
@@ -169,12 +133,12 @@
     }
 
     .page-hero h1 {
-      font-size: clamp(34px, 5vw, 54px);
+      font-size: clamp(30px, 5vw, 54px);
       font-weight: 900;
       color: white;
       letter-spacing: -1px;
       margin-bottom: 18px;
-      line-height: 1.1;
+      line-height: 1.2;
     }
 
     .page-hero h1 span {
@@ -185,15 +149,15 @@
     }
 
     .page-hero p {
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.72);
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.75);
       line-height: 1.7;
     }
 
-    /* ── QUICK CONTACT PILLS ── */
+    /* ── QUICK CONTACT PILLS (FULLY RESPONSIVE) ── */
     .quick-contact {
       background: white;
-      padding: 0 24px;
+      padding: 0 16px;
       position: relative;
       z-index: 5;
     }
@@ -211,7 +175,7 @@
       background: white;
       border: 1.5px solid var(--border);
       border-radius: 18px;
-      padding: 28px 24px;
+      padding: 24px 16px;
       text-align: center;
       text-decoration: none;
       transition: all 0.3s;
@@ -259,13 +223,13 @@
     }
 
     .quick-pill-icon {
-      width: 56px;
-      height: 56px;
+      width: 52px;
+      height: 52px;
       border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
+      font-size: 24px;
     }
 
     .quick-pill-icon.blue {
@@ -290,20 +254,20 @@
 
     .quick-pill-value {
       font-family: 'Nunito', sans-serif;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 800;
       color: var(--dark);
       line-height: 1.2;
     }
 
     .quick-pill-sub {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--text-soft);
     }
 
     /* ── MAIN CONTACT SECTION ── */
     .contact-main {
-      padding: 0 24px 80px;
+      padding: 0 20px 70px;
       background: white;
     }
 
@@ -315,7 +279,7 @@
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1.4fr;
-      gap: 60px;
+      gap: 50px;
       align-items: start;
     }
 
@@ -328,21 +292,16 @@
       color: var(--primary);
       font-family: 'Nunito', sans-serif;
       font-weight: 800;
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      padding: 5px 14px;
+      padding: 5px 12px;
       border-radius: 20px;
       margin-bottom: 12px;
     }
 
-    .section-tag.teal {
-      background: rgba(22, 39, 231, 0.1);
-      color: var(--teal);
-    }
-
     .contact-info h2 {
-      font-size: clamp(24px, 3vw, 36px);
+      font-size: clamp(22px, 3vw, 36px);
       font-weight: 900;
       color: var(--dark);
       line-height: 1.2;
@@ -352,32 +311,26 @@
     .contact-info>p {
       font-size: 14px;
       color: var(--text-soft);
-      line-height: 1.75;
-      margin-bottom: 36px;
+      line-height: 1.7;
+      margin-bottom: 32px;
     }
 
     .info-cards {
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      margin-bottom: 36px;
+      gap: 14px;
+      margin-bottom: 32px;
     }
 
     .info-card {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       align-items: flex-start;
       background: var(--bg);
       border: 1.5px solid var(--border);
       border-radius: 14px;
-      padding: 18px 20px;
+      padding: 16px 18px;
       transition: all 0.25s;
-    }
-
-    .info-card:hover {
-      border-color: var(--primary);
-      background: white;
-      box-shadow: 0 4px 16px rgba(20, 17, 72, 0.06);
     }
 
     .info-card-icon {
@@ -395,16 +348,16 @@
       background: rgba(22, 39, 231, 0.1);
     }
 
+    .info-card-icon.green {
+      background: rgba(37, 211, 102, 0.1);
+    }
+
     .info-card-icon.teal {
       background: rgba(22, 39, 231, 0.1);
     }
 
     .info-card-icon.orange {
       background: rgba(255, 107, 53, 0.1);
-    }
-
-    .info-card-icon.green {
-      background: rgba(37, 211, 102, 0.1);
     }
 
     .info-card-label {
@@ -433,7 +386,7 @@
       background: linear-gradient(135deg, rgba(22, 39, 231, 0.06), rgba(22, 39, 231, 0.06));
       border: 1.5px solid rgba(22, 39, 231, 0.12);
       border-radius: 16px;
-      padding: 22px 24px;
+      padding: 20px 22px;
     }
 
     .hours-card h4 {
@@ -453,6 +406,7 @@
       padding: 7px 0;
       border-bottom: 1px solid rgba(20, 17, 72, 0.06);
       font-size: 13px;
+      flex-wrap: wrap;
     }
 
     .hours-row:last-child {
@@ -482,7 +436,7 @@
       background: var(--bg);
       border: 1.5px solid var(--border);
       border-radius: 24px;
-      padding: 40px;
+      padding: 36px 32px;
     }
 
     .contact-form-wrap h3 {
@@ -507,10 +461,6 @@
 
     .form-field {
       margin-bottom: 16px;
-    }
-
-    .form-field.no-mb {
-      margin-bottom: 0;
     }
 
     .form-field label {
@@ -550,18 +500,14 @@
       min-height: 110px;
     }
 
-    .form-field select {
-      cursor: pointer;
-    }
-
     .form-submit {
       width: 100%;
-      padding: 15px;
+      padding: 14px;
       background: var(--primary);
       color: white;
       font-family: 'Nunito', sans-serif;
       font-weight: 800;
-      font-size: 16px;
+      font-size: 15px;
       border: none;
       border-radius: 12px;
       cursor: pointer;
@@ -593,7 +539,7 @@
     }
 
     .form-note {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--text-soft);
       text-align: center;
       margin-top: 14px;
@@ -601,7 +547,7 @@
 
     /* ── MAP SECTION ── */
     .map-section {
-      padding: 0 24px 80px;
+      padding: 0 20px 70px;
       background: white;
     }
 
@@ -614,13 +560,13 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       flex-wrap: wrap;
       gap: 16px;
     }
 
     .map-header h3 {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 900;
       color: var(--dark);
     }
@@ -661,13 +607,13 @@
     .map-frame iframe {
       display: block;
       width: 100%;
-      height: 420px;
+      height: 380px;
       border: none;
     }
 
-    /* ── CHANNELS ── */
+    /* ── CHANNELS SECTION ── */
     .channels-section {
-      padding: 80px 24px;
+      padding: 70px 20px;
       background: var(--bg);
     }
 
@@ -685,10 +631,10 @@
     }
 
     .channels-inner>p {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--text-soft);
-      max-width: 480px;
-      margin: 0 auto 48px;
+      max-width: 520px;
+      margin: 0 auto 40px;
     }
 
     .channels-grid {
@@ -701,13 +647,13 @@
       background: white;
       border: 1.5px solid var(--border);
       border-radius: 16px;
-      padding: 28px 20px;
+      padding: 24px 16px;
       text-decoration: none;
       transition: all 0.3s;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .channel-card:hover {
@@ -717,13 +663,13 @@
     }
 
     .channel-icon {
-      width: 64px;
-      height: 64px;
+      width: 60px;
+      height: 60px;
       border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
+      font-size: 28px;
     }
 
     .channel-icon.wa {
@@ -787,32 +733,10 @@
     /* ── CTA BANNER ── */
     .cta-banner {
       background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-      padding: 80px 24px;
+      padding: 70px 20px;
       text-align: center;
       position: relative;
       overflow: hidden;
-    }
-
-    .cta-banner::before {
-      content: '';
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: rgba(22, 39, 231, 0.15);
-      top: -120px;
-      right: -80px;
-    }
-
-    .cta-banner::after {
-      content: '';
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.04);
-      bottom: -80px;
-      left: -60px;
     }
 
     .cta-banner h2 {
@@ -826,7 +750,7 @@
 
     .cta-banner p {
       font-size: 15px;
-      color: rgba(255, 255, 255, 0.72);
+      color: rgba(255, 255, 255, 0.75);
       max-width: 440px;
       margin: 0 auto 32px;
       position: relative;
@@ -848,8 +772,8 @@
       color: var(--primary);
       font-family: 'Nunito', sans-serif;
       font-weight: 800;
-      font-size: 15px;
-      padding: 14px 28px;
+      font-size: 14px;
+      padding: 12px 24px;
       border-radius: 12px;
       text-decoration: none;
       transition: all 0.25s;
@@ -865,8 +789,8 @@
       color: white;
       font-family: 'Nunito', sans-serif;
       font-weight: 700;
-      font-size: 15px;
-      padding: 13px 24px;
+      font-size: 14px;
+      padding: 11px 22px;
       border-radius: 12px;
       text-decoration: none;
       transition: all 0.25s;
@@ -881,7 +805,7 @@
     footer {
       background: var(--dark);
       color: rgba(255, 255, 255, 0.6);
-      padding: 64px 24px 32px;
+      padding: 56px 20px 32px;
     }
 
     .footer-inner {
@@ -892,28 +816,16 @@
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
+      gap: 40px;
       margin-bottom: 48px;
     }
 
     .footer-brand {
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.7;
       color: rgba(255, 255, 255, 0.5);
       margin-top: 14px;
       max-width: 280px;
-    }
-
-    .footer-logo-text {
-      font-family: 'Nunito', sans-serif;
-      font-weight: 900;
-      font-size: 20px;
-      color: white;
-      letter-spacing: -0.5px;
-    }
-
-    .footer-logo-text span {
-      color: var(--teal);
     }
 
     .footer-col h4 {
@@ -923,7 +835,7 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .footer-col ul {
@@ -931,18 +843,14 @@
     }
 
     .footer-col li {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .footer-col a {
-      font-size: 13px;
+      font-size: 12px;
       color: rgba(255, 255, 255, 0.5);
       text-decoration: none;
       transition: color 0.2s;
-    }
-
-    .footer-col a:hover {
-      color: white;
     }
 
     .footer-bottom {
@@ -956,7 +864,7 @@
     }
 
     .footer-copy {
-      font-size: 12px;
+      font-size: 11px;
       color: rgba(255, 255, 255, 0.3);
       font-family: 'Nunito', sans-serif;
     }
@@ -964,11 +872,11 @@
     /* ── WHATSAPP ── */
     .whatsapp-float {
       position: fixed;
-      bottom: 28px;
-      right: 28px;
+      bottom: 24px;
+      right: 24px;
       z-index: 999;
-      width: 56px;
-      height: 56px;
+      width: 54px;
+      height: 54px;
       border-radius: 50%;
       background: #25d366;
       display: flex;
@@ -1022,7 +930,7 @@
       transition-delay: 0.3s;
     }
 
-    /* ── RESPONSIVE ── */
+    /* ═══════════════════ RESPONSIVE BREAKPOINTS (MOBILE FIRST FIXES) ═══════════════════ */
     @media (max-width: 1024px) {
       .contact-grid {
         grid-template-columns: 1fr;
@@ -1031,39 +939,33 @@
 
       .channels-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
       }
 
       .footer-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 32px;
       }
     }
 
     @media (max-width: 768px) {
-
-
-
-
       .quick-contact-inner {
         grid-template-columns: 1fr;
+        gap: 16px;
         transform: translateY(-32px);
+      }
+
+      .quick-pill {
+        padding: 20px 16px;
+      }
+
+      .quick-pill-value {
+        font-size: 15px;
       }
 
       .form-row {
         grid-template-columns: 1fr;
-      }
-
-      .channels-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
+        gap: 12px;
       }
 
       .contact-form-wrap {
@@ -1071,268 +973,103 @@
       }
 
       .map-frame iframe {
-        height: 300px;
+        height: 280px;
+      }
+
+      .channels-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+      }
+
+      .footer-brand {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hours-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+
+      .map-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .map-link {
+        white-space: normal;
+        text-align: center;
       }
     }
 
-    @media (max-width: 480px) {
-      .channels-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 550px) {
+      .page-hero {
+        padding: 60px 20px 80px;
+      }
+
+      .quick-pill-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+      }
+
+      .info-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+
+      .info-card-icon {
+        margin-bottom: 6px;
+      }
+
+      .contact-form-wrap h3 {
+        font-size: 20px;
+      }
+
+      .contact-main {
+        padding: 0 16px 50px;
+      }
+
+      .channels-section {
+        padding: 50px 16px;
+      }
+
+      .cta-banner {
+        padding: 50px 16px;
+      }
+
+      .cta-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .btn-white,
+      .btn-ghost {
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
       }
     }
   </style>
 </head>
 
 <body>
-  <style>
-    /* ── BRAND COLORS ── */
-    :root {
-      --primary: #1627E7;
-      --dark: #141148;
-      --white: #FFFFFF;
-      --black: #000000;
-      --border: rgba(22, 39, 231, 0.15);
-      --text: #141148;
-      --text-soft: rgba(20, 17, 72, 0.6);
-      --bg: #f4f5ff;
-    }
-
-    /* ── NAV CONTAINER ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 2px 20px rgba(20, 17, 72, 0.08);
-    }
-
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    .nav-logo img {
-      height: 80px;
-      width: auto;
-      object-fit: contain;
-      transition: transform 0.3s ease;
-    }
-
-    @media (max-width: 768px) {
-      .nav-logo img {
-        height: 52px;
-      }
-    }
-
-    .nav-logo img:hover {
-      transform: scale(1.02);
-    }
-
-    /* ── DESKTOP LINKS ── */
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--text-soft);
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 8px;
-      transition: all 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-      background: rgba(22, 39, 231, 0.07);
-    }
-
-    .nav-links a.active {
-      color: var(--primary);
-    }
-
-    .nav-cta {
-      background: var(--primary) !important;
-      color: var(--white) !important;
-      padding: 10px 20px !important;
-      border-radius: 10px !important;
-      font-weight: 800 !important;
-    }
-
-    .nav-cta:hover {
-      background: var(--dark) !important;
-      color: var(--white) !important;
-    }
-
-    /* ── HAMBURGER BUTTON ── */
-    .hamburger {
-      display: none;
-      border: none;
-      background: none;
-      cursor: pointer;
-      padding: 6px;
-      z-index: 101;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2.5px;
-      background: var(--dark);
-      border-radius: 2px;
-      margin: 5px 0;
-      transition: all 0.3s ease;
-    }
-
-    .hamburger.active span:nth-child(1) {
-      transform: translateY(7.5px) rotate(45deg);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: translateY(-7.5px) rotate(-45deg);
-    }
-
-    /* ── MOBILE NAV DRAWER ── */
-    .mobile-nav {
-      visibility: hidden;
-      position: fixed;
-      top: 90px;
-      left: 0;
-      right: 0;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 24px 24px;
-      z-index: 99;
-      box-shadow: 0 8px 30px rgba(20, 17, 72, 0.12);
-      transform: translateY(-10px);
-      opacity: 0;
-      transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
-      pointer-events: none;
-    }
-
-    .mobile-nav.open {
-      visibility: visible;
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .mobile-nav a {
-      display: block;
-      padding: 13px 0;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .mobile-nav a:last-child {
-      border-bottom: none;
-    }
-
-    .mobile-nav .m-cta {
-      margin-top: 16px;
-      display: block;
-      text-align: center;
-      background: var(--primary);
-      color: var(--white) !important;
-      padding: 14px !important;
-      border-radius: 12px;
-      border-bottom: none !important;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hamburger {
-        display: block;
-      }
-    }
-  </style>
-
-
-  <nav>
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img src="logo2.png" alt="Xynera Global Education" />
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="index.html#universities">Universities</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="service.html">Services</a></li>
-        <li><a href="contactus.html" class="nav-cta">Free Counselling</a></li>
-      </ul>
-
-      <button class="hamburger" id="menuBtn" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="index.html#universities">Universities</a>
-    <a href="about.html">About Us</a>
-    <a href="service.html">Services</a>
-    <a href="contactus.html" class="m-cta">📞 Free Counselling</a>
-  </div>
-
-  <script>
-    (function () {
-      const menuBtn = document.getElementById('menuBtn');
-      const mobileNav = document.getElementById('mobileNav');
-      if (menuBtn && mobileNav) {
-        menuBtn.addEventListener('click', () => {
-          menuBtn.classList.toggle('active');
-          mobileNav.classList.toggle('open');
-        });
-        mobileNav.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            menuBtn.classList.remove('active');
-            mobileNav.classList.remove('open');
-          });
-        });
-      }
-    })();
-  </script>
-
-
-
-  <!-- NAV -->
-
-
-
-
   <!-- PAGE HERO -->
   <div class="page-hero">
     <div class="page-hero-inner">
@@ -1371,14 +1108,12 @@
   <div class="contact-main">
     <div class="contact-main-inner">
       <div class="contact-grid">
-
         <!-- LEFT: Info -->
         <div class="contact-info reveal">
           <div class="section-tag">Get In Touch</div>
           <h2>Visit Us or Send a Message</h2>
           <p>Walk into our office in Mannarkkad, call us, WhatsApp us, or fill the form — whichever way works for you.
             We're here to help.</p>
-
           <div class="info-cards">
             <div class="info-card">
               <div class="info-card-icon blue">📍</div>
@@ -1413,16 +1148,12 @@
               </div>
             </div>
           </div>
-
           <div class="hours-card">
             <h4>🕐 Office Hours</h4>
-            <div class="hours-row"><span class="day">Monday – Friday</span><span class="time open">9:00 AM – 7:00
-                PM</span></div>
-            <div class="hours-row"><span class="day">Saturday</span><span class="time open">9:00 AM – 5:00 PM</span>
-            </div>
+            <div class="hours-row"><span class="day">Monday – Friday</span><span class="time open">9:00 AM – 7:00 PM</span></div>
+            <div class="hours-row"><span class="day">Saturday</span><span class="time open">9:00 AM – 5:00 PM</span></div>
             <div class="hours-row"><span class="day">Sunday</span><span class="time closed">Closed</span></div>
-            <div class="hours-row"><span class="day">WhatsApp Support</span><span class="time open">7 Days / Week</span>
-            </div>
+            <div class="hours-row"><span class="day">WhatsApp Support</span><span class="time open">7 Days / Week</span></div>
           </div>
         </div>
 
@@ -1430,37 +1161,33 @@
         <div class="contact-form-wrap reveal reveal-d1">
           <h3>📋 Book a Free Counselling Session</h3>
           <p>Fill in your details and our counsellor will call you back — usually within a few hours.</p>
-
           <form onsubmit="submitForm(event)" id="mainForm">
             <div class="form-row">
-              <div class="form-field no-mb">
+              <div class="form-field">
                 <label>First Name *</label>
                 <input type="text" placeholder="Arjun" required />
               </div>
-              <div class="form-field no-mb">
+              <div class="form-field">
                 <label>Last Name</label>
                 <input type="text" placeholder="Nair" />
               </div>
             </div>
-
             <div class="form-row">
-              <div class="form-field no-mb">
+              <div class="form-field">
                 <label>Phone Number *</label>
                 <input type="tel" placeholder="+91 98765 43210" required />
               </div>
-              <div class="form-field no-mb">
+              <div class="form-field">
                 <label>WhatsApp Number</label>
                 <input type="tel" placeholder="Same as above" />
               </div>
             </div>
-
             <div class="form-field">
               <label>Email Address</label>
               <input type="email" placeholder="you@email.com" />
             </div>
-
             <div class="form-row">
-              <div class="form-field no-mb">
+              <div class="form-field">
                 <label>Current Qualification *</label>
                 <select required>
                   <option value="" disabled selected>Select level</option>
@@ -1471,7 +1198,7 @@
                   <option>Other</option>
                 </select>
               </div>
-              <div class="form-field no-mb">
+              <div class="form-field">
                 <label>Interested Stream *</label>
                 <select required>
                   <option value="" disabled selected>Select stream</option>
@@ -1486,7 +1213,6 @@
                 </select>
               </div>
             </div>
-
             <div class="form-field">
               <label>Preferred University (optional)</label>
               <select>
@@ -1504,22 +1230,17 @@
                 <option>Other</option>
               </select>
             </div>
-
             <div class="form-field">
               <label>Your Message / Questions</label>
-              <textarea
-                placeholder="Tell us anything — your marks, what subjects you like, career goals, or any doubts you have. We'll give you honest advice."></textarea>
+              <textarea placeholder="Tell us anything — your marks, what subjects you like, career goals, or any doubts you have. We'll give you honest advice."></textarea>
             </div>
-
             <button type="submit" class="form-submit">
               <span>📨</span> Send My Details & Book Counselling
             </button>
-            <div id="formMsg">✅ Thank you! Our counsellor will call you within 24 hours. You can also WhatsApp us for a
-              faster response.</div>
+            <div id="formMsg">✅ Thank you! Our counsellor will call you within 24 hours. You can also WhatsApp us for a faster response.</div>
             <p class="form-note">🔒 Your details are private. We never share your information with third parties.</p>
           </form>
         </div>
-
       </div>
     </div>
   </div>
@@ -1537,10 +1258,7 @@
         </a>
       </div>
       <div class="map-frame reveal">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31365.5!2d76.455!3d10.997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c3b1b1b1b1b1%3A0x1!2sMannarkkad%2C+Kerala!5e0!3m2!1sen!2sin!4v1"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31365.5!2d76.455!3d10.997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c3b1b1b1b1b1%3A0x1!2sMannarkkad%2C+Kerala!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
@@ -1550,8 +1268,7 @@
     <div class="channels-inner">
       <div class="section-tag teal reveal">All Ways to Reach Us</div>
       <h2 class="reveal reveal-d1">Pick How You Want to Connect</h2>
-      <p class="reveal reveal-d2">Whether you're comfortable calling, chatting, emailing, or walking in — we're here for
-        you.</p>
+      <p class="reveal reveal-d2">Whether you're comfortable calling, chatting, emailing, or walking in — we're here for you.</p>
       <div class="channels-grid">
         <a href="https://wa.me/919746495785" target="_blank" class="channel-card reveal">
           <div class="channel-icon wa">💬</div>
@@ -1571,8 +1288,7 @@
           <p>Send us your details and questions. We'll respond with a detailed, personalised reply within 24 hours.</p>
           <span class="channel-badge mail">📧 Detailed Reply</span>
         </a>
-        <a href="https://maps.google.com/?q=Mannarkkad,Palakkad,Kerala" target="_blank"
-          class="channel-card reveal reveal-d3">
+        <a href="https://maps.google.com/?q=Mannarkkad,Palakkad,Kerala" target="_blank" class="channel-card reveal reveal-d3">
           <div class="channel-icon vi">🏢</div>
           <h4>Walk In</h4>
           <p>Visit our office in Mannarkkad, Palakkad. No appointment needed — just come in during office hours.</p>
@@ -1596,11 +1312,9 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-grid">
-        <div class="">
-          <img src="logo1.png" alt="Xynera Global & Ozone Education Network Logo"
-            class="h-34 w-auto object-contain opacity-95 transition-opacity duration-300" />
-          <p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the
-            right universities since 2020. 5000+ success stories and counting.</p>
+        <div>
+          <img src="logo1.png" alt="Xynera Global & Ozone Education Network Logo" style="height: auto; max-width: 160px; width: 100%; object-fit: contain; opacity: 0.95;" />
+          <p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the right universities since 2020. 5000+ success stories and counting.</p>
         </div>
         <div class="footer-col">
           <h4>Navigate</h4>
@@ -1632,31 +1346,24 @@
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span class="footer-copy">© 2026 Xynera Global Education. All rights
-          reserved.</span>
-        <span class="footer-copy">Made with ❤️ in Kerala</span>
-      </div>
+
     </div>
   </footer>
 
   <a href="https://wa.me/919746495785" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-      <path
-        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
   </a>
 
   <script>
-
-
     function submitForm(e) {
       e.preventDefault();
       const msg = document.getElementById('formMsg');
       msg.classList.add('show');
-      e.target.querySelector('.form-submit').textContent = '✅ Submitted!';
+      e.target.querySelector('.form-submit').innerHTML = '✅ Submitted!';
       e.target.querySelector('.form-submit').style.background = '#10b981';
-      setTimeout(() => { e.target.reset(); }, 500);
+      setTimeout(() => { e.target.reset(); e.target.querySelector('.form-submit').innerHTML = '<span>📨</span> Send My Details & Book Counselling'; e.target.querySelector('.form-submit').style.background = ''; }, 2000);
     }
 
     const observer = new IntersectionObserver(entries => entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('show'); }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
