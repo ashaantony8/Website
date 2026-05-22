@@ -1270,216 +1270,10 @@
             --bg: #f4f5ff;
         }
 
-        /* ── NAV CONTAINER ── */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 2px 20px rgba(20, 17, 72, 0.08);
-        }
-
-        .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .nav-logo img {
-            height: 80px;
-            width: auto;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .nav-logo img {
-                height: 52px;
-            }
-        }
-
-        .nav-logo img:hover {
-            transform: scale(1.02);
-        }
-
-        /* ── DESKTOP LINKS ── */
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            color: var(--text-soft);
-            text-decoration: none;
-            padding: 8px 14px;
-            border-radius: 8px;
-            transition: all 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-            background: rgba(22, 39, 231, 0.07);
-        }
-
-        .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .nav-cta {
-            background: var(--primary) !important;
-            color: var(--white) !important;
-            padding: 10px 20px !important;
-            border-radius: 10px !important;
-            font-weight: 800 !important;
-        }
-
-        .nav-cta:hover {
-            background: var(--dark) !important;
-            color: var(--white) !important;
-        }
-
-        /* ── HAMBURGER BUTTON ── */
-        .hamburger {
-            display: none;
-            border: none;
-            background: none;
-            cursor: pointer;
-            padding: 6px;
-            z-index: 101;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 24px;
-            height: 2.5px;
-            background: var(--dark);
-            border-radius: 2px;
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: translateY(7.5px) rotate(45deg);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: translateY(-7.5px) rotate(-45deg);
-        }
-
-        /* ── MOBILE NAV DRAWER ── */
-        .mobile-nav {
-            visibility: hidden;
-            position: fixed;
-            top: 90px;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 24px 24px;
-            z-index: 99;
-            box-shadow: 0 8px 30px rgba(20, 17, 72, 0.12);
-            transform: translateY(-10px);
-            opacity: 0;
-            transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
-            pointer-events: none;
-        }
-
-        .mobile-nav.open {
-            visibility: visible;
-            transform: translateY(0);
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .mobile-nav a {
-            display: block;
-            padding: 13px 0;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 15px;
-            color: var(--text);
-            text-decoration: none;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .mobile-nav a:last-child {
-            border-bottom: none;
-        }
-
-        .mobile-nav .m-cta {
-            margin-top: 16px;
-            display: block;
-            text-align: center;
-            background: var(--primary);
-            color: var(--white) !important;
-            padding: 14px !important;
-            border-radius: 12px;
-            border-bottom: none !important;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: block;
-            }
-        }
+    
     </style>
 
-    <nav>
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
-                <img src="logo2.png" alt="Xynera Global Education" />
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="index.html#universities">Universities</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="contactus.html" class="nav-cta">Free Counselling</a></li>
-            </ul>
-
-            <button class="hamburger" id="menuBtn" aria-label="Open menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-
-    <div class="mobile-nav" id="mobileNav">
-        <a href="index.html">Home</a>
-        <a href="courses.html">Courses</a>
-        <a href="index.html#universities">Universities</a>
-        <a href="about.html">About Us</a>
-        <a href="service.html">Services</a>
-        <a href="contactus.html" class="m-cta">📞 Free Counselling</a>
-    </div>
-
-
+    
 
 
     <!-- NAV -->
@@ -2126,7 +1920,7 @@
             <div class="footer-grid">
                 <div class="-mt-20">
                     <img src="logo1.png" alt="Xynera Global & Ozone Education Network Logo"
-                        class="h-34 w-auto object-contain opacity-95 transition-opacity duration-300" />
+                        style="height:105px;object-fit:contain;"  />
                     <p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the
                         right universities since 2020. 5000+ success stories and counting.</p>
                 </div>
@@ -2160,11 +1954,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <span class="footer-copy">© 2026 Xynera Global Education. All rights
-                    reserved.</span>
-                <span class="footer-copy">Made with ❤️ in Kerala</span>
-            </div>
+          
         </div>
     </footer>
 
@@ -2177,21 +1967,7 @@
     </a>
 
     <script>
-        // Mobile menu
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-
-        menuBtn.onclick = () => {
-            menuBtn.classList.toggle('active');   // Toggles the 'X' shape animation
-            mobileNav.classList.toggle('open');   // Toggles the dropdown menu
-        };
-
-        document.querySelectorAll('.mobile-nav a').forEach(a => {
-            a.addEventListener('click', () => {
-                menuBtn.classList.remove('active');  // Resets the hamburger button
-                mobileNav.classList.remove('open');   // Closes the menu
-            });
-        });
+     
 
         // Tab switching
         function switchTab(e, id) {
