@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>About Us | Xynera Global Education</title>
     <link rel="icon" type="image/png" href="fav.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -184,7 +184,7 @@
             line-height: 1.7;
         }
 
-        /* ABOUT STORY */
+        /* ABOUT STORY - FIXED RESPONSIVE */
         .story-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -203,35 +203,41 @@
             gap: 24px;
         }
 
+        /* FIX: Responsive stats row - prevents overflow on mobile */
         .story-stat-row {
             display: flex;
             gap: 24px;
+            flex-wrap: wrap;
         }
 
         .story-stat-box {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 16px;
-            padding: 24px;
+            padding: 24px 16px;
             flex: 1;
+            min-width: 120px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .story-stat-box .num {
             font-family: "Nunito", sans-serif;
-            font-size: 36px;
+            font-size: clamp(28px, 5vw, 36px);
             font-weight: 900;
             color: white;
-            line-height: 1;
-            margin-bottom: 4px;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            word-break: keep-all;
         }
 
         .story-stat-box .lbl {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.6);
+            font-size: clamp(10px, 3vw, 12px);
+            color: rgba(255, 255, 255, 0.7);
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-weight: 600;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            line-height: 1.4;
+            word-break: break-word;
         }
 
         .story-stat-wide {
@@ -242,22 +248,24 @@
             display: flex;
             align-items: center;
             gap: 16px;
+            flex-wrap: wrap;
         }
 
         .story-stat-wide .icon {
             font-size: 32px;
+            flex-shrink: 0;
         }
 
         .story-stat-wide .text strong {
             display: block;
             font-family: "Nunito", sans-serif;
-            font-size: 18px;
+            font-size: clamp(16px, 4vw, 18px);
             font-weight: 800;
             color: white;
         }
 
         .story-stat-wide .text span {
-            font-size: 12px;
+            font-size: clamp(11px, 3vw, 13px);
             color: rgba(255, 255, 255, 0.6);
         }
 
@@ -286,6 +294,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            flex-wrap: wrap;
         }
 
         .story-hi .dot {
@@ -300,6 +309,93 @@
             font-size: 14px;
             font-weight: 600;
             color: var(--dark);
+        }
+
+        /* MISSION & VISION SECTION */
+        .mission-vision-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        .mission-card,
+        .vision-card {
+            background: white;
+            border-radius: 28px;
+            padding: 40px 32px;
+            transition: all 0.3s ease;
+            border: 1.5px solid var(--border);
+            box-shadow: 0 10px 30px rgba(20, 17, 72, 0.04);
+        }
+
+        .mission-card:hover,
+        .vision-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(22, 39, 231, 0.3);
+            box-shadow: 0 20px 35px rgba(20, 17, 72, 0.1);
+        }
+
+        .mv-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+
+        .mission-card h3,
+        .vision-card h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+        }
+
+        .mission-card p,
+        .vision-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-soft);
+            margin-bottom: 24px;
+        }
+
+        .mv-list {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .mv-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text);
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+
+        .mv-list li span {
+            font-size: 18px;
+        }
+
+        .mv-tag {
+            display: inline-block;
+            background: rgba(22, 39, 231, 0.08);
+            font-family: "Nunito", sans-serif;
+            font-weight: 800;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: var(--primary);
+            margin-bottom: 16px;
         }
 
         /* VALUES */
@@ -411,52 +507,10 @@
             display: block;
         }
 
-        .team-avatar.blue {
-            background: linear-gradient(135deg,
-                    rgba(22, 39, 231, 0.12),
-                    rgba(22, 39, 231, 0.08));
-        }
-
         .team-avatar.teal {
             background: linear-gradient(135deg,
                     rgba(22, 39, 231, 0.12),
                     rgba(22, 39, 231, 0.08));
-        }
-
-        .team-avatar.orange {
-            background: linear-gradient(135deg,
-                    rgba(255, 107, 53, 0.12),
-                    rgba(255, 183, 0, 0.08));
-        }
-
-        .team-avatar.green {
-            background: linear-gradient(135deg,
-                    rgba(16, 185, 129, 0.12),
-                    rgba(22, 39, 231, 0.08));
-        }
-
-        .team-avatar.purple {
-            background: linear-gradient(135deg,
-                    rgba(139, 92, 246, 0.12),
-                    rgba(22, 39, 231, 0.08));
-        }
-
-        .team-avatar.coral {
-            background: linear-gradient(135deg,
-                    rgba(255, 99, 132, 0.12),
-                    rgba(255, 107, 53, 0.08));
-        }
-
-        .team-avatar.indigo {
-            background: linear-gradient(135deg,
-                    rgba(76, 29, 149, 0.12),
-                    rgba(79, 70, 229, 0.08));
-        }
-
-        .team-avatar.slate {
-            background: linear-gradient(135deg,
-                    rgba(51, 65, 85, 0.12),
-                    rgba(100, 116, 139, 0.08));
         }
 
         .team-info {
@@ -539,22 +593,6 @@
             box-shadow: 0 0 0 4px rgba(22, 39, 231, 0.1);
         }
 
-        .timeline-item:nth-child(2) .timeline-dot {
-            border-color: var(--teal);
-            box-shadow: 0 0 0 4px rgba(22, 39, 231, 0.1);
-        }
-
-        .timeline-item:nth-child(3) .timeline-dot {
-            border-color: var(--orange);
-            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
-            background: var(--orange);
-        }
-
-        .timeline-item:last-child .timeline-dot {
-            border-color: var(--primary);
-            background: var(--primary);
-        }
-
         .timeline-content {
             background: var(--bg);
             border: 1.5px solid var(--border);
@@ -585,17 +623,6 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .cta-banner::before {
-            content: "";
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            background: rgba(22, 39, 231, 0.15);
-            top: -100px;
-            right: -100px;
         }
 
         .cta-banner h2 {
@@ -635,6 +662,7 @@
             border-radius: 12px;
             text-decoration: none;
             transition: all 0.25s;
+            display: inline-block;
         }
 
         .btn-white:hover {
@@ -652,6 +680,7 @@
             border-radius: 12px;
             text-decoration: none;
             transition: all 0.25s;
+            display: inline-block;
         }
 
         .btn-ghost:hover {
@@ -684,18 +713,6 @@
             color: rgba(255, 255, 255, 0.5);
             margin-top: 14px;
             max-width: 280px;
-        }
-
-        .footer-logo-text {
-            font-family: "Nunito", sans-serif;
-            font-weight: 900;
-            font-size: 20px;
-            color: white;
-            letter-spacing: -0.5px;
-        }
-
-        .footer-logo-text span {
-            color: var(--teal);
         }
 
         .footer-col h4 {
@@ -791,10 +808,11 @@
             transition-delay: 0.3s;
         }
 
-        /* RESPONSIVE */
+        /* RESPONSIVE FIXES */
         @media (max-width: 1024px) {
             .story-grid {
                 grid-template-columns: 1fr;
+                gap: 48px;
             }
 
             .values-grid {
@@ -853,27 +871,56 @@
             .section {
                 padding: 60px 20px;
             }
+
+            /* Additional responsive for story stats */
+            .story-visual {
+                padding: 32px 24px;
+            }
+
+            .story-stat-row {
+                gap: 16px;
+            }
+
+            .story-stat-box {
+                padding: 20px 12px;
+                min-width: 100px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .story-stat-row {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .story-stat-box {
+                width: 100%;
+            }
+            
+            .story-stat-wide {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .mv-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .mission-card,
+            .vision-card {
+                padding: 32px 24px;
+            }
+            
+            .mission-card h3,
+            .vision-card h3 {
+                font-size: 26px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <style>
-        /* ── BRAND COLORS ── */
-        :root {
-            --primary: #1627e7;
-            --dark: #141148;
-            --white: #ffffff;
-            --black: #000000;
-            --border: rgba(22, 39, 231, 0.15);
-            --text: #141148;
-            --text-soft: rgba(20, 17, 72, 0.6);
-            --bg: #f4f5ff;
-        }
-    </style>
-
-    <!-- NAV -->
-
     <!-- PAGE HERO -->
     <div class="page-hero">
         <div class="page-hero-inner">
@@ -887,7 +934,7 @@
         </div>
     </div>
 
-    <!-- STORY -->
+    <!-- STORY SECTION (FIXED RESPONSIVE STATS) -->
     <section class="section" style="background: white">
         <div class="section-inner">
             <div class="story-grid">
@@ -895,21 +942,21 @@
                     <div class="story-stat-row">
                         <div class="story-stat-box">
                             <div class="num">5000+</div>
-                            <div class="lbl">Students Placed</div>
+                            <div class="lbl">STUDENTS PLACED</div>
                         </div>
                         <div class="story-stat-box">
                             <div class="num">30+</div>
-                            <div class="lbl">Partner Universities</div>
+                            <div class="lbl">PARTNER UNIVERSITIES</div>
                         </div>
                     </div>
                     <div class="story-stat-row">
                         <div class="story-stat-box">
                             <div class="num">95%</div>
-                            <div class="lbl">Admission Success Rate</div>
+                            <div class="lbl">ADMISSION SUCCESS RATE</div>
                         </div>
                         <div class="story-stat-box">
                             <div class="num">4+</div>
-                            <div class="lbl">Years of Trust</div>
+                            <div class="lbl">YEARS OF TRUST</div>
                         </div>
                     </div>
                     <div class="story-stat-wide">
@@ -967,7 +1014,44 @@
         </div>
     </section>
 
-    <!-- VALUES -->
+    <!-- MISSION & VISION SECTION -->
+    <section class="section mission-vision-section">
+        <div class="section-inner">
+            <div style="text-align: center; margin-bottom: 32px">
+                <div class="section-tag teal reveal">Our Compass</div>
+                <h2 class="section-title reveal reveal-d1">Mission & Vision</h2>
+                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">
+                    The guiding principles that drive our commitment to students across Kerala.
+                </p>
+            </div>
+            <div class="mv-grid">
+                <div class="mission-card reveal">
+                    <div class="mv-tag">✦ Our Purpose</div>
+                    <div class="mv-icon">🎓</div>
+                    <h3>Mission</h3>
+                    <p>To democratize quality higher education in India by providing transparent, ethical, and personalized admission counselling — ensuring every student finds the right academic path without confusion or hidden barriers.</p>
+                    <ul class="mv-list">
+                        <li><span>✅</span> Zero-pressure, student-first counselling</li>
+                        <li><span>✅</span> Bridge the gap between aspirations and affordable options</li>
+                        <li><span>✅</span> Empower students with job-linked programs & scholarships</li>
+                    </ul>
+                </div>
+                <div class="vision-card reveal reveal-d1">
+                    <div class="mv-tag">✨ Our North Star</div>
+                    <div class="mv-icon">🌍</div>
+                    <h3>Vision</h3>
+                    <p>To become Kerala's most loved and trusted education ecosystem — where no student is left behind because of lack of guidance. We envision a future where every graduate we support becomes a confident professional and a changemaker.</p>
+                    <ul class="mv-list">
+                        <li><span>🌟</span> 10,000+ career-ready students by 2028</li>
+                        <li><span>🌟</span> Expand to 50+ partner universities with exclusive pathways</li>
+                        <li><span>🌟</span> Launch community-driven mentorship hubs across rural Kerala</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES SECTION -->
     <section class="section values-section">
         <div class="section-inner">
             <div style="text-align: center; margin-bottom: 48px">
@@ -984,69 +1068,44 @@
                 <div class="value-card reveal">
                     <span class="value-emoji">🎯</span>
                     <h4>Student First, Always</h4>
-                    <p>
-                        Every decision we make starts with one question: what's best for
-                        the student? We never push a course or university that doesn't fit
-                        your goals.
-                    </p>
+                    <p>Every decision we make starts with one question: what's best for the student? We never push a course or university that doesn't fit your goals.</p>
                 </div>
                 <div class="value-card reveal reveal-d1">
                     <span class="value-emoji">🤝</span>
                     <h4>Honest Guidance</h4>
-                    <p>
-                        We give you the full picture — fees, career scope, placement
-                        records, campus life — so you make a confident, informed decision.
-                    </p>
+                    <p>We give you the full picture — fees, career scope, placement records, campus life — so you make a confident, informed decision.</p>
                 </div>
                 <div class="value-card reveal reveal-d2">
                     <span class="value-emoji">⚡</span>
                     <h4>Speed & Reliability</h4>
-                    <p>
-                        Admission deadlines wait for no one. Our team moves fast, responds
-                        quickly, and makes sure you never miss an opportunity.
-                    </p>
+                    <p>Admission deadlines wait for no one. Our team moves fast, responds quickly, and makes sure you never miss an opportunity.</p>
                 </div>
                 <div class="value-card reveal">
                     <span class="value-emoji">💡</span>
                     <h4>Expertise You Can Trust</h4>
-                    <p>
-                        Our counsellors have deep knowledge of courses, universities,
-                        eligibility, and scholarships — so you get advice that's actually
-                        useful.
-                    </p>
+                    <p>Our counsellors have deep knowledge of courses, universities, eligibility, and scholarships — so you get advice that's actually useful.</p>
                 </div>
                 <div class="value-card reveal reveal-d1">
                     <span class="value-emoji">🌍</span>
                     <h4>Inclusive Access</h4>
-                    <p>
-                        Whether you're from a village in Palakkad or a city in Kerala, you
-                        deserve the same quality of guidance and the same opportunities.
-                    </p>
+                    <p>Whether you're from a village in Palakkad or a city in Kerala, you deserve the same quality of guidance and the same opportunities.</p>
                 </div>
                 <div class="value-card reveal reveal-d2">
                     <span class="value-emoji">📈</span>
                     <h4>Long-Term Thinking</h4>
-                    <p>
-                        We're not just here to get you admitted — we're invested in your
-                        career success. We think about your future, not just your
-                        enrollment.
-                    </p>
+                    <p>We're not just here to get you admitted — we're invested in your career success. We think about your future, not just your enrollment.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TEAM SECTION - 4 COLUMN GRID (No IDs) -->
+    <!-- TEAM SECTION -->
     <div class="team-section">
         <div class="team-container">
             <div class="team-header">
                 <div class="section-tag teal reveal">Executive Directorate</div>
-                <h2 class="section-title reveal reveal-d1">
-                    Leadership & Administration
-                </h2>
-                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">
-                    Meet the dedicated professionals behind Xynera Global's success
-                </p>
+                <h2 class="section-title reveal reveal-d1">Leadership & Administration</h2>
+                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">Meet the dedicated professionals behind Xynera Global's success</p>
             </div>
             <div class="team-grid">
                 <div class="team-card reveal">
@@ -1054,41 +1113,31 @@
                     <div class="team-info">
                         <h4>Sayyed Sinan PM</h4>
                         <div class="role">Chief Executive Officer</div>
-                        <p>
-                            Strategic leader driving institutional partnerships and academic
-                            excellence.
-                        </p>
+                        <p>Strategic leader driving institutional partnerships and academic excellence.</p>
                     </div>
                 </div>
                 <div class="team-card reveal reveal-d1">
-                    <img src="img4.jpeg" alt="Sayyed Sinan PM" class="team-avatar teal" />
+                    <img src="img4.jpeg" alt="Varsha M" class="team-avatar teal" />
                     <div class="team-info">
                         <h4>Varsha M</h4>
                         <div class="role">Regional Manager</div>
-                        <p>
-                            Oversees zonal operations and ensures smooth admission workflows
-                            across Kerala.
-                        </p>
+                        <p>Oversees zonal operations and ensures smooth admission workflows across Kerala.</p>
                     </div>
                 </div>
                 <div class="team-card reveal reveal-d2">
-                    <img src="img3.jpeg" alt="Sayyed Sinan PM" class="team-avatar teal" />
+                    <img src="img3.jpeg" alt="Bhavana P C" class="team-avatar teal" />
                     <div class="team-info">
                         <h4>Bhavana P C</h4>
                         <div class="role">Senior Academic Counselor</div>
-                        <p>
-                            Specializes in Physical Education, B.Ed & M.Ed program guidance.
-                        </p>
+                        <p>Specializes in Physical Education, B.Ed & M.Ed program guidance.</p>
                     </div>
                 </div>
                 <div class="team-card reveal reveal-d3">
-                    <img src="img2.jpeg" alt="Sayyed Sinan PM" class="team-avatar teal" />
+                    <img src="img2.jpeg" alt="Anju Krishna PK" class="team-avatar teal" />
                     <div class="team-info">
                         <h4>Anju Krishna PK</h4>
                         <div class="role">Administrative Officer</div>
-                        <p>
-                            Manages UG/PG department operations and student documentation.
-                        </p>
+                        <p>Manages UG/PG department operations and student documentation.</p>
                     </div>
                 </div>
             </div>
@@ -1099,20 +1148,14 @@
     <section class="section milestones-section">
         <div class="section-inner">
             <div class="section-tag reveal">Our Journey</div>
-            <h2 class="section-title reveal reveal-d1">
-                Milestones That Define Us
-            </h2>
+            <h2 class="section-title reveal reveal-d1">Milestones That Define Us</h2>
             <div class="timeline">
                 <div class="timeline-item reveal">
                     <div class="timeline-year">2020</div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h4>🚀 Xynera Founded in Mannarkkad</h4>
-                        <p>
-                            Started with a small team and a big dream — to make quality
-                            college admissions accessible to every student in Kerala. First
-                            batch of 50 students successfully placed.
-                        </p>
+                        <p>Started with a small team and a big dream — to make quality college admissions accessible to every student in Kerala. First batch of 50 students successfully placed.</p>
                     </div>
                 </div>
                 <div class="timeline-item reveal">
@@ -1120,11 +1163,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h4>🤝 First 10 University Partnerships</h4>
-                        <p>
-                            Signed agreements with Manipal, Amity, and LPU. Expanded course
-                            offerings to include B.Ed, M.Ed, and management programs. Grew
-                            to 300+ annual admissions.
-                        </p>
+                        <p>Signed agreements with Manipal, Amity, and LPU. Expanded course offerings to include B.Ed, M.Ed, and management programs. Grew to 300+ annual admissions.</p>
                     </div>
                 </div>
                 <div class="timeline-item reveal">
@@ -1132,11 +1171,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h4>🏆 30+ University Network & 2000+ Students</h4>
-                        <p>
-                            Expanded partnerships to 30+ universities including government
-                            institutions. Launched NIOS programs and BCA specializations.
-                            Crossed 2000 successful admissions.
-                        </p>
+                        <p>Expanded partnerships to 30+ universities including government institutions. Launched NIOS programs and BCA specializations. Crossed 2000 successful admissions.</p>
                     </div>
                 </div>
                 <div class="timeline-item reveal">
@@ -1144,11 +1179,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h4>⭐ 5000+ Students & Job Guarantee Program</h4>
-                        <p>
-                            Launched the Job Guarantee Letter at admission program.
-                            Introduced full scholarship for 90%+ students. Became Palakkad's
-                            most trusted education consultancy.
-                        </p>
+                        <p>Launched the Job Guarantee Letter at admission program. Introduced full scholarship for 90%+ students. Became Palakkad's most trusted education consultancy.</p>
                     </div>
                 </div>
             </div>
@@ -1158,10 +1189,7 @@
     <!-- CTA -->
     <div class="cta-banner">
         <h2>Ready to Find Your Perfect College?</h2>
-        <p>
-            Talk to our counsellors for free — no pressure, no sales pitch, just
-            honest guidance.
-        </p>
+        <p>Talk to our counsellors for free — no pressure, no sales pitch, just honest guidance.</p>
         <div class="cta-btns">
             <a href="index.html#contactus" class="btn-white">📋 Book Free Counselling</a>
             <a href="https://wa.me/919746495785" class="btn-ghost">💬 WhatsApp Us</a>
@@ -1172,14 +1200,9 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-grid">
-                <div class="-mt-20">
-                    <img src="logo1.png" alt="Xynera Global & Ozone Education Network Logo"
-                        class="h-34 w-auto object-contain opacity-95 transition-opacity duration-300" />
-                    <p class="footer-brand">
-                        Kerala's trusted admission counselling partner. Connecting
-                        students with the right universities since 2020. 5000+ success
-                        stories and counting.
-                    </p>
+                <div>
+                    <img src="logo1.png" alt="Xynera Global & Ozone Education Network Logo" style="height: auto; max-width: 180px; width: 100%; object-fit: contain; opacity: 0.95;" />
+                    <p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the right universities since 2020. 5000+ success stories and counting.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navigate</h4>
@@ -1220,8 +1243,7 @@
 
     <a href="https://wa.me/919746495785" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-            <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
     </a>
 
@@ -1233,9 +1255,7 @@
                 }),
             { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
         );
-        document
-            .querySelectorAll(".reveal")
-            .forEach((el) => observer.observe(el));
+        document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     </script>
 </body>
 
