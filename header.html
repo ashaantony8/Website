@@ -1,0 +1,264 @@
+<!-- ══════════════════════════════════════════════
+     COMMON HEADER / NAVBAR  –  header.html
+     Include via: <script src="header.js"></script>
+     placed right after <body> in every page.
+     Active link is set automatically from the URL.
+══════════════════════════════════════════════ -->
+<style>
+  /* ── Google Fonts (Nunito) ── */
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+  /* ── CSS Variables (shared palette) ── */
+  :root {
+    --primary: #1627e7;
+    --dark:    #141148;
+    --white:   #ffffff;
+    --border:  rgba(20,17,72,0.10);
+    --text:    #1a1a2e;
+    --text-soft: #4a4a6a;
+    --nav-h:   90px;
+    --nav-h-md: 72px;
+    --nav-h-sm: 64px;
+  }
+
+  /* ── Reset helpers ── */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  /* ══ NAVBAR ══ */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 20px rgba(20,17,72,0.08);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  /* Logo */
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .nav-logo img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  .nav-logo img:hover { transform: scale(1.02); }
+
+  /* Desktop links */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-soft);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--primary);
+    background: rgba(22,39,231,0.07);
+  }
+
+  /* CTA button */
+  .nav-cta {
+    background: var(--primary) !important;
+    color: var(--white) !important;
+    padding: 10px 20px !important;
+    border-radius: 10px !important;
+    font-weight: 800 !important;
+  }
+  .nav-cta:hover {
+    background: var(--dark) !important;
+    color: var(--white) !important;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 1001;
+    flex-shrink: 0;
+  }
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 2.5px;
+    background: var(--dark);
+    border-radius: 2px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+  .hamburger.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+  /* ══ MOBILE DRAWER ══ */
+  .mobile-nav {
+    visibility: hidden;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px 24px;
+    z-index: 999;
+    box-shadow: 0 8px 30px rgba(20,17,72,0.12);
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
+    pointer-events: none;
+  }
+  .mobile-nav.open {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .mobile-nav a {
+    display: block;
+    padding: 13px 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-nav a:last-child { border-bottom: none; }
+  .mobile-nav .m-cta {
+    margin-top: 16px;
+    display: block;
+    text-align: center;
+    background: var(--primary);
+    color: var(--white) !important;
+    padding: 14px !important;
+    border-radius: 12px;
+    border-bottom: none !important;
+    font-weight: 800;
+  }
+  .mobile-nav .m-cta:hover { background: var(--dark); }
+
+  /* ══ RESPONSIVE BREAKPOINTS ══ */
+  @media (max-width: 860px) {
+    .nav-links  { display: none; }
+    .hamburger  { display: block; }
+  }
+
+  @media (max-width: 768px) {
+    :root { --nav-h: var(--nav-h-md); }
+    .nav-inner  { height: var(--nav-h-md); padding: 0 16px; }
+    .nav-logo img { height: 52px; }
+    .mobile-nav { top: var(--nav-h-md); }
+  }
+
+  @media (max-width: 480px) {
+    :root { --nav-h: var(--nav-h-sm); }
+    .nav-inner  { height: var(--nav-h-sm); padding: 0 12px; }
+    .nav-logo img { height: 44px; }
+    .mobile-nav { top: var(--nav-h-sm); }
+  }
+</style>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo2.png" alt="Xynera Global Education" />
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html"              data-page="index">Home</a></li>
+      <li><a href="courses.html"            data-page="courses">Courses</a></li>
+      <li><a href="index.html#universities" data-page="universities">Universities</a></li>
+      <li><a href="about.html"              data-page="about">About</a></li>
+      <li><a href="service.html"            data-page="service">Services</a></li>
+      <li><a href="contactus.html"          class="nav-cta">Free Counselling</a></li>
+    </ul>
+
+    <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile menu">
+  <a href="index.html"              data-page="index">Home</a>
+  <a href="courses.html"            data-page="courses">Courses</a>
+  <a href="index.html#universities" data-page="universities">Universities</a>
+  <a href="about.html"              data-page="about">About Us</a>
+  <a href="service.html"            data-page="service">Services</a>
+  <a href="contactus.html"          class="m-cta">📞 Free Counselling</a>
+</div>
+
+<script>
+(function () {
+  /* ── Auto-highlight active link based on current page ── */
+  var page = location.pathname.split('/').pop().replace('.html','') || 'index';
+  document.querySelectorAll('[data-page]').forEach(function(a){
+    if(a.dataset.page === page) a.classList.add('active');
+  });
+
+  /* ── Hamburger toggle ── */
+  var btn = document.getElementById('menuBtn');
+  var nav = document.getElementById('mobileNav');
+
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    btn.classList.toggle('active', open);
+    btn.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  /* Close drawer when a mobile link is tapped */
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      btn.classList.remove('active');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* Close drawer on outside click */
+  document.addEventListener('click', function(e){
+    if(nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)){
+      nav.classList.remove('open');
+      btn.classList.remove('active');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
+})();
+</script>
