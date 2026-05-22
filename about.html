@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -13,18 +13,18 @@
         rel="stylesheet" />
     <style>
         :root {
-            --primary: #1627E7;
-            --primary-light: #1627E7;
+            --primary: #1627e7;
+            --primary-light: #1627e7;
             --dark: #141148;
-            --teal: #1627E7;
+            --teal: #1627e7;
             --teal-light: #3a50ff;
             --orange: #141148;
-            --yellow: #1627E7;
+            --yellow: #1627e7;
             --bg: #f4f5ff;
-            --white: #FFFFFF;
+            --white: #ffffff;
             --text: #141148;
-            --text-soft: rgba(20,17,72,0.6);
-            --border: rgba(22,39,231,0.15);
+            --text-soft: rgba(20, 17, 72, 0.6);
+            --border: rgba(22, 39, 231, 0.15);
         }
 
         *,
@@ -40,7 +40,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
             background: var(--bg);
             color: var(--text);
             overflow-x: hidden;
@@ -52,50 +52,15 @@
         h3,
         h4,
         h5 {
-            font-family: 'Nunito', sans-serif;
+            font-family: "Nunito", sans-serif;
         }
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
 
         /* PAGE HERO */
         .page-hero {
-            background: linear-gradient(135deg, var(--dark) 0%, #141148 55%, #1627E7 100%);
+            background: linear-gradient(135deg,
+                    var(--dark) 0%,
+                    #141148 55%,
+                    #1627e7 100%);
             padding: 80px 24px 80px;
             text-align: center;
             position: relative;
@@ -103,19 +68,19 @@
         }
 
         .page-hero::before {
-            content: '';
+            content: "";
             position: absolute;
             width: 600px;
             height: 600px;
             border-radius: 50%;
-            background: rgba(22,39,231, 0.08);
+            background: rgba(22, 39, 231, 0.08);
             top: -200px;
             right: -100px;
             pointer-events: none;
         }
 
         .page-hero::after {
-            content: '';
+            content: "";
             position: absolute;
             width: 400px;
             height: 400px;
@@ -137,10 +102,10 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(22,39,231, 0.2);
-            border: 1px solid rgba(22,39,231, 0.4);
+            background: rgba(22, 39, 231, 0.2);
+            border: 1px solid rgba(22, 39, 231, 0.4);
             color: #a0aaff;
-            font-family: 'Nunito', sans-serif;
+            font-family: "Nunito", sans-serif;
             font-size: 12px;
             font-weight: 800;
             letter-spacing: 0.08em;
@@ -160,7 +125,7 @@
         }
 
         .page-hero h1 span {
-            background: linear-gradient(90deg, #1627E7, #a0aaff);
+            background: linear-gradient(90deg, #1627e7, #a0aaff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -186,9 +151,9 @@
 
         .section-tag {
             display: inline-block;
-            background: rgba(22,39,231, 0.08);
+            background: rgba(22, 39, 231, 0.08);
             color: var(--primary);
-            font-family: 'Nunito', sans-serif;
+            font-family: "Nunito", sans-serif;
             font-weight: 800;
             font-size: 12px;
             text-transform: uppercase;
@@ -199,7 +164,7 @@
         }
 
         .section-tag.teal {
-            background: rgba(22,39,231, 0.1);
+            background: rgba(22, 39, 231, 0.1);
             color: var(--teal);
         }
 
@@ -228,7 +193,9 @@
         }
 
         .story-visual {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            background: linear-gradient(135deg,
+                    var(--primary) 0%,
+                    var(--dark) 100%);
             border-radius: 24px;
             padding: 48px 36px;
             display: flex;
@@ -251,7 +218,7 @@
         }
 
         .story-stat-box .num {
-            font-family: 'Nunito', sans-serif;
+            font-family: "Nunito", sans-serif;
             font-size: 36px;
             font-weight: 900;
             color: white;
@@ -268,8 +235,8 @@
         }
 
         .story-stat-wide {
-            background: rgba(22,39,231, 0.25);
-            border: 1px solid rgba(22,39,231, 0.4);
+            background: rgba(22, 39, 231, 0.25);
+            border: 1px solid rgba(22, 39, 231, 0.4);
             border-radius: 16px;
             padding: 20px 24px;
             display: flex;
@@ -283,7 +250,7 @@
 
         .story-stat-wide .text strong {
             display: block;
-            font-family: 'Nunito', sans-serif;
+            font-family: "Nunito", sans-serif;
             font-size: 18px;
             font-weight: 800;
             color: white;
@@ -357,7 +324,7 @@
         }
 
         .value-card::after {
-            content: '';
+            content: "";
             position: absolute;
             bottom: 0;
             left: 0;
@@ -368,7 +335,7 @@
 
         .value-card:hover {
             border-color: transparent;
-            box-shadow: 0 12px 40px rgba(20,17,72, 0.1);
+            box-shadow: 0 12px 40px rgba(20, 17, 72, 0.1);
             transform: translateY(-4px);
         }
 
@@ -431,7 +398,7 @@
         }
 
         .team-card:hover {
-            box-shadow: 0 12px 40px rgba(20,17,72, 0.1);
+            box-shadow: 0 12px 40px rgba(20, 17, 72, 0.1);
             transform: translateY(-4px);
             border-color: transparent;
         }
@@ -445,35 +412,51 @@
         }
 
         .team-avatar.blue {
-            background: linear-gradient(135deg, rgba(22,39,231, 0.12), rgba(22,39,231, 0.08));
+            background: linear-gradient(135deg,
+                    rgba(22, 39, 231, 0.12),
+                    rgba(22, 39, 231, 0.08));
         }
 
         .team-avatar.teal {
-            background: linear-gradient(135deg, rgba(22,39,231, 0.12), rgba(22,39,231, 0.08));
+            background: linear-gradient(135deg,
+                    rgba(22, 39, 231, 0.12),
+                    rgba(22, 39, 231, 0.08));
         }
 
         .team-avatar.orange {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(255, 183, 0, 0.08));
+            background: linear-gradient(135deg,
+                    rgba(255, 107, 53, 0.12),
+                    rgba(255, 183, 0, 0.08));
         }
 
         .team-avatar.green {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(22,39,231, 0.08));
+            background: linear-gradient(135deg,
+                    rgba(16, 185, 129, 0.12),
+                    rgba(22, 39, 231, 0.08));
         }
 
         .team-avatar.purple {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(22,39,231, 0.08));
+            background: linear-gradient(135deg,
+                    rgba(139, 92, 246, 0.12),
+                    rgba(22, 39, 231, 0.08));
         }
 
         .team-avatar.coral {
-            background: linear-gradient(135deg, rgba(255, 99, 132, 0.12), rgba(255, 107, 53, 0.08));
+            background: linear-gradient(135deg,
+                    rgba(255, 99, 132, 0.12),
+                    rgba(255, 107, 53, 0.08));
         }
 
         .team-avatar.indigo {
-            background: linear-gradient(135deg, rgba(76, 29, 149, 0.12), rgba(79, 70, 229, 0.08));
+            background: linear-gradient(135deg,
+                    rgba(76, 29, 149, 0.12),
+                    rgba(79, 70, 229, 0.08));
         }
 
         .team-avatar.slate {
-            background: linear-gradient(135deg, rgba(51, 65, 85, 0.12), rgba(100, 116, 139, 0.08));
+            background: linear-gradient(135deg,
+                    rgba(51, 65, 85, 0.12),
+                    rgba(100, 116, 139, 0.08));
         }
 
         .team-info {
@@ -515,7 +498,7 @@
         }
 
         .timeline::before {
-            content: '';
+            content: "";
             position: absolute;
             left: 127px;
             top: 0;
@@ -533,7 +516,7 @@
         }
 
         .timeline-year {
-            font-family: 'Nunito', sans-serif;
+            font-family: "Nunito", sans-serif;
             font-size: 16px;
             font-weight: 900;
             color: var(--primary);
@@ -553,12 +536,12 @@
             margin-top: 6px;
             position: relative;
             z-index: 1;
-            box-shadow: 0 0 0 4px rgba(22,39,231, 0.1);
+            box-shadow: 0 0 0 4px rgba(22, 39, 231, 0.1);
         }
 
         .timeline-item:nth-child(2) .timeline-dot {
             border-color: var(--teal);
-            box-shadow: 0 0 0 4px rgba(22,39,231, 0.1);
+            box-shadow: 0 0 0 4px rgba(22, 39, 231, 0.1);
         }
 
         .timeline-item:nth-child(3) .timeline-dot {
@@ -595,7 +578,9 @@
 
         /* CTA */
         .cta-banner {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            background: linear-gradient(135deg,
+                    var(--primary) 0%,
+                    var(--dark) 100%);
             padding: 80px 24px;
             text-align: center;
             position: relative;
@@ -603,12 +588,12 @@
         }
 
         .cta-banner::before {
-            content: '';
+            content: "";
             position: absolute;
             width: 400px;
             height: 400px;
             border-radius: 50%;
-            background: rgba(22,39,231, 0.15);
+            background: rgba(22, 39, 231, 0.15);
             top: -100px;
             right: -100px;
         }
@@ -643,7 +628,7 @@
         .btn-white {
             background: white;
             color: var(--primary);
-            font-family: 'Nunito', sans-serif;
+            font-family: "Nunito", sans-serif;
             font-weight: 800;
             font-size: 15px;
             padding: 14px 32px;
@@ -660,7 +645,7 @@
         .btn-ghost {
             border: 2px solid rgba(255, 255, 255, 0.4);
             color: white;
-            font-family: 'Nunito', sans-serif;
+            font-family: "Nunito", sans-serif;
             font-weight: 700;
             font-size: 15px;
             padding: 13px 28px;
@@ -702,7 +687,7 @@
         }
 
         .footer-logo-text {
-            font-family: 'Nunito', sans-serif;
+            font-family: "Nunito", sans-serif;
             font-weight: 900;
             font-size: 20px;
             color: white;
@@ -714,7 +699,7 @@
         }
 
         .footer-col h4 {
-            font-family: 'Nunito', sans-serif;
+            font-family: "Nunito", sans-serif;
             font-size: 13px;
             font-weight: 800;
             text-transform: uppercase;
@@ -755,7 +740,7 @@
         .footer-copy {
             font-size: 12px;
             color: rgba(255, 255, 255, 0.3);
-            font-family: 'Nunito', sans-serif;
+            font-family: "Nunito", sans-serif;
         }
 
         /* WHATSAPP */
@@ -784,7 +769,9 @@
         .reveal {
             opacity: 0;
             transform: translateY(24px);
-            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal.show {
@@ -824,10 +811,6 @@
         }
 
         @media (max-width: 768px) {
-            
-
-            
-
             .values-grid {
                 grid-template-columns: 1fr;
             }
@@ -875,260 +858,37 @@
 </head>
 
 <body>
- <style>
+    <style>
         /* ── BRAND COLORS ── */
         :root {
-            --primary: #1627E7;
+            --primary: #1627e7;
             --dark: #141148;
-            --white: #FFFFFF;
+            --white: #ffffff;
             --black: #000000;
             --border: rgba(22, 39, 231, 0.15);
             --text: #141148;
             --text-soft: rgba(20, 17, 72, 0.6);
             --bg: #f4f5ff;
         }
-
-        /* ── NAV CONTAINER ── */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 2px 20px rgba(20, 17, 72, 0.08);
-        }
-
-        .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .nav-logo img {
-            height: 154px;
-            width: auto;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-logo img:hover {
-            transform: scale(1.02);
-        }
-
-        /* ── DESKTOP LINKS ── */
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            color: var(--text-soft);
-            text-decoration: none;
-            padding: 8px 14px;
-            border-radius: 8px;
-            transition: all 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-            background: rgba(22, 39, 231, 0.07);
-        }
-
-        .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .nav-cta {
-            background: var(--primary) !important;
-            color: var(--white) !important;
-            padding: 10px 20px !important;
-            border-radius: 10px !important;
-            font-weight: 800 !important;
-        }
-
-        .nav-cta:hover {
-            background: var(--dark) !important;
-            color: var(--white) !important;
-        }
-
-        /* ── HAMBURGER BUTTON ── */
-        .hamburger {
-            display: none;
-            border: none;
-            background: none;
-            cursor: pointer;
-            padding: 6px;
-            z-index: 101;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 24px;
-            height: 2.5px;
-            background: var(--dark);
-            border-radius: 2px;
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: translateY(7.5px) rotate(45deg);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: translateY(-7.5px) rotate(-45deg);
-        }
-
-        /* ── MOBILE NAV DRAWER ── */
-        .mobile-nav {
-            visibility: hidden;
-            position: fixed;
-            top: 72px;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 24px 24px;
-            z-index: 99;
-            box-shadow: 0 8px 30px rgba(20, 17, 72, 0.12);
-            transform: translateY(-10px);
-            opacity: 0;
-            transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
-            pointer-events: none;
-        }
-
-        .mobile-nav.open {
-            visibility: visible;
-            transform: translateY(0);
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .mobile-nav a {
-            display: block;
-            padding: 13px 0;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 15px;
-            color: var(--text);
-            text-decoration: none;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .mobile-nav a:last-child {
-            border-bottom: none;
-        }
-
-        .mobile-nav .m-cta {
-            margin-top: 16px;
-            display: block;
-            text-align: center;
-            background: var(--primary);
-            color: var(--white) !important;
-            padding: 14px !important;
-            border-radius: 12px;
-            border-bottom: none !important;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: block;
-            }
-        }
     </style>
 
-
- <nav>
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
-                <img src="logo2.png" alt="Xynera Global Education" />
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="index.html#universities">Universities</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="contactus.html" class="nav-cta">Free Counselling</a></li>
-            </ul>
-
-            <button class="hamburger" id="menuBtn" aria-label="Open menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-
-    <div class="mobile-nav" id="mobileNav">
-        <a href="index.html">Home</a>
-        <a href="courses.html">Courses</a>
-        <a href="index.html#universities">Universities</a>
-        <a href="about.html">About Us</a>
-        <a href="service.html">Services</a>
-        <a href="contactus.html" class="m-cta">📞 Free Counselling</a>
-    </div>
-
-<script>
-   // Mobile menu
-const menuBtn = document.getElementById('menuBtn');
-const mobileNav = document.getElementById('mobileNav');
-
-menuBtn.onclick = () => {
-    menuBtn.classList.toggle('active');   // Toggles the 'X' shape animation
-    mobileNav.classList.toggle('open');   // Toggles the dropdown menu
-};
-
-document.querySelectorAll('.mobile-nav a').forEach(a => {
-    a.addEventListener('click', () => {
-        menuBtn.classList.remove('active');  // Resets the hamburger button
-        mobileNav.classList.remove('open');   // Closes the menu
-    });
-});
-</script>
-
-
-
     <!-- NAV -->
-    
-
-    
 
     <!-- PAGE HERO -->
     <div class="page-hero">
         <div class="page-hero-inner">
             <div class="page-badge">🏫 Our Story</div>
             <h1>Guiding Students to Their <span>Dream Careers</span></h1>
-            <p>Xynera Global Education is Kerala's trusted admission counselling partner — connecting students with the
-                right universities, right courses, and right futures since 2020.</p>
+            <p>
+                Xynera Global Education is Kerala's trusted admission counselling
+                partner — connecting students with the right universities, right
+                courses, and right futures since 2020.
+            </p>
         </div>
     </div>
 
     <!-- STORY -->
-    <section class="section" style="background: white;">
+    <section class="section" style="background: white">
         <div class="section-inner">
             <div class="story-grid">
                 <div class="story-visual reveal">
@@ -1162,29 +922,43 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
                 </div>
                 <div class="story-text reveal reveal-d1">
                     <div class="section-tag">Who We Are</div>
-                    <h2 class="section-title">Born in Kerala, Built for Every Student's Dream</h2>
-                    <p class="lead">Xynera Global Education started with a simple belief — every student in Kerala
-                        deserves access to the best colleges and courses in India, regardless of where they come from.
+                    <h2 class="section-title">
+                        Born in Kerala, Built for Every Student's Dream
+                    </h2>
+                    <p class="lead">
+                        Xynera Global Education started with a simple belief — every
+                        student in Kerala deserves access to the best colleges and courses
+                        in India, regardless of where they come from.
                     </p>
-                    <p>Based in Mannarkkad, Palakkad, we work directly with 30+ top universities including Manipal,
-                        Amity, LPU, Jain University, Symbiosis, and many government institutions. Our counsellors have
-                        hands-on experience in helping students navigate the admission process — from choosing the right
-                        course to completing enrollment.</p>
-                    <p>We handle UG, PG, diploma, and NIOS programs across streams — Engineering, Arts, Commerce,
-                        Education (B.Ed, M.Ed), Management, Computer Science, and more. Study abroad is not our focus —
-                        we go deep on domestic admissions and do it exceptionally well.</p>
+                    <p>
+                        Based in Mannarkkad, Palakkad, we work directly with 30+ top
+                        universities including Manipal, Amity, LPU, Jain University,
+                        Symbiosis, and many government institutions. Our counsellors have
+                        hands-on experience in helping students navigate the admission
+                        process — from choosing the right course to completing enrollment.
+                    </p>
+                    <p>
+                        We handle UG, PG, diploma, and NIOS programs across streams —
+                        Engineering, Arts, Commerce, Education (B.Ed, M.Ed), Management,
+                        Computer Science, and more. Study abroad is not our focus — we go
+                        deep on domestic admissions and do it exceptionally well.
+                    </p>
                     <div class="story-highlights">
                         <div class="story-hi">
-                            <div class="dot"></div><span>Job Guarantee Letter issued at the time of admission</span>
+                            <div class="dot"></div>
+                            <span>Job Guarantee Letter issued at the time of admission</span>
                         </div>
                         <div class="story-hi">
-                            <div class="dot"></div><span>Full fee scholarship for students scoring 90% and above</span>
+                            <div class="dot"></div>
+                            <span>Full fee scholarship for students scoring 90% and above</span>
                         </div>
                         <div class="story-hi">
-                            <div class="dot"></div><span>End-to-end support — counselling to enrollment</span>
+                            <div class="dot"></div>
+                            <span>End-to-end support — counselling to enrollment</span>
                         </div>
                         <div class="story-hi">
-                            <div class="dot"></div><span>Partnered with Manipal, Amity, LPU & 27 more
+                            <div class="dot"></div>
+                            <span>Partnered with Manipal, Amity, LPU & 27 more
                                 universities</span>
                         </div>
                     </div>
@@ -1196,48 +970,67 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
     <!-- VALUES -->
     <section class="section values-section">
         <div class="section-inner">
-            <div style="text-align:center; margin-bottom: 48px;">
+            <div style="text-align: center; margin-bottom: 48px">
                 <div class="section-tag teal reveal">Our Values</div>
-                <h2 class="section-title reveal reveal-d1">What Drives Everything We Do</h2>
-                <p class="section-sub reveal reveal-d2" style="margin: 0 auto;">These aren't just words on a wall — they
-                    shape every conversation, every counselling session, and every admission we support.</p>
+                <h2 class="section-title reveal reveal-d1">
+                    What Drives Everything We Do
+                </h2>
+                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">
+                    These aren't just words on a wall — they shape every conversation,
+                    every counselling session, and every admission we support.
+                </p>
             </div>
             <div class="values-grid">
                 <div class="value-card reveal">
                     <span class="value-emoji">🎯</span>
                     <h4>Student First, Always</h4>
-                    <p>Every decision we make starts with one question: what's best for the student? We never push a
-                        course or university that doesn't fit your goals.</p>
+                    <p>
+                        Every decision we make starts with one question: what's best for
+                        the student? We never push a course or university that doesn't fit
+                        your goals.
+                    </p>
                 </div>
                 <div class="value-card reveal reveal-d1">
                     <span class="value-emoji">🤝</span>
                     <h4>Honest Guidance</h4>
-                    <p>We give you the full picture — fees, career scope, placement records, campus life — so you make a
-                        confident, informed decision.</p>
+                    <p>
+                        We give you the full picture — fees, career scope, placement
+                        records, campus life — so you make a confident, informed decision.
+                    </p>
                 </div>
                 <div class="value-card reveal reveal-d2">
                     <span class="value-emoji">⚡</span>
                     <h4>Speed & Reliability</h4>
-                    <p>Admission deadlines wait for no one. Our team moves fast, responds quickly, and makes sure you
-                        never miss an opportunity.</p>
+                    <p>
+                        Admission deadlines wait for no one. Our team moves fast, responds
+                        quickly, and makes sure you never miss an opportunity.
+                    </p>
                 </div>
                 <div class="value-card reveal">
                     <span class="value-emoji">💡</span>
                     <h4>Expertise You Can Trust</h4>
-                    <p>Our counsellors have deep knowledge of courses, universities, eligibility, and scholarships — so
-                        you get advice that's actually useful.</p>
+                    <p>
+                        Our counsellors have deep knowledge of courses, universities,
+                        eligibility, and scholarships — so you get advice that's actually
+                        useful.
+                    </p>
                 </div>
                 <div class="value-card reveal reveal-d1">
                     <span class="value-emoji">🌍</span>
                     <h4>Inclusive Access</h4>
-                    <p>Whether you're from a village in Palakkad or a city in Kerala, you deserve the same quality of
-                        guidance and the same opportunities.</p>
+                    <p>
+                        Whether you're from a village in Palakkad or a city in Kerala, you
+                        deserve the same quality of guidance and the same opportunities.
+                    </p>
                 </div>
                 <div class="value-card reveal reveal-d2">
                     <span class="value-emoji">📈</span>
                     <h4>Long-Term Thinking</h4>
-                    <p>We're not just here to get you admitted — we're invested in your career success. We think about
-                        your future, not just your enrollment.</p>
+                    <p>
+                        We're not just here to get you admitted — we're invested in your
+                        career success. We think about your future, not just your
+                        enrollment.
+                    </p>
                 </div>
             </div>
         </div>
@@ -1248,9 +1041,12 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
         <div class="team-container">
             <div class="team-header">
                 <div class="section-tag teal reveal">Executive Directorate</div>
-                <h2 class="section-title reveal reveal-d1">Leadership & Administration</h2>
-                <p class="section-sub reveal reveal-d2" style="margin: 0 auto;">Meet the dedicated professionals behind
-                    Xynera Global's success</p>
+                <h2 class="section-title reveal reveal-d1">
+                    Leadership & Administration
+                </h2>
+                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">
+                    Meet the dedicated professionals behind Xynera Global's success
+                </p>
             </div>
             <div class="team-grid">
                 <div class="team-card reveal">
@@ -1258,7 +1054,10 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
                     <div class="team-info">
                         <h4>Sayyed Sinan PM</h4>
                         <div class="role">Chief Executive Officer</div>
-                        <p>Strategic leader driving institutional partnerships and academic excellence.</p>
+                        <p>
+                            Strategic leader driving institutional partnerships and academic
+                            excellence.
+                        </p>
                     </div>
                 </div>
                 <div class="team-card reveal reveal-d1">
@@ -1266,7 +1065,10 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
                     <div class="team-info">
                         <h4>Varsha M</h4>
                         <div class="role">Regional Manager</div>
-                        <p>Oversees zonal operations and ensures smooth admission workflows across Kerala.</p>
+                        <p>
+                            Oversees zonal operations and ensures smooth admission workflows
+                            across Kerala.
+                        </p>
                     </div>
                 </div>
                 <div class="team-card reveal reveal-d2">
@@ -1274,7 +1076,9 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
                     <div class="team-info">
                         <h4>Bhavana P C</h4>
                         <div class="role">Senior Academic Counselor</div>
-                        <p>Specializes in Physical Education, B.Ed & M.Ed program guidance.</p>
+                        <p>
+                            Specializes in Physical Education, B.Ed & M.Ed program guidance.
+                        </p>
                     </div>
                 </div>
                 <div class="team-card reveal reveal-d3">
@@ -1282,7 +1086,9 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
                     <div class="team-info">
                         <h4>Anju Krishna PK</h4>
                         <div class="role">Administrative Officer</div>
-                        <p>Manages UG/PG department operations and student documentation.</p>
+                        <p>
+                            Manages UG/PG department operations and student documentation.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1293,15 +1099,20 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
     <section class="section milestones-section">
         <div class="section-inner">
             <div class="section-tag reveal">Our Journey</div>
-            <h2 class="section-title reveal reveal-d1">Milestones That Define Us</h2>
+            <h2 class="section-title reveal reveal-d1">
+                Milestones That Define Us
+            </h2>
             <div class="timeline">
                 <div class="timeline-item reveal">
                     <div class="timeline-year">2020</div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h4>🚀 Xynera Founded in Mannarkkad</h4>
-                        <p>Started with a small team and a big dream — to make quality college admissions accessible to
-                            every student in Kerala. First batch of 50 students successfully placed.</p>
+                        <p>
+                            Started with a small team and a big dream — to make quality
+                            college admissions accessible to every student in Kerala. First
+                            batch of 50 students successfully placed.
+                        </p>
                     </div>
                 </div>
                 <div class="timeline-item reveal">
@@ -1309,8 +1120,11 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h4>🤝 First 10 University Partnerships</h4>
-                        <p>Signed agreements with Manipal, Amity, and LPU. Expanded course offerings to include B.Ed,
-                            M.Ed, and management programs. Grew to 300+ annual admissions.</p>
+                        <p>
+                            Signed agreements with Manipal, Amity, and LPU. Expanded course
+                            offerings to include B.Ed, M.Ed, and management programs. Grew
+                            to 300+ annual admissions.
+                        </p>
                     </div>
                 </div>
                 <div class="timeline-item reveal">
@@ -1318,8 +1132,11 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h4>🏆 30+ University Network & 2000+ Students</h4>
-                        <p>Expanded partnerships to 30+ universities including government institutions. Launched NIOS
-                            programs and BCA specializations. Crossed 2000 successful admissions.</p>
+                        <p>
+                            Expanded partnerships to 30+ universities including government
+                            institutions. Launched NIOS programs and BCA specializations.
+                            Crossed 2000 successful admissions.
+                        </p>
                     </div>
                 </div>
                 <div class="timeline-item reveal">
@@ -1327,8 +1144,11 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h4>⭐ 5000+ Students & Job Guarantee Program</h4>
-                        <p>Launched the Job Guarantee Letter at admission program. Introduced full scholarship for 90%+
-                            students. Became Palakkad's most trusted education consultancy.</p>
+                        <p>
+                            Launched the Job Guarantee Letter at admission program.
+                            Introduced full scholarship for 90%+ students. Became Palakkad's
+                            most trusted education consultancy.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1338,7 +1158,10 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
     <!-- CTA -->
     <div class="cta-banner">
         <h2>Ready to Find Your Perfect College?</h2>
-        <p>Talk to our counsellors for free — no pressure, no sales pitch, just honest guidance.</p>
+        <p>
+            Talk to our counsellors for free — no pressure, no sales pitch, just
+            honest guidance.
+        </p>
         <div class="cta-btns">
             <a href="index.html#contactus" class="btn-white">📋 Book Free Counselling</a>
             <a href="https://wa.me/919746495785" class="btn-ghost">💬 WhatsApp Us</a>
@@ -1352,8 +1175,11 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
                 <div class="-mt-20">
                     <img src="logo1.png" alt="Xynera Global & Ozone Education Network Logo"
                         class="h-34 w-auto object-contain opacity-95 transition-opacity duration-300" />
-                    <p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the
-                        right universities since 2020. 5000+ success stories and counting.</p>
+                    <p class="footer-brand">
+                        Kerala's trusted admission counselling partner. Connecting
+                        students with the right universities since 2020. 5000+ success
+                        stories and counting.
+                    </p>
                 </div>
                 <div class="footer-col">
                     <h4>Navigate</h4>
@@ -1386,8 +1212,7 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
                 </div>
             </div>
             <div class="footer-bottom">
-                <span class="footer-copy">© 2026 Xynera Global Education. All rights
-                    reserved.</span>
+                <span class="footer-copy">© 2026 Xynera Global Education. All rights reserved.</span>
                 <span class="footer-copy">Made with ❤️ in Kerala</span>
             </div>
         </div>
@@ -1401,9 +1226,16 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
     </a>
 
     <script>
-        
-        const observer = new IntersectionObserver(entries => entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('show'); }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        const observer = new IntersectionObserver(
+            (entries) =>
+                entries.forEach((el) => {
+                    if (el.isIntersecting) el.target.classList.add("show");
+                }),
+            { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+        );
+        document
+            .querySelectorAll(".reveal")
+            .forEach((el) => observer.observe(el));
     </script>
 </body>
 
