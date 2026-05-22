@@ -56,12 +56,6 @@
             font-family: 'Nunito', sans-serif;
         }
 
-
-
-
-
-
-
         /* ── RESPONSIVE MEDIA QUERY ── */
         @media (max-width: 768px) {}
 
@@ -1198,10 +1192,6 @@
         }
 
         @media (max-width: 768px) {
-
-
-
-
             .hero {
                 padding: 60px 20px 40px;
                 min-height: auto;
@@ -1257,29 +1247,9 @@
 </head>
 
 <body>
-    <style>
-        /* ── BRAND COLORS ── */
-        :root {
-            --primary: #1627E7;
-            --dark: #141148;
-            --white: #FFFFFF;
-            --black: #000000;
-            --border: rgba(22, 39, 231, 0.15);
-            --text: #141148;
-            --text-soft: rgba(20, 17, 72, 0.6);
-            --bg: #f4f5ff;
-        }
 
-    
-    </style>
-
-    
-
-
-    <!-- NAV -->
-
-
-
+    <!-- HEADER PLACEHOLDER - header.html will be injected here -->
+    <div id="global-header-placeholder"></div>
 
     <!-- HERO -->
     <section class="hero">
@@ -1966,9 +1936,38 @@
         </svg>
     </a>
 
+    <!-- HEADER INJECTION SCRIPT: Dynamically loads header.html without touching other content -->
     <script>
-     
+        (function loadHeader() {
+            fetch('header.html')
+                .then(response => {
+                    if (!response.ok) throw new Error('Header not found');
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('global-header-placeholder').innerHTML = html;
+                    // Re-run header's internal scripts to bind mobile menu, active links, etc.
+                    const scripts = document.querySelectorAll('#global-header-placeholder script');
+                    scripts.forEach(oldScript => {
+                        const newScript = document.createElement('script');
+                        if (oldScript.src) {
+                            newScript.src = oldScript.src;
+                        } else {
+                            newScript.textContent = oldScript.textContent;
+                        }
+                        document.body.appendChild(newScript);
+                    });
+                    // Manually set active link based on current page (index page)
+                    const currentPage = 'index';
+                    document.querySelectorAll('[data-page]').forEach(el => {
+                        if (el.dataset.page === currentPage) el.classList.add('active');
+                    });
+                })
+                .catch(err => console.warn('Header could not be loaded. Please ensure header.html exists.', err));
+        })();
+    </script>
 
+    <script>
         // Tab switching
         function switchTab(e, id) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
