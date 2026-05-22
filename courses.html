@@ -521,7 +521,8 @@
 
 <body>
 
- 
+  <!-- ===================== HEADER (INJECTED VIA JS) ===================== -->
+  <div id="global-header-placeholder"></div>
 
   <div class="page-hero">
     <div class="page-hero-inner">
@@ -917,29 +918,39 @@
     </svg>
   </a>
 
+  <!-- HEADER INJECTION SCRIPT: Dynamically loads header.html without touching other content -->
   <script>
-    var btn = document.getElementById('menuBtn'), mobileNav = document.getElementById('mobileNav');
-    function setNavTop() {
-      var navEl = document.querySelector('nav');
-      if (navEl && mobileNav) { mobileNav.style.top = navEl.offsetHeight + 'px'; }
-    }
-    if (btn && mobileNav) {
-      setNavTop();
-      window.addEventListener('resize', setNavTop);
-      btn.addEventListener('click', function () {
-        btn.classList.toggle('open');
-        mobileNav.classList.toggle('open');
-      });
-      mobileNav.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () { btn.classList.remove('open'); mobileNav.classList.remove('open'); });
-      });
-      // close on outside click
-      document.addEventListener('click', function (e) {
-        if (!btn.contains(e.target) && !mobileNav.contains(e.target)) {
-          btn.classList.remove('open'); mobileNav.classList.remove('open');
-        }
-      });
-    }
+    (function loadHeader() {
+      fetch('header.html')
+        .then(response => {
+          if (!response.ok) throw new Error('Header not found');
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById('global-header-placeholder').innerHTML = html;
+          // Re-run header's internal scripts to bind mobile menu, active links, etc.
+          const scripts = document.querySelectorAll('#global-header-placeholder script');
+          scripts.forEach(oldScript => {
+            const newScript = document.createElement('script');
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+          });
+          // Manually set active link based on current page (courses page)
+          const currentPage = 'courses';
+          document.querySelectorAll('[data-page]').forEach(el => {
+            if (el.dataset.page === currentPage) el.classList.add('active');
+          });
+        })
+        .catch(err => console.warn('Header could not be loaded. Please ensure header.html exists.', err));
+    })();
+  </script>
+
+  <script>
+    // existing scroll reveal & form handler (preserved)
     var reveals = document.querySelectorAll('.reveal');
     function checkReveal() { for (var el of reveals) { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('show'); } }
     window.addEventListener('scroll', checkReveal); checkReveal();

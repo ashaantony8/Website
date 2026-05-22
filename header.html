@@ -1,264 +1,535 @@
-<!-- ══════════════════════════════════════════════
-     COMMON HEADER / NAVBAR  –  header.html
-     Include via: <script src="header.js"></script>
-     placed right after <body> in every page.
-     Active link is set automatically from the URL.
-══════════════════════════════════════════════ -->
-<style>
-  /* ── Google Fonts (Nunito) ── */
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Xynera Global Education – Header Component</title>
+    <style>
+      /* ── Google Fonts (Nunito) ── */
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap");
 
-  /* ── CSS Variables (shared palette) ── */
-  :root {
-    --primary: #1627e7;
-    --dark:    #141148;
-    --white:   #ffffff;
-    --border:  rgba(20,17,72,0.10);
-    --text:    #1a1a2e;
-    --text-soft: #4a4a6a;
-    --nav-h:   90px;
-    --nav-h-md: 72px;
-    --nav-h-sm: 64px;
-  }
+      /* ── CSS Variables (shared palette) ── */
+      :root {
+        --primary: #1627e7;
+        --dark: #141148;
+        --white: #ffffff;
+        --border: rgba(20, 17, 72, 0.1);
+        --text: #1a1a2e;
+        --text-soft: #4a4a6a;
+        --nav-h: 90px;
+        --nav-h-md: 72px;
+        --nav-h-sm: 64px;
+      }
 
-  /* ── Reset helpers ── */
-  *, *::before, *::after { box-sizing: border-box; }
+      /* ── Reset helpers ── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Nunito", sans-serif;
+        background: #f9fafc;
+      }
 
-  /* ══ NAVBAR ══ */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 2px 20px rgba(20,17,72,0.08);
-  }
+      /* demo placeholder for hero content */
+      .hero-demo {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 3rem 2rem;
+        background: white;
+        border-radius: 32px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+      .hero-demo h1 {
+        font-size: 2.5rem;
+        color: var(--dark);
+        margin-bottom: 1rem;
+      }
+      .hero-demo p {
+        color: var(--text-soft);
+        font-size: 1.1rem;
+      }
 
-  .nav-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    height: var(--nav-h);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
+      /* ══ NAVBAR ══ */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 2px 20px rgba(20, 17, 72, 0.08);
+      }
 
-  /* Logo */
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    flex-shrink: 0;
-  }
-  .nav-logo img {
-    height: 80px;
-    width: auto;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-  }
-  .nav-logo img:hover { transform: scale(1.02); }
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        height: var(--nav-h);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
 
-  /* Desktop links */
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .nav-links a {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--text-soft);
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    transition: color 0.2s, background 0.2s;
-    white-space: nowrap;
-  }
-  .nav-links a:hover,
-  .nav-links a.active {
-    color: var(--primary);
-    background: rgba(22,39,231,0.07);
-  }
+      /* Logo */
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
+      /* fallback dummy logo text if logo2.png missing – but keeps original reference */
+      .nav-logo img {
+        height: 180px;
+        width: auto;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+      .nav-logo img:hover {
+        transform: scale(1.02);
+      }
 
-  /* CTA button */
-  .nav-cta {
-    background: var(--primary) !important;
-    color: var(--white) !important;
-    padding: 10px 20px !important;
-    border-radius: 10px !important;
-    font-weight: 800 !important;
-  }
-  .nav-cta:hover {
-    background: var(--dark) !important;
-    color: var(--white) !important;
-  }
+      /* Desktop links */
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-links a {
+        font-family: "Nunito", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        color: var(--text-soft);
+        text-decoration: none;
+        padding: 8px 14px;
+        border-radius: 8px;
+        transition:
+          color 0.2s,
+          background 0.2s;
+        white-space: nowrap;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--primary);
+        background: rgba(22, 39, 231, 0.07);
+      }
 
-  /* Hamburger */
-  .hamburger {
-    display: none;
-    border: none;
-    background: none;
-    cursor: pointer;
-    padding: 6px;
-    z-index: 1001;
-    flex-shrink: 0;
-  }
-  .hamburger span {
-    display: block;
-    width: 25px;
-    height: 2.5px;
-    background: var(--dark);
-    border-radius: 2px;
-    margin: 5px 0;
-    transition: all 0.3s ease;
-  }
-  .hamburger.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-  .hamburger.active span:nth-child(2) { opacity: 0; }
-  .hamburger.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+      /* CTA button */
+      .nav-cta {
+        background: var(--primary) !important;
+        color: var(--white) !important;
+        padding: 10px 20px !important;
+        border-radius: 10px !important;
+        font-weight: 800 !important;
+      }
+      .nav-cta:hover {
+        background: var(--dark) !important;
+        color: var(--white) !important;
+      }
 
-  /* ══ MOBILE DRAWER ══ */
-  .mobile-nav {
-    visibility: hidden;
-    position: fixed;
-    top: var(--nav-h);
-    left: 0;
-    right: 0;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-    padding: 16px 24px 24px;
-    z-index: 999;
-    box-shadow: 0 8px 30px rgba(20,17,72,0.12);
-    transform: translateY(-10px);
-    opacity: 0;
-    transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
-    pointer-events: none;
-  }
-  .mobile-nav.open {
-    visibility: visible;
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .mobile-nav a {
-    display: block;
-    padding: 13px 0;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    color: var(--text);
-    text-decoration: none;
-    border-bottom: 1px solid var(--border);
-  }
-  .mobile-nav a:last-child { border-bottom: none; }
-  .mobile-nav .m-cta {
-    margin-top: 16px;
-    display: block;
-    text-align: center;
-    background: var(--primary);
-    color: var(--white) !important;
-    padding: 14px !important;
-    border-radius: 12px;
-    border-bottom: none !important;
-    font-weight: 800;
-  }
-  .mobile-nav .m-cta:hover { background: var(--dark); }
+      /* Hamburger */
+      .hamburger {
+        display: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 6px;
+        z-index: 1001;
+        flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 25px;
+        height: 2.5px;
+        background: var(--dark);
+        border-radius: 2px;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+      }
+      .hamburger.active span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+      }
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+      }
 
-  /* ══ RESPONSIVE BREAKPOINTS ══ */
-  @media (max-width: 860px) {
-    .nav-links  { display: none; }
-    .hamburger  { display: block; }
-  }
+      /* ══ MOBILE DRAWER (ENHANCED WITH X BUTTON) ══ */
+      .mobile-nav {
+        visibility: hidden;
+        position: fixed;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--white);
+        border-top: 1px solid var(--border);
+        padding: 20px 24px 30px;
+        z-index: 999;
+        box-shadow: 0 8px 30px rgba(20, 17, 72, 0.12);
+        transform: translateY(-10px);
+        opacity: 0;
+        transition:
+          opacity 0.25s ease,
+          visibility 0.25s ease,
+          transform 0.25s ease;
+        pointer-events: none;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
 
-  @media (max-width: 768px) {
-    :root { --nav-h: var(--nav-h-md); }
-    .nav-inner  { height: var(--nav-h-md); padding: 0 16px; }
-    .nav-logo img { height: 52px; }
-    .mobile-nav { top: var(--nav-h-md); }
-  }
+      /* header inside drawer: holds close (X) button + optional title */
+      .mobile-nav-header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(20, 17, 72, 0.08);
+      }
+      .close-drawer-btn {
+        background: rgba(20, 17, 72, 0.05);
+        border: none;
+        font-size: 26px;
+        font-weight: 400;
+        width: 44px;
+        height: 44px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--dark);
+        transition: all 0.2s ease;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Nunito",
+          sans-serif;
+      }
+      .close-drawer-btn:hover {
+        background: rgba(22, 39, 231, 0.1);
+        color: var(--primary);
+        transform: rotate(90deg);
+      }
+      .close-drawer-btn:focus-visible {
+        outline: 2px solid var(--primary);
+      }
 
-  @media (max-width: 480px) {
-    :root { --nav-h: var(--nav-h-sm); }
-    .nav-inner  { height: var(--nav-h-sm); padding: 0 12px; }
-    .nav-logo img { height: 44px; }
-    .mobile-nav { top: var(--nav-h-sm); }
-  }
-</style>
+      .mobile-nav a {
+        display: block;
+        padding: 14px 0;
+        font-family: "Nunito", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--text);
+        text-decoration: none;
+        border-bottom: 1px solid var(--border);
+        transition:
+          padding-left 0.2s,
+          color 0.2s;
+      }
+      .mobile-nav a:active,
+      .mobile-nav a:hover {
+        color: var(--primary);
+        padding-left: 8px;
+        background: transparent;
+      }
+      .mobile-nav a:last-child {
+        border-bottom: none;
+      }
+      .mobile-nav .m-cta {
+        margin-top: 24px;
+        display: block;
+        text-align: center;
+        background: var(--primary);
+        color: var(--white) !important;
+        padding: 16px !important;
+        border-radius: 14px;
+        border-bottom: none !important;
+        font-weight: 800;
+        transition: all 0.2s;
+      }
+      .mobile-nav .m-cta:hover {
+        background: var(--dark);
+        padding-left: 0 !important;
+        transform: scale(0.99);
+      }
+      .mobile-nav.open {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
 
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="logo2.png" alt="Xynera Global Education" />
-    </a>
+      /* ══ RESPONSIVE BREAKPOINTS ══ */
+      @media (max-width: 860px) {
+        .nav-links {
+          display: none;
+        }
+        .hamburger {
+          display: block;
+        }
+      }
 
-    <ul class="nav-links">
-      <li><a href="index.html"              data-page="index">Home</a></li>
-      <li><a href="courses.html"            data-page="courses">Courses</a></li>
-      <li><a href="index.html#universities" data-page="universities">Universities</a></li>
-      <li><a href="about.html"              data-page="about">About</a></li>
-      <li><a href="service.html"            data-page="service">Services</a></li>
-      <li><a href="contactus.html"          class="nav-cta">Free Counselling</a></li>
-    </ul>
+      @media (max-width: 768px) {
+        :root {
+          --nav-h: var(--nav-h-md);
+        }
+        .nav-inner {
+          height: var(--nav-h-md);
+          padding: 0 16px;
+        }
+        .nav-logo img {
+          height: 152px;
+        }
+        .mobile-nav {
+          top: var(--nav-h-md);
+          padding: 16px 20px 30px;
+        }
+        .mobile-nav a {
+          font-size: 15px;
+          padding: 12px 0;
+        }
+      }
 
-    <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+      @media (max-width: 480px) {
+        :root {
+          --nav-h: var(--nav-h-sm);
+        }
+        .nav-inner {
+          height: var(--nav-h-sm);
+          padding: 0 12px;
+        }
+        .nav-logo img {
+          height: 144px;
+        }
+        .mobile-nav {
+          top: var(--nav-h-sm);
+          padding: 12px 18px 24px;
+        }
+      }
 
-<div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile menu">
-  <a href="index.html"              data-page="index">Home</a>
-  <a href="courses.html"            data-page="courses">Courses</a>
-  <a href="index.html#universities" data-page="universities">Universities</a>
-  <a href="about.html"              data-page="about">About Us</a>
-  <a href="service.html"            data-page="service">Services</a>
-  <a href="contactus.html"          class="m-cta">📞 Free Counselling</a>
-</div>
+      /* prevent body scroll when drawer open */
+      body.menu-open {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <!-- Replace with your actual logo; keeps logo2.png as per request -->
+          <img
+            src="logo2.png"
+            alt="Xynera Global Education"
+            onerror="
+              this.onerror = null;
+              this.src = 'https://placehold.co/200x80?text=XYNERA';
+            "
+          />
+        </a>
 
-<script>
-(function () {
-  /* ── Auto-highlight active link based on current page ── */
-  var page = location.pathname.split('/').pop().replace('.html','') || 'index';
-  document.querySelectorAll('[data-page]').forEach(function(a){
-    if(a.dataset.page === page) a.classList.add('active');
-  });
+        <ul class="nav-links">
+          <li><a href="index.html" data-page="index">Home</a></li>
+          <li><a href="courses.html" data-page="courses">Courses</a></li>
+          <li>
+            <a href="index.html#universities" data-page="universities"
+              >Universities</a
+            >
+          </li>
+          <li><a href="about.html" data-page="about">About</a></li>
+          <li><a href="service.html" data-page="service">Services</a></li>
+          <li><a href="contactus.html" class="nav-cta">Free Counselling</a></li>
+        </ul>
 
-  /* ── Hamburger toggle ── */
-  var btn = document.getElementById('menuBtn');
-  var nav = document.getElementById('mobileNav');
+        <button
+          class="hamburger"
+          id="menuBtn"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
 
-  btn.addEventListener('click', function () {
-    var open = nav.classList.toggle('open');
-    btn.classList.toggle('active', open);
-    btn.setAttribute('aria-expanded', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
+    <!-- Mobile drawer with explicit X close button (top-right) -->
+    <div
+      class="mobile-nav"
+      id="mobileNav"
+      role="navigation"
+      aria-label="Mobile menu"
+    >
+      <a href="index.html" data-page="index">🏠 Home</a>
+      <a href="courses.html" data-page="courses">📚 Courses</a>
+      <a href="index.html#universities" data-page="universities"
+        >🎓 Universities</a
+      >
+      <a href="about.html" data-page="about">🌟 About Us</a>
+      <a href="service.html" data-page="service">⚙️ Services</a>
+      <a href="contactus.html" class="m-cta">📞 Free Counselling</a>
+    </div>
 
-  /* Close drawer when a mobile link is tapped */
-  nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      nav.classList.remove('open');
-      btn.classList.remove('active');
-      btn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  });
+    <script>
+      (function () {
+        /* ── Auto-highlight active link based on current page ── */
+        var page =
+          location.pathname.split("/").pop().replace(".html", "") || "index";
+        // if page is empty (like root path), treat as index
+        if (page === "") page = "index";
+        document.querySelectorAll("[data-page]").forEach(function (a) {
+          if (a.dataset.page === page) a.classList.add("active");
+        });
 
-  /* Close drawer on outside click */
-  document.addEventListener('click', function(e){
-    if(nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)){
-      nav.classList.remove('open');
-      btn.classList.remove('active');
-      btn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-  });
-})();
-</script>
+        // Get elements
+        var hamburgerBtn = document.getElementById("menuBtn");
+        var mobileDrawer = document.getElementById("mobileNav");
+        var closeXBtn = document.getElementById("closeDrawerXBtn");
+
+        // Helper: open drawer
+        function openDrawer() {
+          mobileDrawer.classList.add("open");
+          hamburgerBtn.classList.add("active");
+          hamburgerBtn.setAttribute("aria-expanded", "true");
+          document.body.classList.add("menu-open");
+        }
+
+        // Helper: close drawer
+        function closeDrawer() {
+          mobileDrawer.classList.remove("open");
+          hamburgerBtn.classList.remove("active");
+          hamburgerBtn.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
+        }
+
+        // Toggle via hamburger click
+        hamburgerBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          if (mobileDrawer.classList.contains("open")) {
+            closeDrawer();
+          } else {
+            openDrawer();
+          }
+        });
+
+        // Explicit X button close handler (★  X CLOSE BUTTON ★)
+        if (closeXBtn) {
+          closeXBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            closeDrawer();
+          });
+        }
+
+        // Close drawer when any mobile link is clicked (navigation friendly)
+        var allMobileLinks = mobileDrawer.querySelectorAll("a");
+        allMobileLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            closeDrawer();
+          });
+        });
+
+        // Close drawer on outside click (click outside drawer & not on hamburger)
+        document.addEventListener("click", function (e) {
+          if (mobileDrawer.classList.contains("open")) {
+            // if click target is NOT inside drawer AND not the hamburger button
+            if (
+              !mobileDrawer.contains(e.target) &&
+              !hamburgerBtn.contains(e.target)
+            ) {
+              closeDrawer();
+            }
+          }
+        });
+
+        // Optional: prevent body scroll lock conflicts if escape key pressed
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && mobileDrawer.classList.contains("open")) {
+            closeDrawer();
+          }
+        });
+
+        // If window resize from mobile to desktop while drawer open, auto-close to avoid glitch
+        let resizeTimer;
+        window.addEventListener("resize", function () {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(function () {
+            if (
+              window.innerWidth > 860 &&
+              mobileDrawer.classList.contains("open")
+            ) {
+              closeDrawer();
+            }
+          }, 150);
+        });
+      })();
+    </script>
+
+    <!-- additional style to make dummy logo work even if missing, optional fine-tune active link indicator -->
+    <style>
+      /* subtle underline for active desktop links */
+      .nav-links a.active {
+        position: relative;
+        color: var(--primary) !important;
+        background: rgba(22, 39, 231, 0.08);
+      }
+      .mobile-nav a.active {
+        color: var(--primary);
+        border-left: 3px solid var(--primary);
+        padding-left: 12px !important;
+        background: rgba(22, 39, 231, 0.02);
+      }
+      /* improve tap highlight on mobile */
+      .mobile-nav a,
+      .close-drawer-btn,
+      .hamburger {
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* smooth scroll locking */
+      body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+      }
+      @media (max-width: 860px) {
+        body.menu-open {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+        }
+      }
+      /* extra polish for X button */
+      .close-drawer-btn {
+        font-size: 28px;
+        line-height: 1;
+        font-weight: 500;
+        background: #f0f2f8;
+        transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      }
+      .close-drawer-btn:hover {
+        background: #e6e9f2;
+        transform: rotate(90deg) scale(0.98);
+      }
+      /* ensure drawer header doesn't affect menu links */
+      .mobile-nav-header {
+        margin-bottom: 4px;
+      }
+    </style>
+  </body>
+</html>
