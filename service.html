@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Services | Xynera Global Education</title>
+    <meta name="description"
+        content="Xynera Global Education offers free counselling, university admissions, documentation support, and scholarship assistance across 30+ partner universities in India." />
     <link rel="icon" type="image/png" href="fav.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,19 +14,17 @@
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
     <style>
+        /* ── ROOT ── */
         :root {
             --primary: #1627E7;
-            --primary-light: #1627E7;
             --dark: #141148;
             --teal: #1627E7;
             --teal-light: #3a50ff;
-            --orange: #141148;
-            --yellow: #1627E7;
             --bg: #f4f5ff;
             --white: #FFFFFF;
             --text: #141148;
-            --text-soft: rgba(20,17,72,0.6);
-            --border: rgba(22,39,231,0.15);
+            --text-soft: rgba(20, 17, 72, 0.6);
+            --border: rgba(22, 39, 231, 0.15);
         }
 
         *,
@@ -55,46 +55,204 @@
             font-family: 'Nunito', sans-serif;
         }
 
-        
+        /* ── NAV ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 20px rgba(20, 17, 72, 0.08);
+        }
 
-        
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
 
-        
+        .nav-logo img {
+            height: 56px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
 
-        
+        .nav-logo img:hover {
+            transform: scale(1.03);
+        }
 
-        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+        }
 
-        
+        .nav-links a {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-soft);
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
 
-        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+            background: rgba(22, 39, 231, 0.07);
+        }
 
-        
+        .nav-cta {
+            background: var(--primary) !important;
+            color: var(--white) !important;
+            padding: 10px 20px !important;
+            border-radius: 10px !important;
+            font-weight: 800 !important;
+        }
 
-        
+        .nav-cta:hover {
+            background: var(--dark) !important;
+            color: var(--white) !important;
+        }
 
-        
+        .hamburger {
+            display: none;
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 6px;
+            z-index: 1001;
+        }
 
-        
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2.5px;
+            background: var(--dark);
+            border-radius: 3px;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
 
-        
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(7.5px) rotate(45deg);
+        }
 
-        
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
 
-        
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-7.5px) rotate(-45deg);
+        }
 
-        
+        .mobile-nav {
+            visibility: hidden;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px 24px;
+            z-index: 998;
+            box-shadow: 0 8px 30px rgba(20, 17, 72, 0.12);
+            transform: translateY(-8px);
+            opacity: 0;
+            transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
+            pointer-events: none;
+        }
 
-        
+        .mobile-nav.open {
+            visibility: visible;
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
 
-        
+        .mobile-nav a {
+            display: block;
+            padding: 13px 0;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
 
-        /* PAGE HERO */
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav .m-cta {
+            margin-top: 14px;
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color: white !important;
+            padding: 14px !important;
+            border-radius: 12px;
+            border-bottom: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-logo img {
+                height: 44px;
+            }
+
+            .nav-inner {
+                height: 64px;
+                padding: 0 16px;
+            }
+
+            .mobile-nav {
+                top: 64px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-logo img {
+                height: 38px;
+            }
+
+            .nav-inner {
+                height: 58px;
+                padding: 0 12px;
+            }
+
+            .mobile-nav {
+                top: 58px;
+            }
+        }
+
+        /* ── PAGE HERO ── */
         .page-hero {
             background: linear-gradient(135deg, var(--dark) 0%, #141148 55%, #1627E7 100%);
-            padding: 80px 24px 80px;
+            padding: 80px 24px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -106,7 +264,7 @@
             width: 600px;
             height: 600px;
             border-radius: 50%;
-            background: rgba(22,39,231, 0.08);
+            background: rgba(22, 39, 231, 0.08);
             top: -200px;
             right: -100px;
             pointer-events: none;
@@ -123,8 +281,8 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(22,39,231, 0.2);
-            border: 1px solid rgba(22,39,231, 0.4);
+            background: rgba(22, 39, 231, 0.2);
+            border: 1px solid rgba(22, 39, 231, 0.4);
             color: #a0aaff;
             font-family: 'Nunito', sans-serif;
             font-size: 12px;
@@ -137,7 +295,7 @@
         }
 
         .page-hero h1 {
-            font-size: clamp(34px, 5vw, 56px);
+            font-size: clamp(30px, 5vw, 56px);
             font-weight: 900;
             color: white;
             letter-spacing: -1px;
@@ -160,7 +318,7 @@
             margin: 0 auto;
         }
 
-        /* SECTION */
+        /* ── SECTIONS ── */
         .section {
             padding: 80px 24px;
         }
@@ -172,7 +330,7 @@
 
         .section-tag {
             display: inline-block;
-            background: rgba(22,39,231, 0.08);
+            background: rgba(22, 39, 231, 0.08);
             color: var(--primary);
             font-family: 'Nunito', sans-serif;
             font-weight: 800;
@@ -184,13 +342,8 @@
             margin-bottom: 12px;
         }
 
-        .section-tag.teal {
-            background: rgba(22,39,231, 0.1);
-            color: var(--teal);
-        }
-
         .section-title {
-            font-size: clamp(26px, 3.5vw, 42px);
+            font-size: clamp(24px, 3.5vw, 42px);
             font-weight: 900;
             color: var(--dark);
             line-height: 1.15;
@@ -205,7 +358,7 @@
             line-height: 1.7;
         }
 
-        /* MAIN SERVICES */
+        /* ── SERVICE CARDS ── */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -236,7 +389,7 @@
         }
 
         .service-card.blue::before {
-            background: linear-gradient(90deg, var(--primary), #1627E7);
+            background: linear-gradient(90deg, var(--primary), #3a50ff);
         }
 
         .service-card.teal::before {
@@ -244,12 +397,12 @@
         }
 
         .service-card.orange::before {
-            background: linear-gradient(90deg, var(--orange), #ff8f5a);
+            background: linear-gradient(90deg, #ff6b35, #ff8f5a);
         }
 
         .service-card:hover {
             border-color: transparent;
-            box-shadow: 0 16px 48px rgba(20,17,72, 0.12);
+            box-shadow: 0 16px 48px rgba(20, 17, 72, 0.12);
             transform: translateY(-6px);
         }
 
@@ -269,11 +422,11 @@
         }
 
         .service-icon.blue {
-            background: rgba(22,39,231, 0.08);
+            background: rgba(22, 39, 231, 0.08);
         }
 
         .service-icon.teal {
-            background: rgba(22,39,231, 0.1);
+            background: rgba(22, 39, 231, 0.1);
         }
 
         .service-icon.orange {
@@ -318,7 +471,23 @@
             flex-shrink: 0;
         }
 
-        /* FEATURED SERVICE */
+        /* ── SCHOLARSHIP NOTE ── */
+        .scholarship-note {
+            margin-top: 14px;
+            padding: 12px 14px;
+            background: rgba(22, 39, 231, 0.06);
+            border-left: 3px solid var(--primary);
+            border-radius: 8px;
+            font-size: 12px;
+            color: var(--text-soft);
+            line-height: 1.6;
+        }
+
+        .scholarship-note strong {
+            color: var(--primary);
+        }
+
+        /* ── FEATURED SERVICE ── */
         .featured-service {
             background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
             border-radius: 24px;
@@ -338,7 +507,7 @@
             width: 400px;
             height: 400px;
             border-radius: 50%;
-            background: rgba(22,39,231, 0.1);
+            background: rgba(22, 39, 231, 0.1);
             top: -150px;
             right: -100px;
             pointer-events: none;
@@ -351,8 +520,8 @@
 
         .featured-tag {
             display: inline-block;
-            background: rgba(22,39,231, 0.25);
-            border: 1px solid rgba(22,39,231, 0.5);
+            background: rgba(22, 39, 231, 0.25);
+            border: 1px solid rgba(22, 39, 231, 0.5);
             color: #a0aaff;
             font-family: 'Nunito', sans-serif;
             font-size: 11px;
@@ -365,7 +534,7 @@
         }
 
         .featured-service-text h3 {
-            font-size: clamp(24px, 3vw, 34px);
+            font-size: clamp(22px, 3vw, 34px);
             font-weight: 900;
             color: white;
             line-height: 1.2;
@@ -438,109 +607,7 @@
             color: rgba(255, 255, 255, 0.55);
         }
 
-        /* COURSES LIST */
-        .courses-section {
-            background: white;
-        }
-
-        .courses-list-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            margin-top: 48px;
-        }
-
-        .course-group {
-            background: var(--bg);
-            border-radius: 16px;
-            padding: 28px;
-            border: 1.5px solid var(--border);
-        }
-
-        .course-group-head {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .course-group-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-        }
-
-        .course-group-icon.blue {
-            background: rgba(22,39,231, 0.1);
-        }
-
-        .course-group-icon.teal {
-            background: rgba(22,39,231, 0.1);
-        }
-
-        .course-group-icon.orange {
-            background: rgba(255, 107, 53, 0.1);
-        }
-
-        .course-group-icon.yellow {
-            background: rgba(255, 183, 0, 0.12);
-        }
-
-        .course-group h4 {
-            font-size: 16px;
-            font-weight: 800;
-            color: var(--dark);
-        }
-
-        .course-group p.sub {
-            font-size: 12px;
-            color: var(--text-soft);
-        }
-
-        .course-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .course-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 9px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .course-list li:last-child {
-            border-bottom: none;
-        }
-
-        .course-list li span {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text);
-        }
-
-        .course-list li .duration-badge {
-            font-size: 10px;
-            font-weight: 700;
-            color: var(--primary);
-            background: rgba(22,39,231, 0.08);
-            padding: 3px 10px;
-            border-radius: 20px;
-            white-space: nowrap;
-        }
-
-        /* UNIVERSITIES */
-        .unis-section {
-            background: var(--bg);
-        }
-
+        /* ── UNIVERSITIES ── */
         .unis-list {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -559,7 +626,7 @@
 
         .uni-pill:hover {
             border-color: var(--primary);
-            box-shadow: 0 6px 20px rgba(20,17,72, 0.08);
+            box-shadow: 0 6px 20px rgba(20, 17, 72, 0.08);
             transform: translateY(-2px);
         }
 
@@ -581,7 +648,7 @@
             margin-top: 2px;
         }
 
-        /* PROCESS */
+        /* ── PROCESS ── */
         .process-section {
             background: white;
         }
@@ -594,12 +661,16 @@
             position: relative;
         }
 
+        /* connector line sits at vertical center of circles (circle top offset = 20px padding + 0 = 20px from step top) */
         .process-steps::before {
             content: '';
             position: absolute;
-            top: 36px;
-            left: 12%;
-            right: 12%;
+            top: calc(20px + 36px);
+            /* 20px step padding-top + half of 72px circle */
+            left: calc(12.5% + 36px);
+            /* center of first circle */
+            right: calc(12.5% + 36px);
+            /* center of last circle */
             height: 2px;
             background: linear-gradient(90deg, var(--primary), var(--teal));
             z-index: 0;
@@ -621,25 +692,26 @@
             align-items: center;
             justify-content: center;
             font-size: 26px;
+            background: white;
         }
 
         .step-circle.c1 {
-            background: rgba(22,39,231, 0.1);
+           background: white;
             border: 3px solid var(--primary);
         }
 
         .step-circle.c2 {
-            background: rgba(22,39,231, 0.1);
+          background: white;
             border: 3px solid var(--teal);
         }
 
         .step-circle.c3 {
-            background: rgba(255, 107, 53, 0.1);
-            border: 3px solid var(--orange);
+         background: white;
+            border: 3px solid #ff6b35;
         }
 
         .step-circle.c4 {
-            background: var(--primary);
+          background: white;
             border: 3px solid var(--primary);
         }
 
@@ -659,7 +731,7 @@
         }
 
         .step-label.o {
-            background: var(--orange);
+            background: #ff6b35;
         }
 
         .process-step h4 {
@@ -677,7 +749,7 @@
             margin: 0 auto;
         }
 
-        /* FAQ */
+        /* ── FAQ ── */
         .faq-section {
             background: var(--bg);
         }
@@ -741,7 +813,7 @@
             line-height: 1.7;
         }
 
-        /* CONTACT STRIP */
+        /* ── CONTACT STRIP ── */
         .contact-strip {
             background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
             padding: 80px 24px;
@@ -757,7 +829,7 @@
         }
 
         .contact-strip h2 {
-            font-size: clamp(26px, 3.5vw, 40px);
+            font-size: clamp(24px, 3.5vw, 40px);
             font-weight: 900;
             color: white;
             margin-bottom: 14px;
@@ -845,7 +917,7 @@
         }
 
         .strip-field select {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.85);
             cursor: pointer;
         }
 
@@ -856,7 +928,7 @@
 
         .strip-field input:focus,
         .strip-field select:focus {
-            border-color: var(--teal);
+            border-color: var(--teal-light);
         }
 
         .strip-submit {
@@ -887,7 +959,7 @@
             font-weight: 600;
         }
 
-        /* FOOTER */
+        /* ── FOOTER ── */
         footer {
             background: var(--dark);
             color: rgba(255, 255, 255, 0.6);
@@ -904,7 +976,6 @@
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 48px;
             margin-bottom: 48px;
-           
         }
 
         .footer-brand {
@@ -913,18 +984,6 @@
             color: rgba(255, 255, 255, 0.5);
             margin-top: 14px;
             max-width: 280px;
-        }
-
-        .footer-logo-text {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 900;
-            font-size: 20px;
-            color: white;
-            letter-spacing: -0.5px;
-        }
-
-        .footer-logo-text span {
-            color: var(--teal);
         }
 
         .footer-col h4 {
@@ -972,7 +1031,7 @@
             font-family: 'Nunito', sans-serif;
         }
 
-        /* WHATSAPP */
+        /* ── WHATSAPP FLOAT ── */
         .whatsapp-float {
             position: fixed;
             bottom: 28px;
@@ -994,7 +1053,7 @@
             transform: scale(1.1);
         }
 
-        /* REVEAL */
+        /* ── REVEAL ── */
         .reveal {
             opacity: 0;
             transform: translateY(24px);
@@ -1018,7 +1077,7 @@
             transition-delay: 0.3s;
         }
 
-        /* RESPONSIVE */
+        /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1053,15 +1112,7 @@
         }
 
         @media (max-width: 768px) {
-            
-
-            
-
             .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .courses-list-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1090,255 +1141,64 @@
             .section {
                 padding: 60px 20px;
             }
+
+            .page-hero {
+                padding: 60px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .featured-service {
+                padding: 28px 20px;
+            }
+
+            .contact-strip {
+                padding: 56px 16px;
+            }
+
+            .contact-strip-form {
+                padding: 24px 18px;
+            }
+
+            .unis-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
         }
     </style>
 </head>
 
 <body>
- <style>
-        /* ── BRAND COLORS ── */
-        :root {
-            --primary: #1627E7;
-            --dark: #141148;
-            --white: #FFFFFF;
-            --black: #000000;
-            --border: rgba(22, 39, 231, 0.15);
-            --text: #141148;
-            --text-soft: rgba(20, 17, 72, 0.6);
-            --bg: #f4f5ff;
-        }
 
-        /* ── NAV CONTAINER ── */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 2px 20px rgba(20, 17, 72, 0.08);
-        }
-
-        .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .nav-logo img {
-            height: 154px;
-            width: auto;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-logo img:hover {
-            transform: scale(1.02);
-        }
-
-        /* ── DESKTOP LINKS ── */
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            color: var(--text-soft);
-            text-decoration: none;
-            padding: 8px 14px;
-            border-radius: 8px;
-            transition: all 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-            background: rgba(22, 39, 231, 0.07);
-        }
-
-        .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .nav-cta {
-            background: var(--primary) !important;
-            color: var(--white) !important;
-            padding: 10px 20px !important;
-            border-radius: 10px !important;
-            font-weight: 800 !important;
-        }
-
-        .nav-cta:hover {
-            background: var(--dark) !important;
-            color: var(--white) !important;
-        }
-
-        /* ── HAMBURGER BUTTON ── */
-        .hamburger {
-            display: none;
-            border: none;
-            background: none;
-            cursor: pointer;
-            padding: 6px;
-            z-index: 101;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 24px;
-            height: 2.5px;
-            background: var(--dark);
-            border-radius: 2px;
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: translateY(7.5px) rotate(45deg);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: translateY(-7.5px) rotate(-45deg);
-        }
-
-        /* ── MOBILE NAV DRAWER ── */
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 72px;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 24px 24px;
-            z-index: 99;
-            box-shadow: 0 8px 30px rgba(20, 17, 72, 0.12);
-            transform: translateY(-10px);
-            opacity: 0;
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-
-        .mobile-nav.open {
-            display: block;
-            transform: translateY(0);
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .mobile-nav a {
-            display: block;
-            padding: 13px 0;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 15px;
-            color: var(--text);
-            text-decoration: none;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .mobile-nav a:last-child {
-            border-bottom: none;
-        }
-
-        .mobile-nav .m-cta {
-            margin-top: 16px;
-            display: block;
-            text-align: center;
-            background: var(--primary);
-            color: var(--white) !important;
-            padding: 14px !important;
-            border-radius: 12px;
-            border-bottom: none !important;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: block;
-            }
-        }
-    </style>
-
-
-<nav>
-    <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-            <img src="logo2.png" alt="Xynera Global Education" />
-        </a>
-
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="index.html#universities">Universities</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="service.html">Services</a></li>
-            <li><a href="contactus.html" class="nav-cta">Free Counselling</a></li>
-        </ul>
-
-        <button class="hamburger" id="menuBtn" aria-label="Open menu">
-            <span></span><span></span><span></span>
-        </button>
+    <!-- ══ NAV ══ -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="logo2.png" alt="Xynera Global Education" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="index.html#universities">Universities</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html" class="active">Services</a></li>
+                <li><a href="contactus.html" class="nav-cta">Free Counselling</a></li>
+            </ul>
+            <button class="hamburger" id="menuBtn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="index.html#universities">Universities</a>
+        <a href="about.html">About Us</a>
+        <a href="service.html">Services</a>
+        <a href="contactus.html" class="m-cta">📞 Free Counselling</a>
     </div>
-</nav>
 
-<div class="mobile-nav" id="mobileNav">
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="index.html#universities">Universities</a>
-    <a href="about.html">About Us</a>
-    <a href="service.html">Services</a>
-    <a href="contactus.html" class="m-cta">📞 Free Counselling</a>
-</div>
-
-<script>
-    (function() {
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        if (menuBtn && mobileNav) {
-            menuBtn.addEventListener('click', () => {
-                menuBtn.classList.toggle('active');
-                mobileNav.classList.toggle('open');
-            });
-            mobileNav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    menuBtn.classList.remove('active');
-                    mobileNav.classList.remove('open');
-                });
-            });
-        }
-    })();
-</script>
-
-
-
-    <!-- NAV -->
-    
-
-    
-
-    <!-- PAGE HERO -->
+    <!-- ══ HERO ══ -->
     <div class="page-hero">
         <div class="page-hero-inner">
             <div class="page-badge">🛎️ What We Offer</div>
@@ -1348,16 +1208,17 @@
         </div>
     </div>
 
-    <!-- MAIN SERVICES -->
+    <!-- ══ CORE SERVICES ══ -->
     <section class="section" style="background: white;">
         <div class="section-inner">
-            <div style="text-align: center; margin-bottom: 48px;">
+            <div style="text-align:center; margin-bottom:48px;">
                 <div class="section-tag reveal">Core Services</div>
                 <h2 class="section-title reveal reveal-d1">How We Help You Get Admitted</h2>
-                <p class="section-sub reveal reveal-d2" style="margin: 0 auto;">End-to-end support from first
+                <p class="section-sub reveal reveal-d2" style="margin:0 auto;">End-to-end support from first
                     conversation to college enrollment — all at zero extra cost to the student.</p>
             </div>
             <div class="services-grid">
+
                 <div class="service-card blue reveal">
                     <div class="service-icon blue">🎓</div>
                     <h3>Free Career Counselling</h3>
@@ -1366,75 +1227,86 @@
                     <ul class="service-features">
                         <li>1-on-1 expert counselling sessions</li>
                         <li>Course matching based on your profile</li>
-                        <li>Career scope & salary insights</li>
+                        <li>Career scope &amp; salary insights</li>
                         <li>University shortlisting</li>
                     </ul>
                 </div>
+
                 <div class="service-card teal reveal reveal-d1">
                     <div class="service-icon teal">🏛️</div>
                     <h3>University Admissions Support</h3>
-                    <p>We're partnered with 30+ top universities across India. We handle the paperwork, applications,
-                        and follow-ups — you just show up and study.</p>
+                    <p>We're partnered with top universities across India. We handle the paperwork, applications, and
+                        follow-ups — you just show up and study.</p>
                     <ul class="service-features">
                         <li>Direct admission to 30+ universities</li>
                         <li>Government university admissions</li>
-                        <li>Manipal, Amity, LPU, Jain & more</li>
+                        <li>Anna University, VTU, Bharathiyar &amp; more</li>
                         <li>Guaranteed seat confirmation</li>
                     </ul>
                 </div>
+
                 <div class="service-card orange reveal reveal-d2">
                     <div class="service-icon orange">📄</div>
-                    <h3>Documentation & Application</h3>
+                    <h3>Documentation &amp; Application</h3>
                     <p>Admission processes are full of paperwork. We help you collect, verify, and submit all required
                         documents — correctly, on time, every time.</p>
                     <ul class="service-features">
-                        <li>Document checklist & guidance</li>
+                        <li>Document checklist &amp; guidance</li>
                         <li>Application form filling</li>
                         <li>Certificate verification</li>
                         <li>Deadline management</li>
                     </ul>
                 </div>
+
                 <div class="service-card blue reveal">
                     <div class="service-icon blue">🎁</div>
                     <h3>Scholarship Assistance</h3>
-                    <p>Students with 90% and above marks get a full fee scholarship through our partner universities. We
-                        identify every scholarship you qualify for and help you apply.</p>
+                    <p>We identify every scholarship you qualify for and help you apply — from merit-based awards to
+                        government schemes. Scholarship availability varies by university.</p>
                     <ul class="service-features">
-                        <li>Full scholarship for 90%+ students</li>
                         <li>Merit-based scholarship matching</li>
                         <li>University scholarship applications</li>
                         <li>Government scheme guidance</li>
+                        <li>Up to 100% scholarship at select universities</li>
                     </ul>
+                    <div class="scholarship-note">
+                        <strong>Note:</strong> Scholarships depend on the university — some offer up to 100% fee waiver,
+                        others may not have a scholarship scheme. Our counsellors will confirm eligibility based on your
+                        profile.
+                    </div>
                 </div>
+
                 <div class="service-card teal reveal reveal-d1">
                     <div class="service-icon teal">💼</div>
-                    <h3>Placement support</h3>
-                    <p>Select courses come with a Job Guarantee Letter issued at the time of admission — giving you and
-                        your family confidence before you even step into class.</p>
+                    <h3>Placement Support</h3>
+                    <p>Select courses and universities come with strong placement records and industry connections. We
+                        guide you toward programs that match your career ambitions.</p>
                     <ul class="service-features">
-                        <li>Job guarantee letter at admission</li>
-                        <li>Placement-focused universities</li>
+                        <li>Placement-focused university selection</li>
                         <li>Industry-connected programs</li>
-                        <li>Internship & industrial visit support</li>
+                        <li>Internship &amp; industrial visit opportunities</li>
+                        <li>Career guidance post-admission</li>
                     </ul>
                 </div>
+
                 <div class="service-card orange reveal reveal-d2">
                     <div class="service-icon orange">📱</div>
                     <h3>Post-Admission Support</h3>
                     <p>Our support doesn't end at enrollment. We help you settle in, connect with college, and navigate
                         any issues that come up during your studies.</p>
                     <ul class="service-features">
-                        <li>Orientation & onboarding help</li>
+                        <li>Orientation &amp; onboarding help</li>
                         <li>Fee payment guidance</li>
-                        <li>ID card & student portal setup</li>
+                        <li>ID card &amp; student portal setup</li>
                         <li>Ongoing WhatsApp support</li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- FEATURED: NIOS -->
+    <!-- ══ NIOS FEATURED ══ -->
     <section class="section" style="background: var(--bg);">
         <div class="section-inner">
             <div class="featured-service reveal">
@@ -1445,8 +1317,8 @@
                         complete their 10th or 12th through regular schools. We're an authorized NIOS partner — handling
                         registration, study material, and exam support.</p>
                     <ul class="featured-list">
-                        <li>10th & 12th equivalency through NIOS</li>
-                        <li>Ideal for working students & career changers</li>
+                        <li>10th &amp; 12th equivalency through NIOS</li>
+                        <li>Ideal for working students &amp; career changers</li>
                         <li>No age bar — anyone can enroll</li>
                         <li>Study from home, exam at local centre</li>
                         <li>Recognized by all Indian universities</li>
@@ -1455,262 +1327,98 @@
                 <div class="featured-service-cards">
                     <div class="mini-card">
                         <div class="mini-card-icon">📚</div>
-                        <div>
-                            <strong>Secondary (10th)</strong>
-                            <span>For students who need 10th certification</span>
+                        <div><strong>Secondary (10th)</strong><span>For students who need 10th certification</span>
                         </div>
                     </div>
                     <div class="mini-card">
                         <div class="mini-card-icon">🎓</div>
-                        <div>
-                            <strong>Senior Secondary (12th)</strong>
-                            <span>Gateway to degree admissions</span>
-                        </div>
+                        <div><strong>Senior Secondary (12th)</strong><span>Gateway to degree admissions</span></div>
                     </div>
                     <div class="mini-card">
                         <div class="mini-card-icon">🏫</div>
-                        <div>
-                            <strong>Vocational Courses</strong>
-                            <span>Skill-based certification programs</span>
-                        </div>
+                        <div><strong>Vocational Courses</strong><span>Skill-based certification programs</span></div>
                     </div>
                     <div class="mini-card">
                         <div class="mini-card-icon">✅</div>
-                        <div>
-                            <strong>Authorized NIOS Partner</strong>
-                            <span>Registered & verified center in Mannarkkad</span>
-                        </div>
+                        <div><strong>Authorized NIOS Partner</strong><span>Registered &amp; verified center in
+                                Mannarkkad</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- COURSE LIST -->
-    <section class="section courses-section">
+    <!-- ══ PARTNER UNIVERSITIES ══ -->
+    <section class="section" style="background: white;">
         <div class="section-inner">
-            <div class="section-tag reveal">Full Program List</div>
-            <h2 class="section-title reveal reveal-d1">All Courses We Offer Admissions For</h2>
-            <p class="section-sub reveal reveal-d2">We provide admissions across 4x more courses than most local
-                consultancies — including programs many agencies don't offer.</p>
-            <div class="courses-list-grid">
-                <div class="course-group reveal">
-                    <div class="course-group-head">
-                        <div class="course-group-icon blue">💻</div>
-                        <div>
-                            <h4>BCA Specializations</h4>
-                            <p class="sub">3-year undergraduate program</p>
-                        </div>
-                    </div>
-                    <ul class="course-list">
-                        <li><span>BCA — Artificial Intelligence & Data Science</span>
-                            <div class="duration-badge">3 Years</div>
-                        </li>
-                        <li><span>BCA — Artificial Intelligence & ML</span>
-                            <div class="duration-badge">3 Years</div>
-                        </li>
-                        <li><span>BCA — Ethical Hacking & Cyber Security</span>
-                            <div class="duration-badge">3 Years</div>
-                        </li>
-                        <li><span>BCA — Cyber Security & Digital Forensics</span>
-                            <div class="duration-badge">3 Years</div>
-                        </li>
-                        <li><span>BCA — Cloud Computing & Data Analytics</span>
-                            <div class="duration-badge">3 Years</div>
-                        </li>
-                        <li><span>BCA — General</span>
-                            <div class="duration-badge">3 Years</div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="course-group reveal reveal-d1">
-                    <div class="course-group-head">
-                        <div class="course-group-icon teal">🏫</div>
-                        <div>
-                            <h4>Education Programs</h4>
-                            <p class="sub">Teacher training & education degrees</p>
-                        </div>
-                    </div>
-                    <ul class="course-list">
-                        <li><span>B.Ed — Bachelor of Education</span>
-                            <div class="duration-badge">2 Years</div>
-                        </li>
-                        <li><span>M.Ed — Master of Education</span>
-                            <div class="duration-badge">2 Years</div>
-                        </li>
-                        <li><span>B.P.Ed — Bachelor of Physical Education</span>
-                            <div class="duration-badge">1 Year</div>
-                        </li>
-                        <li><span>M.P.Ed — Master of Physical Education</span>
-                            <div class="duration-badge">2 Years</div>
-                        </li>
-                        <li><span>D.El.Ed — Diploma in Elementary Education</span>
-                            <div class="duration-badge">2 Years</div>
-                        </li>
-                        <li><span>PGDCA — PG Diploma in Computer Application</span>
-                            <div class="duration-badge">1 Year</div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="course-group reveal">
-                    <div class="course-group-head">
-                        <div class="course-group-icon orange">📊</div>
-                        <div>
-                            <h4>Management & Commerce</h4>
-                            <p class="sub">UG & PG business programs</p>
-                        </div>
-                    </div>
-                    <ul class="course-list">
-                        <li><span>MBA — Master of Business Administration</span>
-                            <div class="duration-badge">2 Years</div>
-                        </li>
-                        <li><span>BBA — Bachelor of Business Administration</span>
-                            <div class="duration-badge">3 Years</div>
-                        </li>
-                        <li><span>B.Com — Bachelor of Commerce</span>
-                            <div class="duration-badge">3 Years</div>
-                        </li>
-                        <li><span>M.Com — Master of Commerce</span>
-                            <div class="duration-badge">2 Years</div>
-                        </li>
-                        <li><span>MCA — Master of Computer Application</span>
-                            <div class="duration-badge">2 Years</div>
-                        </li>
-                        <li><span>BSc Computer Science</span>
-                            <div class="duration-badge">3 Years</div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="course-group reveal reveal-d1">
-                    <div class="course-group-head">
-                        <div class="course-group-icon yellow">📝</div>
-                        <div>
-                            <h4>NIOS & Other Programs</h4>
-                            <p class="sub">Open schooling & flexible learning</p>
-                        </div>
-                    </div>
-                    <ul class="course-list">
-                        <li><span>NIOS — 10th (Secondary)</span>
-                            <div class="duration-badge">Flexible</div>
-                        </li>
-                        <li><span>NIOS — 12th (Sr. Secondary)</span>
-                            <div class="duration-badge">Flexible</div>
-                        </li>
-                        <li><span>BA — Bachelor of Arts</span>
-                            <div class="duration-badge">3 Years</div>
-                        </li>
-                        <li><span>MA — Master of Arts</span>
-                            <div class="duration-badge">2 Years</div>
-                        </li>
-                        <li><span>BSc — Bachelor of Science</span>
-                            <div class="duration-badge">3 Years</div>
-                        </li>
-                        <li><span>MSc — Master of Science</span>
-                            <div class="duration-badge">2 Years</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- UNIVERSITIES -->
-    <section class="section unis-section">
-        <div class="section-inner">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <div class="section-tag teal reveal">Partner Universities</div>
-                <h2 class="section-title reveal reveal-d1">30+ Universities, One Point of Contact</h2>
-                <p class="section-sub reveal reveal-d2" style="margin: 0 auto;">We're partnering with India's top
-                    private and government universities to bring you the best admission options.</p>
+            <div style="text-align:center; margin-bottom:40px;">
+                <div class="section-tag reveal">Partner Universities</div>
+                <h2 class="section-title reveal reveal-d1">Our Key University Partners</h2>
+                <p class="section-sub reveal reveal-d2" style="margin:0 auto;">We facilitate admissions to India's top
+                    government and private universities.</p>
             </div>
             <div class="unis-list">
                 <div class="uni-pill reveal">
-                    <div class="icon">🎓</div>
-                    <div class="name">Manipal University</div>
-                    <div class="type">Private | Deemed</div>
+                    <div class="icon">🏛️</div>
+                    <div class="name">Anna University</div>
+                    <div class="type">State | Tamil Nadu</div>
                 </div>
                 <div class="uni-pill reveal">
-                    <div class="icon">🏛️</div>
-                    <div class="name">Amity University</div>
-                    <div class="type">Private | NAAC A+</div>
+                    <div class="icon">🎓</div>
+                    <div class="name">Annamalai University</div>
+                    <div class="type">State | Tamil Nadu</div>
                 </div>
                 <div class="uni-pill reveal">
                     <div class="icon">⭐</div>
-                    <div class="name">LPU (Lovely Professional)</div>
-                    <div class="type">Private | NAAC A++</div>
+                    <div class="name">Bharathiyar University</div>
+                    <div class="type">Central | Tamil Nadu</div>
                 </div>
                 <div class="uni-pill reveal">
-                    <div class="icon">🎯</div>
-                    <div class="name">Jain University</div>
-                    <div class="type">Deemed | Bangalore</div>
+                    <div class="icon">🔬</div>
+                    <div class="name">VTU</div>
+                    <div class="type">State | Karnataka</div>
                 </div>
                 <div class="uni-pill reveal">
-                    <div class="icon">📚</div>
-                    <div class="name">Symbiosis University</div>
-                    <div class="type">Deemed | Pune</div>
+                    <div class="icon">🏥</div>
+                    <div class="name">RGUHS</div>
+                    <div class="type">State | Karnataka</div>
                 </div>
                 <div class="uni-pill reveal">
-                    <div class="icon">🏫</div>
-                    <div class="name">IGNOU</div>
-                    <div class="type">Government | Central</div>
+                    <div class="icon">⚖️</div>
+                    <div class="name">Karnataka State Law University</div>
+                    <div class="type">State | Karnataka</div>
                 </div>
                 <div class="uni-pill reveal">
-                    <div class="icon">🌟</div>
-                    <div class="name">Kerala University</div>
-                    <div class="type">State | Government</div>
-                </div>
-                <div class="uni-pill reveal">
-                    <div class="icon">🎓</div>
-                    <div class="name">MG University</div>
-                    <div class="type">State | Government</div>
-                </div>
-                <div class="uni-pill reveal">
-                    <div class="icon">🏛️</div>
-                    <div class="name">Calicut University</div>
-                    <div class="type">State | Government</div>
-                </div>
-                <div class="uni-pill reveal">
-                    <div class="icon">💡</div>
-                    <div class="name">Chandigarh University</div>
-                    <div class="type">Private | NAAC A+</div>
+                    <div class="icon">🍃</div>
+                    <div class="name">Pondicherry University</div>
+                    <div class="type">Central | Government</div>
                 </div>
                 <div class="uni-pill reveal">
                     <div class="icon">📖</div>
-                    <div class="name">Kannur University</div>
-                    <div class="type">State | Government</div>
+                    <div class="name">Sreenarayanaguru Open University</div>
+                    <div class="type">State | Kerala</div>
                 </div>
                 <div class="uni-pill reveal">
-                    <div class="icon">🎯</div>
-                    <div class="name">NMIMS University</div>
-                    <div class="type">Deemed | Mumbai</div>
+                    <div class="icon">🏫</div>
+                    <div class="name">TN Teachers Education University</div>
+                    <div class="type">State | Tamil Nadu</div>
                 </div>
-                <div class="uni-pill reveal">
-                    <div class="icon">⚡</div>
-                    <div class="name">SRM University</div>
-                    <div class="type">Deemed | Chennai</div>
-                </div>
-                <div class="uni-pill reveal">
-                    <div class="icon">🌍</div>
-                    <div class="name">Vignan University</div>
-                    <div class="type">Deemed | Andhra</div>
-                </div>
-                <div class="uni-pill reveal"
-                    style="background: linear-gradient(135deg, rgba(22,39,231,0.08), rgba(22,39,231,0.08)); border-style: dashed;">
+                <div class="uni-pill reveal" style="background:rgba(22,39,231,0.04); border-style:dashed;">
                     <div class="icon">➕</div>
-                    <div class="name">15+ More Universities</div>
+                    <div class="name">20+ More Universities</div>
                     <div class="type">Call us to know more</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PROCESS -->
+    <!-- ══ PROCESS ══ -->
     <section class="section process-section">
         <div class="section-inner">
-            <div style="text-align: center; margin-bottom: 48px;">
+            <div style="text-align:center; margin-bottom:48px;">
                 <div class="section-tag reveal">How It Works</div>
                 <h2 class="section-title reveal reveal-d1">Getting Admitted is Simpler Than You Think</h2>
-                <p class="section-sub reveal reveal-d2" style="margin: 0 auto;">Our streamlined 4-step process takes you
+                <p class="section-sub reveal reveal-d2" style="margin:0 auto;">Our streamlined 4-step process takes you
                     from confused to confirmed — usually within a week.</p>
             </div>
             <div class="process-steps">
@@ -1729,23 +1437,23 @@
                 <div class="process-step reveal reveal-d2">
                     <div class="step-circle c3">📄</div>
                     <div class="step-label o">Step 3</div>
-                    <h4>Application & Documents</h4>
+                    <h4>Application &amp; Documents</h4>
                     <p>We fill the form, collect documents, and submit your application — you just approve.</p>
                 </div>
                 <div class="process-step reveal reveal-d3">
                     <div class="step-circle c4">🎉</div>
                     <div class="step-label">Step 4</div>
                     <h4>Seat Confirmed!</h4>
-                    <p>Receive your admission letter and job guarantee (if applicable). Welcome to your new college!</p>
+                    <p>Receive your admission letter. Welcome to your new college — your journey begins!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- ══ FAQ ══ -->
     <section class="section faq-section">
         <div class="section-inner">
-            <div style="text-align: center; margin-bottom: 48px;">
+            <div style="text-align:center; margin-bottom:48px;">
                 <div class="section-tag reveal">Questions</div>
                 <h2 class="section-title reveal reveal-d1">Frequently Asked Questions</h2>
             </div>
@@ -1762,38 +1470,28 @@
                 </div>
                 <div class="faq-item reveal reveal-d1">
                     <div class="faq-q" onclick="toggleFaq(this)">
-                        <h4>What is the Job Guarantee Letter?</h4>
+                        <h4>Who qualifies for a scholarship?</h4>
                         <div class="faq-arrow">⌄</div>
                     </div>
                     <div class="faq-a">
-                        <p>Certain courses through our partner universities come with a written job guarantee at the
-                            time of admission. This means you receive a letter confirming employment placement before
-                            you even begin your studies.</p>
+                        <p>Scholarship availability depends on the university. Some universities offer up to 100% fee
+                            scholarships for high-scoring students; others may not have a scholarship scheme. Our
+                            counsellors will check your eligibility based on your marks and the specific university you
+                            choose.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">
-                    <div class="faq-q" onclick="toggleFaq(this)">
-                        <h4>Who qualifies for the full fee scholarship?</h4>
-                        <div class="faq-arrow">⌄</div>
-                    </div>
-                    <div class="faq-a">
-                        <p>Students who scored 90% or above in their qualifying exam are eligible for a full fee
-                            scholarship through select partner universities. Our counsellors will confirm eligibility
-                            during your call.</p>
-                    </div>
-                </div>
-                <div class="faq-item reveal reveal-d1">
                     <div class="faq-q" onclick="toggleFaq(this)">
                         <h4>Do you handle government university admissions?</h4>
                         <div class="faq-arrow">⌄</div>
                     </div>
                     <div class="faq-a">
-                        <p>Yes. We assist with admissions to Kerala University, MG University, Calicut University,
-                            Kannur University, and central institutions like IGNOU alongside our private university
-                            partners.</p>
+                        <p>Yes. We assist with admissions to Anna University, Annamalai University, Bharathiyar
+                            University, Pondicherry University, VTU, RGUHS, Sreenarayanaguru Open University, and more.
+                        </p>
                     </div>
                 </div>
-                <div class="faq-item reveal">
+                <div class="faq-item reveal reveal-d1">
                     <div class="faq-q" onclick="toggleFaq(this)">
                         <h4>Can I apply for distance or online programs?</h4>
                         <div class="faq-arrow">⌄</div>
@@ -1804,7 +1502,7 @@
                             best fit.</p>
                     </div>
                 </div>
-                <div class="faq-item reveal reveal-d1">
+                <div class="faq-item reveal">
                     <div class="faq-q" onclick="toggleFaq(this)">
                         <h4>What is NIOS and who is it for?</h4>
                         <div class="faq-arrow">⌄</div>
@@ -1815,7 +1513,7 @@
                             recognized by all universities in India. We are an authorized NIOS center.</p>
                     </div>
                 </div>
-                <div class="faq-item reveal">
+                <div class="faq-item reveal reveal-d1">
                     <div class="faq-q" onclick="toggleFaq(this)">
                         <h4>How long does the admission process take?</h4>
                         <div class="faq-arrow">⌄</div>
@@ -1826,7 +1524,7 @@
                             ensure you don't miss deadlines.</p>
                     </div>
                 </div>
-                <div class="faq-item reveal reveal-d1">
+                <div class="faq-item reveal">
                     <div class="faq-q" onclick="toggleFaq(this)">
                         <h4>Do you offer support after admission?</h4>
                         <div class="faq-arrow">⌄</div>
@@ -1837,11 +1535,22 @@
                         </p>
                     </div>
                 </div>
+                <div class="faq-item reveal reveal-d1">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        <h4>What is the 40-day Certificate Course?</h4>
+                        <div class="faq-arrow">⌄</div>
+                    </div>
+                    <div class="faq-a">
+                        <p>We offer a 40-day Advanced Certificate Course in select subjects — a focused short-term
+                            program that provides skill-based certification. Ideal for students looking to upskill
+                            quickly alongside their regular studies or work.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT STRIP -->
+    <!-- ══ CONTACT STRIP ══ -->
     <div class="contact-strip">
         <div class="contact-strip-inner">
             <div class="reveal">
@@ -1849,19 +1558,15 @@
                 <p>Talk to a counsellor for free — no commitments, no sales pressure. Just honest guidance on the best
                     course for your future.</p>
                 <div class="contact-strip-btns">
-                    <a href="tel:+918590101284" class="btn-white">📞 Call Now</a>
-                    <a href="https://wa.me/918590101284" class="btn-ghost">💬 WhatsApp</a>
+                    <a href="tel:+919746495785" class="btn-white">📞 +91 97464 95785</a>
+                    <a href="https://wa.me/919746495785" class="btn-ghost">💬 WhatsApp</a>
                 </div>
             </div>
             <div class="contact-strip-form reveal reveal-d1">
                 <h3>📋 Book Free Counselling</h3>
                 <form onsubmit="submitStrip(event)">
-                    <div class="strip-field">
-                        <input type="text" placeholder="Your Full Name" required />
-                    </div>
-                    <div class="strip-field">
-                        <input type="tel" placeholder="Phone Number" required />
-                    </div>
+                    <div class="strip-field"><input type="text" placeholder="Your Full Name" required /></div>
+                    <div class="strip-field"><input type="tel" placeholder="Phone Number" required /></div>
                     <div class="strip-field">
                         <select required>
                             <option value="" disabled selected>Interested Course / Stream</option>
@@ -1870,7 +1575,10 @@
                             <option>MBA / BBA / Management</option>
                             <option>MCA / BSc Computer Science</option>
                             <option>B.Com / M.Com</option>
+                            <option>B.Tech / M.Tech (Anna University / VTU)</option>
                             <option>NIOS (10th / 12th)</option>
+                            <option>40-Day Certificate Course</option>
+                            <option>PhD</option>
                             <option>Other Courses</option>
                         </select>
                     </div>
@@ -1881,15 +1589,15 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- ══ FOOTER ══ -->
     <footer>
         <div class="footer-inner">
             <div class="footer-grid">
-                <div class="">
-                    <img src="logo1.png" alt="Xynera Global & Ozone Education Network Logo"
-                        class="h-34 w-auto object-contain opacity-95 transition-opacity duration-300" />
+                <div>
+                    <img src="logo1.png" alt="Xynera Global Education"
+                        style="height:55px;object-fit:contain;opacity:.95;" />
                     <p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the
-                        right universities since 2020. 5000+ success stories and counting.</p>
+                        right universities. 5000+ success stories and counting.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navigate</h4>
@@ -1914,7 +1622,7 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="tel:+918590101284">+91 85901 01284</a></li>
+                        <li><a href="tel:+919746495785">+91 97464 95785</a></li>
                         <li><a href="mailto:info@xynera.in">info@xynera.in</a></li>
                         <li><a href="#">Mannarkkad, Palakkad</a></li>
                         <li><a href="#">Kerala, India</a></li>
@@ -1922,14 +1630,13 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span class="footer-copy">© 2026 Xynera Global Education & Ozone Education Network. All rights
-                    reserved.</span>
+                <span class="footer-copy">© 2026 Xynera Global Education. All rights reserved.</span>
                 <span class="footer-copy">Made with ❤️ in Kerala</span>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/918590101284" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+    <a href="https://wa.me/919746495785" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -1937,23 +1644,51 @@
     </a>
 
     <script>
-        
+        // Nav hamburger
+        (function () {
+            var btn = document.getElementById('menuBtn');
+            var mobileNav = document.getElementById('mobileNav');
+            function setNavTop() {
+                var navEl = document.querySelector('nav');
+                if (navEl && mobileNav) { mobileNav.style.top = navEl.offsetHeight + 'px'; }
+            }
+            if (btn && mobileNav) {
+                setNavTop();
+                window.addEventListener('resize', setNavTop);
+                btn.addEventListener('click', function () {
+                    btn.classList.toggle('open'); mobileNav.classList.toggle('open');
+                });
+                mobileNav.querySelectorAll('a').forEach(function (a) {
+                    a.addEventListener('click', function () { btn.classList.remove('open'); mobileNav.classList.remove('open'); });
+                });
+                document.addEventListener('click', function (e) {
+                    if (!btn.contains(e.target) && !mobileNav.contains(e.target)) {
+                        btn.classList.remove('open'); mobileNav.classList.remove('open');
+                    }
+                });
+            }
+        })();
 
+        // FAQ accordion
         function toggleFaq(el) {
-            const item = el.closest('.faq-item');
-            const isOpen = item.classList.contains('open');
-            document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+            var item = el.closest('.faq-item');
+            var isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(function (i) { i.classList.remove('open'); });
             if (!isOpen) item.classList.add('open');
         }
 
+        // Form
         function submitStrip(e) {
             e.preventDefault();
             document.getElementById('stripMsg').textContent = '✅ Done! Our counsellor will call you within 24 hours.';
             e.target.reset();
         }
 
-        const observer = new IntersectionObserver(entries => entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('show'); }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        // Reveal on scroll
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (el) { if (el.isIntersecting) el.target.classList.add('show'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
     </script>
 </body>
 
