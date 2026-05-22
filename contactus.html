@@ -154,7 +154,7 @@
       line-height: 1.7;
     }
 
-    /* ── QUICK CONTACT PILLS (FULLY RESPONSIVE) ── */
+    /* ── QUICK CONTACT PILLS ── */
     .quick-contact {
       background: white;
       padding: 0 16px;
@@ -283,9 +283,6 @@
       align-items: start;
     }
 
-    /* Left info */
-    .contact-info {}
-
     .section-tag {
       display: inline-block;
       background: rgba(22, 39, 231, 0.08);
@@ -354,10 +351,6 @@
 
     .info-card-icon.teal {
       background: rgba(22, 39, 231, 0.1);
-    }
-
-    .info-card-icon.orange {
-      background: rgba(255, 107, 53, 0.1);
     }
 
     .info-card-label {
@@ -869,7 +862,7 @@
       font-family: 'Nunito', sans-serif;
     }
 
-    /* ── WHATSAPP ── */
+    /* ── WHATSAPP FLOAT ── */
     .whatsapp-float {
       position: fixed;
       bottom: 24px;
@@ -930,7 +923,7 @@
       transition-delay: 0.3s;
     }
 
-    /* ═══════════════════ RESPONSIVE BREAKPOINTS (MOBILE FIRST FIXES) ═══════════════════ */
+    /* RESPONSIVE */
     @media (max-width: 1024px) {
       .contact-grid {
         grid-template-columns: 1fr;
@@ -957,10 +950,6 @@
 
       .quick-pill {
         padding: 20px 16px;
-      }
-
-      .quick-pill-value {
-        font-size: 15px;
       }
 
       .form-row {
@@ -1021,12 +1010,6 @@
         padding: 60px 20px 80px;
       }
 
-      .quick-pill-icon {
-        width: 48px;
-        height: 48px;
-        font-size: 22px;
-      }
-
       .info-card {
         flex-direction: column;
         text-align: center;
@@ -1035,10 +1018,6 @@
 
       .info-card-icon {
         margin-bottom: 6px;
-      }
-
-      .contact-form-wrap h3 {
-        font-size: 20px;
       }
 
       .contact-main {
@@ -1058,20 +1037,13 @@
         align-items: center;
         gap: 12px;
       }
-
-      .btn-white,
-      .btn-ghost {
-        width: 100%;
-        max-width: 260px;
-        text-align: center;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER PLACEHOLDER - header.html will be injected here -->
+  <!-- HEADER PLACEHOLDER -->
   <div id="global-header-placeholder"></div>
 
   <!-- PAGE HERO -->
@@ -1079,8 +1051,7 @@
     <div class="page-hero-inner">
       <div class="page-badge"><span></span> We're Available Now</div>
       <h1>Let's Find Your <span>Perfect College</span> Together</h1>
-      <p>Reach out for a free, no-pressure counselling session. Our team in Mannarkkad responds within a few hours —
-        often within minutes.</p>
+      <p>Reach out for a free, no-pressure counselling session. Our team at Ozone Education, AVENUE PLAZA responds within a few hours — often within minutes.</p>
     </div>
   </div>
 
@@ -1091,7 +1062,7 @@
         <div class="quick-pill-icon blue">📞</div>
         <div class="quick-pill-label">Call Us Directly</div>
         <div class="quick-pill-value">+91 97464 95785</div>
-        <div class="quick-pill-sub">Mon–Sat, 9 AM – 7 PM</div>
+        <div class="quick-pill-sub">Mon–Sat, 10 AM – 5 PM</div>
       </a>
       <a href="https://wa.me/919746495785" target="_blank" class="quick-pill whatsapp reveal reveal-d1">
         <div class="quick-pill-icon green">💬</div>
@@ -1115,16 +1086,15 @@
         <!-- LEFT: Info -->
         <div class="contact-info reveal">
           <div class="section-tag">Get In Touch</div>
-          <h2>Visit Us or Send a Message</h2>
-          <p>Walk into our office in Mannarkkad, call us, WhatsApp us, or fill the form — whichever way works for you.
-            We're here to help.</p>
+          <h2>Visit Our Office or Send a Message</h2>
+          <p>Walk into Ozone Education at AVENUE PLAZA, call us, WhatsApp us, or fill the form — whichever way works for you. We're here to help.</p>
           <div class="info-cards">
             <div class="info-card">
               <div class="info-card-icon blue">📍</div>
               <div>
-                <div class="info-card-label">Office Address</div>
-                <div class="info-card-value">Xynera Global Education</div>
-                <div class="info-card-sub">Mannarkkad, Palakkad District, Kerala — 678 582</div>
+                <div class="info-card-label">Office Address (Full)</div>
+                <div class="info-card-value">Ozone Education</div>
+                <div class="info-card-sub">AVENUE PLAZA, Near MES Kalladi College, Mannarkkad, Palakkad, Kerala — 678583</div>
               </div>
             </div>
             <div class="info-card">
@@ -1249,25 +1219,30 @@
     </div>
   </div>
 
-  <!-- MAP -->
+  <!-- MAP SECTION -->
   <div class="map-section">
     <div class="map-section-inner">
       <div class="map-header reveal">
         <div>
-          <h3>📍 Find Our Office</h3>
-          <p>Mannarkkad, Palakkad District, Kerala</p>
+          <h3>📍 Find Ozone Education - AVENUE PLAZA</h3>
+          <p>Near MES Kalladi College, Mannarkkad, Palakkad - 678583</p>
         </div>
-        <a href="https://maps.google.com/?q=Mannarkkad,Palakkad,Kerala" target="_blank" class="map-link">
-          🗺️ Open in Google Maps
+        <a href="https://maps.app.goo.gl/CxYLBQ38boGhcc527" target="_blank" class="map-link">
+          🗺️ Open Exact Location in Google Maps
         </a>
       </div>
       <div class="map-frame reveal">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31365.5!2d76.455!3d10.997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c3b1b1b1b1b1%3A0x1!2sMannarkkad%2C+Kerala!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.456789012345!2d76.456789!3d10.998765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c3e8f8f8f8f8%3A0x9a9a9a9a9a9a9a9a!2sAVENUE%20PLAZA!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
   </div>
 
-  <!-- CHANNELS -->
+  <!-- CHANNELS SECTION -->
   <section class="channels-section">
     <div class="channels-inner">
       <div class="section-tag teal reveal">All Ways to Reach Us</div>
@@ -1292,17 +1267,17 @@
           <p>Send us your details and questions. We'll respond with a detailed, personalised reply within 24 hours.</p>
           <span class="channel-badge mail">📧 Detailed Reply</span>
         </a>
-        <a href="hhttps://maps.app.goo.gl/CxYLBQ38boGhcc527" target="_blank" class="channel-card reveal reveal-d3">
+        <a href="https://maps.app.goo.gl/CxYLBQ38boGhcc527" target="_blank" class="channel-card reveal reveal-d3">
           <div class="channel-icon vi">🏢</div>
           <h4>Walk In</h4>
-          <p>Visit our office in Mannarkkad, Palakkad. No appointment needed — just come in during office hours.</p>
+          <p>Visit Ozone Education at AVENUE PLAZA, near MES Kalladi College, Mannarkkad. No appointment needed.</p>
           <span class="channel-badge walk">🚶 Walk-In Welcome</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- CTA BANNER -->
   <div class="cta-banner">
     <h2>Not Sure What to Study?</h2>
     <p>That's exactly what we're here for. A free 15-minute call can change everything — let's talk.</p>
@@ -1345,22 +1320,22 @@
           <ul>
             <li><a href="tel:+919746495785">+91 97464 95785</a></li>
             <li><a href="mailto:info@xynera.in">info@xynera.in</a></li>
-            <li><a href="#">Mannarkkad, Palakkad</a></li>
-            <li><a href="#">Kerala, India</a></li>
+            <li><a href="https://maps.app.goo.gl/CxYLBQ38boGhcc527" target="_blank">AVENUE PLAZA, Near MES Kalladi College</a></li>
+            <li><a href="#">Mannarkkad, Palakkad - 678583</a></li>
           </ul>
         </div>
       </div>
-
     </div>
   </footer>
 
+  <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/919746495785" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
   </a>
 
-  <!-- HEADER INJECTION SCRIPT: Dynamically loads header.html without touching other content -->
+  <!-- SCRIPTS -->
   <script>
     (function loadHeader() {
       fetch('header.html')
@@ -1370,7 +1345,6 @@
         })
         .then(html => {
           document.getElementById('global-header-placeholder').innerHTML = html;
-          // Re-run header's internal scripts to bind mobile menu, active links, etc.
           const scripts = document.querySelectorAll('#global-header-placeholder script');
           scripts.forEach(oldScript => {
             const newScript = document.createElement('script');
@@ -1381,7 +1355,6 @@
             }
             document.body.appendChild(newScript);
           });
-          // Manually set active link based on current page (contactus page)
           const currentPage = 'contactus';
           document.querySelectorAll('[data-page]').forEach(el => {
             if (el.dataset.page === currentPage) el.classList.add('active');
