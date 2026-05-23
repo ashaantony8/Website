@@ -453,165 +453,251 @@
             color: var(--text-soft);
             line-height: 1.65;
         }
+/* TEAM SECTION - 3 COLUMN GRID (2 rows = 6 members) */
+    .team-section {
+        background: var(--bg);
+        padding: 80px 24px;
+    }
 
-        /* TEAM SECTION - 4 COLUMN GRID */
-        .team-section {
-            background: var(--bg);
-            padding: 80px 24px;
+    .team-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .team-header {
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    .team-header .section-tag {
+        margin-bottom: 12px;
+    }
+
+    .team-header .section-title {
+        margin-bottom: 16px;
+    }
+
+    /* 3 columns grid for 6 members (2 rows automatically) */
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+
+    .team-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1.5px solid var(--border);
+        transition: all 0.25s ease;
+        text-align: center;
+    }
+
+    .team-card:hover {
+        box-shadow: 0 15px 40px rgba(20, 17, 72, 0.12);
+        transform: translateY(-6px);
+        border-color: transparent;
+    }
+
+    .team-avatar {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+    }
+
+    .team-avatar.teal {
+        background: linear-gradient(135deg,
+                rgba(22, 39, 231, 0.12),
+                rgba(22, 39, 231, 0.08));
+    }
+
+    /* Placeholder styling for members without images */
+    .team-avatar-placeholder {
+        width: 100%;
+        height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
+    }
+
+    .team-info {
+        padding: 20px 16px 24px;
+    }
+
+    .team-info h4 {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 6px;
+    }
+
+    .team-info .role {
+        font-size: 13px;
+        color: var(--teal);
+        font-weight: 700;
+        margin-bottom: 10px;
+        letter-spacing: 0.3px;
+    }
+
+    .team-info p {
+        font-size: 13px;
+        color: var(--text-soft);
+        line-height: 1.6;
+    }
+
+    /* Responsive: 2 columns on tablets, 1 column on mobile */
+    @media (max-width: 900px) {
+        .team-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+    }
+
+    @media (max-width: 550px) {
+        .team-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .team-avatar, .team-avatar-placeholder {
+            height: 300px;
+        }
+    }
+        /* MESSAGE CARDS (CEO + REGIONAL MANAGER) */
+        .message-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 48px;
         }
 
-        .team-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .message-card {
+            background: white;
+            border-radius: 28px;
+            padding: 36px 32px;
+            border: 1.5px solid var(--border);
+            transition: all 0.3s;
+            box-shadow: 0 8px 24px rgba(20, 17, 72, 0.04);
         }
 
-        .team-header {
-            text-align: center;
-            margin-bottom: 48px;
+        .message-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(22, 39, 231, 0.3);
+            box-shadow: 0 20px 35px rgba(20, 17, 72, 0.08);
         }
 
-        .team-header .section-tag {
-            margin-bottom: 12px;
-        }
-
-        .team-header .section-title {
+        .message-quote {
+            font-size: 42px;
+            line-height: 1;
+            color: var(--primary);
+            opacity: 0.3;
             margin-bottom: 16px;
         }
 
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+        .message-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 20px;
+            font-style: normal;
         }
 
-        .team-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1.5px solid var(--border);
-            transition: all 0.25s ease;
-            text-align: center;
+        .message-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 24px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
         }
 
-        .team-card:hover {
-            box-shadow: 0 12px 40px rgba(20, 17, 72, 0.1);
-            transform: translateY(-4px);
-            border-color: transparent;
-        }
-
-        .team-avatar {
-            width: 100%;
-            height: 380px;
-            object-fit: cover;
-            object-position: center;
-            display: block;
-        }
-
-        .team-avatar.teal {
-            background: linear-gradient(135deg,
-                    rgba(22, 39, 231, 0.12),
-                    rgba(22, 39, 231, 0.08));
-        }
-
-        .team-info {
-            padding: 20px 16px 24px;
-        }
-
-        .team-info h4 {
-            font-size: 16px;
+        .message-author h4 {
+            font-size: 18px;
             font-weight: 800;
             color: var(--dark);
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
-        .team-info .role {
+        .message-author .designation {
             font-size: 12px;
             color: var(--teal);
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: 0.3px;
+            font-weight: 600;
         }
 
-        .team-info p {
-            font-size: 12px;
-            color: var(--text-soft);
-            line-height: 1.6;
+        /* TESTIMONIALS SECTION (staff) */
+        .testimonials-section {
+            background: linear-gradient(135deg, #ffffff 0%, #fafaff 100%);
+            border-top: 1px solid var(--border);
         }
 
-        /* MILESTONES */
-        .milestones-section {
-            background: white;
-        }
-
-        .timeline {
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
             margin-top: 56px;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            position: relative;
         }
 
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 127px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--primary), var(--teal));
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
-            padding-bottom: 48px;
-            position: relative;
-        }
-
-        .timeline-year {
-            font-family: "Nunito", sans-serif;
-            font-size: 16px;
-            font-weight: 900;
-            color: var(--primary);
-            width: 80px;
-            flex-shrink: 0;
-            padding-top: 4px;
-            text-align: right;
-        }
-
-        .timeline-dot {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
+        .testimonial-card {
             background: white;
-            border: 3px solid var(--primary);
-            flex-shrink: 0;
-            margin-top: 6px;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 0 0 4px rgba(22, 39, 231, 0.1);
+            border-radius: 24px;
+            padding: 32px 28px;
+            border: 1px solid var(--border);
+            transition: all 0.25s;
+            box-shadow: 0 6px 14px rgba(20, 17, 72, 0.02);
         }
 
-        .timeline-content {
-            background: var(--bg);
-            border: 1.5px solid var(--border);
-            border-radius: 14px;
-            padding: 20px 24px;
-            flex: 1;
+        .testimonial-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(20, 17, 72, 0.08);
+            border-color: rgba(22, 39, 231, 0.2);
         }
 
-        .timeline-content h4 {
-            font-size: 16px;
+        .testimonial-stars {
+            color: #f5b042;
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-light), var(--dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .testimonial-author h5 {
+            font-size: 15px;
             font-weight: 800;
             color: var(--dark);
-            margin-bottom: 6px;
         }
 
-        .timeline-content p {
-            font-size: 13px;
+        .testimonial-author span {
+            font-size: 11px;
             color: var(--text-soft);
-            line-height: 1.6;
         }
 
         /* CTA */
@@ -826,6 +912,11 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .message-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -834,6 +925,14 @@
             }
 
             .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .message-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -872,7 +971,6 @@
                 padding: 60px 20px;
             }
 
-            /* Additional responsive for story stats */
             .story-visual {
                 padding: 32px 24px;
             }
@@ -892,26 +990,26 @@
                 flex-direction: column;
                 gap: 12px;
             }
-            
+
             .story-stat-box {
                 width: 100%;
             }
-            
+
             .story-stat-wide {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .mv-grid {
                 grid-template-columns: 1fr;
                 gap: 32px;
             }
-            
+
             .mission-card,
             .vision-card {
                 padding: 32px 24px;
             }
-            
+
             .mission-card h3,
             .vision-card h3 {
                 font-size: 26px;
@@ -921,24 +1019,18 @@
 </head>
 
 <body>
-
-    <!-- HEADER PLACEHOLDER - header.html will be injected here -->
     <div id="global-header-placeholder"></div>
 
-    <!-- PAGE HERO -->
     <div class="page-hero">
         <div class="page-hero-inner">
             <div class="page-badge">🏫 Our Story</div>
             <h1>Guiding Students to Their <span>Dream Careers</span></h1>
-            <p>
-                Xynera Global Education is Kerala's trusted admission counselling
-                partner — connecting students with the right universities, right
-                courses, and right futures since 2023.
-            </p>
+            <p>Xynera Global Education is Kerala's trusted admission counselling partner — connecting students with the
+                right universities, right courses, and right futures since 2023.</p>
         </div>
     </div>
 
-    <!-- STORY SECTION (FIXED RESPONSIVE STATS) -->
+    <!-- STORY SECTION -->
     <section class="section" style="background: white">
         <div class="section-inner">
             <div class="story-grid">
@@ -965,51 +1057,35 @@
                     </div>
                     <div class="story-stat-wide">
                         <div class="icon">🏆</div>
-                        <div class="text">
-                            <strong>Kerala's #1 Admission Partner</strong>
-                            <span>Trusted by students across Palakkad, Thrissur & beyond</span>
-                        </div>
+                        <div class="text"><strong>Kerala's #1 Admission Partner</strong><span>Trusted by students across
+                                Palakkad, Thrissur & beyond</span></div>
                     </div>
                 </div>
                 <div class="story-text reveal reveal-d1">
                     <div class="section-tag">Who We Are</div>
-                    <h2 class="section-title">
-                        Born in Kerala, Built for Every Student's Dream
-                    </h2>
-                    <p class="lead">
-                        Xynera Global Education started with a simple belief — every
-                        student in Kerala deserves access to the best colleges and courses
-                        in India, regardless of where they come from.
+                    <h2 class="section-title">Born in Kerala, Built for Every Student's Dream</h2>
+                    <p class="lead">Xynera Global Education started with a simple belief — every student in Kerala
+                        deserves access to the best colleges and courses in India, regardless of where they come from.
                     </p>
-                    <p>
-                        Based in Mannarkkad, Palakkad, we work directly with 30+ top
-                        universities including Manipal, Amity, LPU, Jain University,
-                        Symbiosis, and many government institutions. Our counsellors have
-                        hands-on experience in helping students navigate the admission
-                        process — from choosing the right course to completing enrollment.
-                    </p>
-                    <p>
-                        We handle UG, PG, diploma, and NIOS programs across streams —
-                        Engineering, Arts, Commerce, Education (B.Ed, M.Ed), Management,
-                        Computer Science, and more. Study abroad is not our focus — we go
-                        deep on domestic admissions and do it exceptionally well.
-                    </p>
+                    <p>Based in Mannarkkad, Palakkad, we work directly with 30+ top universities including Manipal,
+                        Amity, LPU, Jain University, Symbiosis, and many government institutions. Our counsellors have
+                        hands-on experience in helping students navigate the admission process — from choosing the right
+                        course to completing enrollment.</p>
+                    <p>We handle UG, PG, diploma, and NIOS programs across streams — Engineering, Arts, Commerce,
+                        Education (B.Ed, M.Ed), Management, Computer Science, and more. Study abroad is not our focus —
+                        we go deep on domestic admissions and do it exceptionally well.</p>
                     <div class="story-highlights">
                         <div class="story-hi">
-                            <div class="dot"></div>
-                            <span>Job Guarantee Letter issued at the time of admission</span>
+                            <div class="dot"></div><span>Job Guarantee Letter issued at the time of admission</span>
                         </div>
                         <div class="story-hi">
-                            <div class="dot"></div>
-                            <span>Full fee scholarship for students scoring 90% and above</span>
+                            <div class="dot"></div><span>Full fee scholarship for students scoring 90% and above</span>
                         </div>
                         <div class="story-hi">
-                            <div class="dot"></div>
-                            <span>End-to-end support — counselling to enrollment</span>
+                            <div class="dot"></div><span>End-to-end support — counselling to enrollment</span>
                         </div>
                         <div class="story-hi">
-                            <div class="dot"></div>
-                            <span>Partnered with Manipal, Amity, LPU & 27 more
+                            <div class="dot"></div><span>Partnered with Manipal, Amity, LPU & 27 more
                                 universities</span>
                         </div>
                     </div>
@@ -1018,22 +1094,64 @@
         </div>
     </section>
 
-    <!-- MISSION & VISION SECTION -->
+    <!-- CEO + REGIONAL MANAGER MESSAGES -->
     <section class="section mission-vision-section">
+        <div class="section-inner">
+            <div style="text-align: center; margin-bottom: 32px">
+                <div class="section-tag teal reveal">Leadership Voice</div>
+                <h2 class="section-title reveal reveal-d1">From Our Leaders</h2>
+                <p class="section-sub reveal reveal-d2">Vision, commitment, and the path to global excellence</p>
+            </div>
+            <div class="message-grid">
+                <div class="message-card reveal">
+                    <div class="message-quote">“</div>
+                    <p class="message-text">In an era where education defines the future of individuals, industries, and
+                        nations, Xynera Global Education stands committed to shaping globally competent professionals
+                        and future leaders. Our vision is to bridge ambition with international opportunities through
+                        world-class educational guidance, innovation, and strategic learning pathways. Through strong
+                        institutional values and personalized guidance, we strive to deliver an educational experience
+                        that inspires achievement and lifelong success.</p>
+                    <div class="message-author">
+                        <div>
+                            <h4>Sayyid Sinan Thangal P.M</h4>
+                            <div class="designation">Chief Executive Officer (CEO)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="message-card reveal reveal-d1">
+                    <div class="message-quote">“</div>
+                    <p class="message-text">It is a privilege to welcome you to Xynera Global Education — an institution
+                        committed to empowering students through globally oriented education, international
+                        opportunities, and professional excellence. As Regional Manager, I am proud to be part of an
+                        organization that believes education is the most powerful investment. At Xynera, we are
+                        dedicated to creating pathways that connect ambition with worldwide educational and career
+                        opportunities, ensuring every student receives strategic guidance.</p>
+                    <div class="message-author">
+                        <div>
+                            <h4>Varsha M</h4>
+                            <div class="designation">Regional Manager</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION & VISION SECTION (existing) -->
+    <section class="section mission-vision-section" style="border-top: none;">
         <div class="section-inner">
             <div style="text-align: center; margin-bottom: 32px">
                 <div class="section-tag teal reveal">Our Compass</div>
                 <h2 class="section-title reveal reveal-d1">Mission & Vision</h2>
-                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">
-                    The guiding principles that drive our commitment to students across Kerala.
-                </p>
             </div>
             <div class="mv-grid">
                 <div class="mission-card reveal">
                     <div class="mv-tag">✦ Our Purpose</div>
                     <div class="mv-icon">🎓</div>
                     <h3>Mission</h3>
-                    <p>To democratize quality higher education in India by providing transparent, ethical, and personalized admission counselling — ensuring every student finds the right academic path without confusion or hidden barriers.</p>
+                    <p>To democratize quality higher education in India by providing transparent, ethical, and
+                        personalized admission counselling — ensuring every student finds the right academic path
+                        without confusion or hidden barriers.</p>
                     <ul class="mv-list">
                         <li><span>✅</span> Zero-pressure, student-first counselling</li>
                         <li><span>✅</span> Bridge the gap between aspirations and affordable options</li>
@@ -1044,7 +1162,9 @@
                     <div class="mv-tag">✨ Our North Star</div>
                     <div class="mv-icon">🌍</div>
                     <h3>Vision</h3>
-                    <p>To become Kerala's most loved and trusted education ecosystem — where no student is left behind because of lack of guidance. We envision a future where every graduate we support becomes a confident professional and a changemaker.</p>
+                    <p>To become Kerala's most loved and trusted education ecosystem — where no student is left behind
+                        because of lack of guidance. We envision a future where every graduate we support becomes a
+                        confident professional and a changemaker.</p>
                     <ul class="mv-list">
                         <li><span>🌟</span> 10,000+ career-ready students by 2028</li>
                         <li><span>🌟</span> Expand to 50+ partner universities with exclusive pathways</li>
@@ -1055,158 +1175,183 @@
         </div>
     </section>
 
-    <!-- VALUES SECTION -->
+    <!-- VALUES SECTION (existing) -->
     <section class="section values-section">
         <div class="section-inner">
             <div style="text-align: center; margin-bottom: 48px">
                 <div class="section-tag teal reveal">Our Values</div>
-                <h2 class="section-title reveal reveal-d1">
-                    What Drives Everything We Do
-                </h2>
-                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">
-                    These aren't just words on a wall — they shape every conversation,
-                    every counselling session, and every admission we support.
-                </p>
+                <h2 class="section-title reveal reveal-d1">What Drives Everything We Do</h2>
             </div>
             <div class="values-grid">
-                <div class="value-card reveal">
-                    <span class="value-emoji">🎯</span>
+                <div class="value-card reveal"><span class="value-emoji">🎯</span>
                     <h4>Student First, Always</h4>
-                    <p>Every decision we make starts with one question: what's best for the student? We never push a course or university that doesn't fit your goals.</p>
+                    <p>Every decision we make starts with one question: what's best for the student? We never push a
+                        course or university that doesn't fit your goals.</p>
                 </div>
-                <div class="value-card reveal reveal-d1">
-                    <span class="value-emoji">🤝</span>
+                <div class="value-card reveal reveal-d1"><span class="value-emoji">🤝</span>
                     <h4>Honest Guidance</h4>
-                    <p>We give you the full picture — fees, career scope, placement records, campus life — so you make a confident, informed decision.</p>
+                    <p>We give you the full picture — fees, career scope, placement records, campus life — so you make a
+                        confident, informed decision.</p>
                 </div>
-                <div class="value-card reveal reveal-d2">
-                    <span class="value-emoji">⚡</span>
+                <div class="value-card reveal reveal-d2"><span class="value-emoji">⚡</span>
                     <h4>Speed & Reliability</h4>
-                    <p>Admission deadlines wait for no one. Our team moves fast, responds quickly, and makes sure you never miss an opportunity.</p>
+                    <p>Admission deadlines wait for no one. Our team moves fast, responds quickly, and makes sure you
+                        never miss an opportunity.</p>
                 </div>
-                <div class="value-card reveal">
-                    <span class="value-emoji">💡</span>
+                <div class="value-card reveal"><span class="value-emoji">💡</span>
                     <h4>Expertise You Can Trust</h4>
-                    <p>Our counsellors have deep knowledge of courses, universities, eligibility, and scholarships — so you get advice that's actually useful.</p>
+                    <p>Our counsellors have deep knowledge of courses, universities, eligibility, and scholarships — so
+                        you get advice that's actually useful.</p>
                 </div>
-                <div class="value-card reveal reveal-d1">
-                    <span class="value-emoji">🌍</span>
+                <div class="value-card reveal reveal-d1"><span class="value-emoji">🌍</span>
                     <h4>Inclusive Access</h4>
-                    <p>Whether you're from a village in Palakkad or a city in Kerala, you deserve the same quality of guidance and the same opportunities.</p>
+                    <p>Whether you're from a village in Palakkad or a city in Kerala, you deserve the same quality of
+                        guidance and the same opportunities.</p>
                 </div>
-                <div class="value-card reveal reveal-d2">
-                    <span class="value-emoji">📈</span>
+                <div class="value-card reveal reveal-d2"><span class="value-emoji">📈</span>
                     <h4>Long-Term Thinking</h4>
-                    <p>We're not just here to get you admitted — we're invested in your career success. We think about your future, not just your enrollment.</p>
+                    <p>We're not just here to get you admitted — we're invested in your career success. We think about
+                        your future, not just your enrollment.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TEAM SECTION -->
-    <div class="team-section">
-        <div class="team-container">
-            <div class="team-header">
-                <div class="section-tag teal reveal">Executive Directorate</div>
-                <h2 class="section-title reveal reveal-d1">Leadership & Administration</h2>
-                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">Meet the dedicated professionals behind Xynera Global's success</p>
+    <!-- TEAM SECTION (existing) -->
+ <div class="team-section">
+    <div class="team-container">
+        <div class="team-header">
+            <div class="section-tag teal reveal">Executive Directorate</div>
+            <h2 class="section-title reveal reveal-d1">Leadership & Administration</h2>
+            <p class="section-sub reveal reveal-d2" style="margin: 0 auto">Meet the dedicated professionals behind Xynera Global's success</p>
+        </div>
+        <div class="team-grid team-grid-full">
+            <!-- Row 1: Leadership Team -->
+            <div class="team-card reveal">
+                <img src="img1.jpeg" alt="Sayyed Sinan PM" class="team-avatar teal" />
+                <div class="team-info">
+                    <h4>Sayyed Sinan PM</h4>
+                    <div class="role">Chief Executive Officer</div>
+                    <p>Strategic leader driving institutional partnerships and academic excellence. Visionary behind Xynera's global education mission.</p>
+                </div>
             </div>
-            <div class="team-grid">
-                <div class="team-card reveal">
-                    <img src="img1.jpeg" alt="Sayyed Sinan PM" class="team-avatar teal" />
-                    <div class="team-info">
-                        <h4>Sayyed Sinan PM</h4>
-                        <div class="role">Chief Executive Officer</div>
-                        <p>Strategic leader driving institutional partnerships and academic excellence.</p>
-                    </div>
+            <div class="team-card reveal reveal-d1">
+                <img src="img4.jpeg" alt="Varsha M" class="team-avatar teal" />
+                <div class="team-info">
+                    <h4>Varsha M</h4>
+                    <div class="role">Regional Manager</div>
+                    <p>Oversees zonal operations and ensures smooth admission workflows across Kerala. Leads regional expansion and university collaborations.</p>
                 </div>
-                <div class="team-card reveal reveal-d1">
-                    <img src="img4.jpeg" alt="Varsha M" class="team-avatar teal" />
-                    <div class="team-info">
-                        <h4>Varsha M</h4>
-                        <div class="role">Regional Manager</div>
-                        <p>Oversees zonal operations and ensures smooth admission workflows across Kerala.</p>
-                    </div>
+            </div>
+            <div class="team-card reveal reveal-d2">
+                <div class="team-avatar-placeholder" style="background: linear-gradient(135deg, #1627e7, #141148); width: 100%; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 16px 16px 0 0;">
+                    <span style="font-size: 64px; color: white; opacity: 0.8;">🌿</span>
                 </div>
-                <div class="team-card reveal reveal-d2">
-                    <img src="img3.jpeg" alt="Bhavana P C" class="team-avatar teal" />
-                    <div class="team-info">
-                        <h4>Bhavana P C</h4>
-                        <div class="role">Senior Academic Counselor</div>
-                        <p>Specializes in Physical Education, B.Ed & M.Ed program guidance.</p>
-                    </div>
+                <div class="team-info">
+                    <h4>Varaha O</h4>
+                    <div class="role">Branch Manager</div>
+                    <p>Manages day-to-day branch operations, student relations, and team coordination. Ensures seamless service delivery at Mannarkkad headquarters.</p>
                 </div>
-                <div class="team-card reveal reveal-d3">
-                    <img src="img2.jpeg" alt="Anju Krishna PK" class="team-avatar teal" />
-                    <div class="team-info">
-                        <h4>Anju Krishna PK</h4>
-                        <div class="role">Administrative Officer</div>
-                        <p>Manages UG/PG department operations and student documentation.</p>
-                    </div>
+            </div>
+            <div class="team-card reveal reveal-d3">
+                <img src="img2.jpeg" alt="Anju Krishna PK" class="team-avatar teal" />
+                <div class="team-info">
+                    <h4>Anju Krishna PK</h4>
+                    <div class="role">Administrative Officer</div>
+                    <p>Manages UG/PG department operations, student documentation, and admission lifecycle coordination across all programs.</p>
+                </div>
+            </div>
+            <!-- Row 2: Counselling Team -->
+            <div class="team-card reveal">
+                <img src="img3.jpeg" alt="Bhavana P C" class="team-avatar teal" />
+                <div class="team-info">
+                    <h4>Bhavana P C</h4>
+                    <div class="role">Senior Academic Counselor</div>
+                    <p>Specializes in Physical Education, B.Ed & M.Ed program guidance. 7+ years of experience in academic counselling.</p>
+                </div>
+            </div>
+            <div class="team-card reveal reveal-d1">
+                <div class="team-avatar-placeholder" style="background: linear-gradient(135deg, #3a50ff, #1627e7); width: 100%; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 16px 16px 0 0;">
+                    <span style="font-size: 64px; color: white; opacity: 0.8;">✨</span>
+                </div>
+                <div class="team-info">
+                    <h4>Vaishnavi</h4>
+                    <div class="role">Academic Counselor</div>
+                    <p>Guides students in UG program selection, scholarship opportunities, and career path planning. Known for empathetic student support.</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- MILESTONES -->
-    <!-- <section class="section milestones-section">
+
+
+    <!-- NEW: STAFF TESTIMONIALS SECTION -->
+    <section class="section testimonials-section">
         <div class="section-inner">
-            <div class="section-tag reveal">Our Journey</div>
-            <h2 class="section-title reveal reveal-d1">Milestones That Define Us</h2>
-            <div class="timeline">
-                <div class="timeline-item reveal">
-                    <div class="timeline-year">2023</div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h4>🚀 Xynera Founded in Mannarkkad</h4>
-                        <p>Started with a small team and a big dream — to make quality college admissions accessible to every student in Kerala. First batch of 50 students successfully placed.</p>
+            <div style="text-align: center; margin-bottom: 32px">
+                <div class="section-tag teal reveal">✧ Voices of Excellence</div>
+                <h2 class="section-title reveal reveal-d1">What Our Team Says</h2>
+                <p class="section-sub reveal reveal-d2">Passion, dedication, and shared mission — from the people behind
+                    Xynera</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">“Working at Xynera has been transformative. The culture of integrity and
+                        student-centric approach makes every counselling session meaningful. I take pride in guiding
+                        students toward their dream careers.”</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">BP</div>
+                        <div>
+                            <h5>Bhavana P C</h5><span>Senior Academic Counselor</span>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item reveal">
-                    <div class="timeline-year">2021</div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h4>🤝 First 10 University Partnerships</h4>
-                        <p>Signed agreements with Manipal, Amity, and LPU. Expanded course offerings to include B.Ed, M.Ed, and management programs. Grew to 300+ annual admissions.</p>
+                <div class="testimonial-card reveal reveal-d1">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">“Xynera empowers us with the right tools and university partnerships.
+                        Every day, I witness how honest admission counselling changes lives. The job guarantee and
+                        scholarship initiatives are game-changers.”</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AK</div>
+                        <div>
+                            <h5>Anju Krishna PK</h5><span>Administrative Officer</span>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item reveal">
-                    <div class="timeline-year">2023</div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h4>🏆 30+ University Network & 2000+ Students</h4>
-                        <p>Expanded partnerships to 30+ universities including government institutions. Launched NIOS programs and BCA specializations. Crossed 2000 successful admissions.</p>
-                    </div>
-                </div>
-                <div class="timeline-item reveal">
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h4>⭐ 5000+ Students & Job Guarantee Program</h4>
-                        <p>Launched the Job Guarantee Letter at admission program. Introduced full scholarship for 90%+ students. Became Palakkad's most trusted education consultancy.</p>
+                <div class="testimonial-card reveal reveal-d2">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">“The leadership at Xynera truly values innovation and transparency. I've
+                        seen how our regional strategies directly improve student success rates. Proud to be part of
+                        this growth story.”</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">VM</div>
+                        <div>
+                            <h5>Varsha M</h5><span>Regional Manager</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- CTA -->
     <div class="cta-banner">
         <h2>Ready to Find Your Perfect College?</h2>
         <p>Talk to our counsellors for free — no pressure, no sales pitch, just honest guidance.</p>
-        <div class="cta-btns">
-            <a href="index.html#contactus" class="btn-white">📋 Book Free Counselling</a>
-            <a href="https://wa.me/919746495785" class="btn-ghost">💬 WhatsApp Us</a>
-        </div>
+        <div class="cta-btns"><a href="index.html#contactus" class="btn-white">📋 Book Free Counselling</a><a
+                href="https://wa.me/919746495785" class="btn-ghost">💬 WhatsApp Us</a></div>
     </div>
 
     <!-- FOOTER -->
     <footer>
         <div class="footer-inner">
             <div class="footer-grid">
-                <div>
-                    <img src="logo1.png" alt="Xynera Global & Xynera Global Education Network Logo" style="height: auto; max-width: 180px; width: 100%; object-fit: contain; opacity: 0.95;" />
-                    <p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the right universities since 2023. 5000+ success stories and counting.</p>
+                <div><img src="logo1.png" alt="Xynera Global & Xynera Global Education Network Logo"
+                        style="height: auto; max-width: 180px; width: 100%; object-fit: contain; opacity: 0.95;" />
+                    <p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the
+                        right universities since 2023. 5000+ success stories and counting.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navigate</h4>
@@ -1238,56 +1383,21 @@
                     </ul>
                 </div>
             </div>
-         
         </div>
     </footer>
 
-    <a href="https://wa.me/919746495785" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-        </svg>
-    </a>
+    <a href="https://wa.me/919746495785" target="_blank" class="whatsapp-float" title="Chat on WhatsApp"><svg width="28"
+            height="28" viewBox="0 0 24 24" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg></a>
 
-    <!-- HEADER INJECTION SCRIPT: Dynamically loads header.html without touching other content -->
     <script>
         (function loadHeader() {
-            fetch('header.html')
-                .then(response => {
-                    if (!response.ok) throw new Error('Header not found');
-                    return response.text();
-                })
-                .then(html => {
-                    document.getElementById('global-header-placeholder').innerHTML = html;
-                    // Re-run header's internal scripts to bind mobile menu, active links, etc.
-                    const scripts = document.querySelectorAll('#global-header-placeholder script');
-                    scripts.forEach(oldScript => {
-                        const newScript = document.createElement('script');
-                        if (oldScript.src) {
-                            newScript.src = oldScript.src;
-                        } else {
-                            newScript.textContent = oldScript.textContent;
-                        }
-                        document.body.appendChild(newScript);
-                    });
-                    // Manually set active link based on current page (about page)
-                    const currentPage = 'about';
-                    document.querySelectorAll('[data-page]').forEach(el => {
-                        if (el.dataset.page === currentPage) el.classList.add('active');
-                    });
-                })
-                .catch(err => console.warn('Header could not be loaded. Please ensure header.html exists.', err));
+            fetch('header.html').then(response => { if (!response.ok) throw new Error('Header not found'); return response.text(); }).then(html => { document.getElementById('global-header-placeholder').innerHTML = html; const scripts = document.querySelectorAll('#global-header-placeholder script'); scripts.forEach(oldScript => { const newScript = document.createElement('script'); if (oldScript.src) newScript.src = oldScript.src; else newScript.textContent = oldScript.textContent; document.body.appendChild(newScript); }); const currentPage = 'about'; document.querySelectorAll('[data-page]').forEach(el => { if (el.dataset.page === currentPage) el.classList.add('active'); }); }).catch(err => console.warn('Header could not be loaded.', err));
         })();
-    </script>
-
-    <script>
-        const observer = new IntersectionObserver(
-            (entries) =>
-                entries.forEach((el) => {
-                    if (el.isIntersecting) el.target.classList.add("show");
-                }),
-            { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
-        );
-        document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+        const observer = new IntersectionObserver((entries) => entries.forEach(el => { if (el.isIntersecting) el.target.classList.add("show"); }), { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+        document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
     </script>
 </body>
 
