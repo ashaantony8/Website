@@ -453,119 +453,122 @@
             color: var(--text-soft);
             line-height: 1.65;
         }
-/* TEAM SECTION - 3 COLUMN GRID (2 rows = 6 members) */
-    .team-section {
-        background: var(--bg);
-        padding: 80px 24px;
-    }
 
-    .team-container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+        /* TEAM SECTION - 3 COLUMN GRID (2 rows = 6 members) */
+        .team-section {
+            background: var(--bg);
+            padding: 80px 24px;
+        }
 
-    .team-header {
-        text-align: center;
-        margin-bottom: 48px;
-    }
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .team-header .section-tag {
-        margin-bottom: 12px;
-    }
+        .team-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
 
-    .team-header .section-title {
-        margin-bottom: 16px;
-    }
+        .team-header .section-tag {
+            margin-bottom: 12px;
+        }
 
-    /* 3 columns grid for 6 members (2 rows automatically) */
-    .team-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 28px;
-    }
+        .team-header .section-title {
+            margin-bottom: 16px;
+        }
 
-    .team-card {
-        background: white;
-        border-radius: 20px;
-        overflow: hidden;
-        border: 1.5px solid var(--border);
-        transition: all 0.25s ease;
-        text-align: center;
-    }
-
-    .team-card:hover {
-        box-shadow: 0 15px 40px rgba(20, 17, 72, 0.12);
-        transform: translateY(-6px);
-        border-color: transparent;
-    }
-
-    .team-avatar {
-        width: 100%;
-        height: 320px;
-        object-fit: cover;
-        object-position: center top;
-        display: block;
-    }
-
-    .team-avatar.teal {
-        background: linear-gradient(135deg,
-                rgba(22, 39, 231, 0.12),
-                rgba(22, 39, 231, 0.08));
-    }
-
-    /* Placeholder styling for members without images */
-    .team-avatar-placeholder {
-        width: 100%;
-        height: 320px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0;
-    }
-
-    .team-info {
-        padding: 20px 16px 24px;
-    }
-
-    .team-info h4 {
-        font-size: 18px;
-        font-weight: 800;
-        color: var(--dark);
-        margin-bottom: 6px;
-    }
-
-    .team-info .role {
-        font-size: 13px;
-        color: var(--teal);
-        font-weight: 700;
-        margin-bottom: 10px;
-        letter-spacing: 0.3px;
-    }
-
-    .team-info p {
-        font-size: 13px;
-        color: var(--text-soft);
-        line-height: 1.6;
-    }
-
-    /* Responsive: 2 columns on tablets, 1 column on mobile */
-    @media (max-width: 900px) {
+        /* 3 columns grid for 6 members (2 rows automatically) */
         .team-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
         }
-    }
 
-    @media (max-width: 550px) {
-        .team-grid {
-            grid-template-columns: 1fr;
-            gap: 20px;
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1.5px solid var(--border);
+            transition: all 0.25s ease;
+            text-align: center;
         }
-        
-        .team-avatar, .team-avatar-placeholder {
-            height: 300px;
+
+        .team-card:hover {
+            box-shadow: 0 15px 40px rgba(20, 17, 72, 0.12);
+            transform: translateY(-6px);
+            border-color: transparent;
         }
-    }
+
+        .team-avatar {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .team-avatar.teal {
+            background: linear-gradient(135deg,
+                    rgba(22, 39, 231, 0.12),
+                    rgba(22, 39, 231, 0.08));
+        }
+
+        /* Placeholder styling for members without images */
+        .team-avatar-placeholder {
+            width: 100%;
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+        }
+
+        .team-info {
+            padding: 20px 16px 24px;
+        }
+
+        .team-info h4 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .team-info .role {
+            font-size: 13px;
+            color: var(--teal);
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        .team-info p {
+            font-size: 13px;
+            color: var(--text-soft);
+            line-height: 1.6;
+        }
+
+        /* Responsive: 2 columns on tablets, 1 column on mobile */
+        @media (max-width: 900px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .team-avatar,
+            .team-avatar-placeholder {
+                height: 300px;
+            }
+        }
+
         /* MESSAGE CARDS (CEO + REGIONAL MANAGER) */
         .message-grid {
             display: grid;
@@ -1037,7 +1040,7 @@
                 <div class="story-visual reveal">
                     <div class="story-stat-row">
                         <div class="story-stat-box">
-                            <div class="num">5000+</div>
+                            <div class="num">1000+</div>
                             <div class="lbl">STUDENTS PLACED</div>
                         </div>
                         <div class="story-stat-box">
@@ -1055,6 +1058,26 @@
                             <div class="lbl">YEARS OF TRUST</div>
                         </div>
                     </div>
+                    <div class="story-stat-row">
+                        <div class="story-stat-box">
+                            <div class="num">1000+</div>
+                            <div class="lbl">ADMISSIONS COMPLETED</div>
+                        </div>
+                        <div class="story-stat-box">
+                            <div class="num">15+</div>
+                            <div class="lbl">COURSES OFFERED</div>
+                        </div>
+                    </div>
+                    <div class="story-stat-row">
+                        <div class="story-stat-box">
+                            <div class="num">50+</div>
+                            <div class="lbl">EXPERT COUNSELORS</div>
+                        </div>
+                        <div class="story-stat-box">
+                            <div class="num">100%</div>
+                            <div class="lbl">STUDENT SATISFACTION</div>
+                        </div>
+                    </div>
                     <div class="story-stat-wide">
                         <div class="icon">🏆</div>
                         <div class="text"><strong>Kerala's #1 Admission Partner</strong><span>Trusted by students across
@@ -1064,16 +1087,24 @@
                 <div class="story-text reveal reveal-d1">
                     <div class="section-tag">Who We Are</div>
                     <h2 class="section-title">Born in Kerala, Built for Every Student's Dream</h2>
-                    <p class="lead">Xynera Global Education started with a simple belief — every student in Kerala
-                        deserves access to the best colleges and courses in India, regardless of where they come from.
+                    <p class="lead">A forward thinking Educational institution dedicated to shaping future Global
+                        leaders through quality Education, innovation and international opportunities.</p>
+                    <p>Driven by our motto, <strong>"Learning Today, Leading Tomorrow,"</strong> we aim to inspire
+                        students to become confident learners, visionary thinkers, and responsible global professionals.
+                        Based in Mannarkkad, Palakkad. We are committed to creating an environment where ambition meets
+                        opportunity, empowering every student to unlock their true potential and achieve excellence in
+                        both education and career.</p>
+                    <p>At Xynera, integrity, commitment, innovation, and excellence are at the heart of everything we
+                        do. Through trusted guidance, strategic partnerships, and a passion for student success, we
+                        continue to build a platform that transforms aspirations into achievements on a global scale.
                     </p>
-                    <p>Based in Mannarkkad, Palakkad, we work directly with 30+ top universities including Manipal,
-                        Amity, LPU, Jain University, Symbiosis, and many government institutions. Our counsellors have
-                        hands-on experience in helping students navigate the admission process — from choosing the right
-                        course to completing enrollment.</p>
-                    <p>We handle UG, PG, diploma, and NIOS programs across streams — Engineering, Arts, Commerce,
-                        Education (B.Ed, M.Ed), Management, Computer Science, and more. Study abroad is not our focus —
-                        we go deep on domestic admissions and do it exceptionally well.</p>
+                    <p>We handle UG, PG, Diploma, and NIOS Programs across streams - Engineering, Arts, Commerce,
+                        Education (B.Ed, M.Ed), Management, Computer science and more. We assist students in exploring
+                        education opportunities in leading international destinations including the United Kingdom,
+                        Canada, Australia, New Zealand, Germany, Ireland and other globally recognized study
+                        destinations.</p>
+                    <p>Join Xynera Global Education and become part of a journey dedicated to knowledge, leadership, and
+                        international success.</p>
                     <div class="story-highlights">
                         <div class="story-hi">
                             <div class="dot"></div><span>Job Guarantee Letter issued at the time of admission</span>
@@ -1100,7 +1131,8 @@
             <div style="text-align: center; margin-bottom: 32px">
                 <div class="section-tag teal reveal">Leadership Voice</div>
                 <h2 class="section-title reveal reveal-d1">From Our Leaders</h2>
-                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">Vision, commitment, and the path to global excellence</p>
+                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">Vision, commitment, and the path to
+                    global excellence</p>
             </div>
             <div class="message-grid">
                 <div class="message-card reveal">
@@ -1218,88 +1250,98 @@
     </section>
 
     <!-- TEAM SECTION (existing) -->
- <div class="team-section">
-    <div class="team-container">
-        <div class="team-header">
-            <div class="section-tag teal reveal">Executive Directorate</div>
-            <h2 class="section-title reveal reveal-d1">Our team members</h2>
-            <p class="section-sub reveal reveal-d2" style="margin: 0 auto">Meet the dedicated professionals behind Xynera Global's success</p>
-        </div>
-        <div class="team-grid team-grid-full">
-            <!-- Row 1: Leadership Team -->
-            <div class="team-card reveal">
-                <img src="img1.jpeg" alt="Sayyid Sinan PM" class="team-avatar teal" />
-                <div class="team-info">
-                    <h4>Sayyid Sinan PM</h4>
-                    <div class="role">Chief Executive Officer</div>
-                    <p>Strategic leader driving institutional partnerships and academic excellence. Visionary behind Xynera's global education mission.</p>
-                </div>
+    <div class="team-section">
+        <div class="team-container">
+            <div class="team-header">
+                <div class="section-tag teal reveal">Executive Directorate</div>
+                <h2 class="section-title reveal reveal-d1">Our core team</h2>
+                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">Meet the dedicated professionals behind
+                    Xynera Global's success</p>
             </div>
-            <div class="team-card reveal reveal-d1">
-                <img src="img4.jpeg" alt="Varsha M" class="team-avatar teal" />
-                <div class="team-info">
-                    <h4>Varsha M</h4>
-                    <div class="role">Regional Manager</div>
-                    <p>Oversees zonal operations and ensures smooth admission workflows across Kerala. Leads regional expansion and university collaborations.</p>
+            <div class="team-grid team-grid-full">
+                <!-- Row 1: Leadership Team -->
+                <div class="team-card reveal">
+                    <img src="img1.jpeg" alt="Sayyid Sinan PM" class="team-avatar teal" />
+                    <div class="team-info">
+                        <h4>Sayyid Sinan PM</h4>
+                        <div class="role">Chief Executive Officer</div>
+                        <p>Strategic leader driving institutional partnerships and academic excellence. Visionary behind
+                            Xynera's global education mission.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="team-card reveal reveal-d2">
-                 <img src="img6.jpeg" alt="Varaha" class="team-avatar teal" />
-                <div class="team-info">
-                    <h4>Varaha O</h4>
-                    <div class="role">Branch Manager</div>
-                    <p>Manages day-to-day branch operations, student relations, and team coordination. Ensures seamless service delivery at Mannarkkad headquarters.</p>
+                <div class="team-card reveal reveal-d1">
+                    <img src="img4.jpeg" alt="Varsha M" class="team-avatar teal" />
+                    <div class="team-info">
+                        <h4>Varsha M</h4>
+                        <div class="role">Regional Manager</div>
+                        <p>Oversees zonal operations and ensures smooth admission workflows across Kerala. Leads
+                            regional expansion and university collaborations.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="team-card reveal reveal-d3">
-                <img src="img2.jpeg" alt="Anju Krishna PK" class="team-avatar teal" />
-                <div class="team-info">
-                    <h4>Anju Krishna PK</h4>
-                    <div class="role">Administrative Officer</div>
-                    <p>Manages UG/PG department operations, student documentation, and admission lifecycle coordination across all programs.</p>
+                <div class="team-card reveal reveal-d2">
+                    <img src="img6.jpeg" alt="Varaha" class="team-avatar teal" />
+                    <div class="team-info">
+                        <h4>Varaha O</h4>
+                        <div class="role">Branch Manager</div>
+                        <p>Manages day-to-day branch operations, student relations, and team coordination. Ensures
+                            seamless service delivery at Mannarkkad headquarters.</p>
+                    </div>
                 </div>
-            </div>
-            <!-- Row 2: Counselling Team -->
-            <div class="team-card reveal">
-                <img src="img3.jpeg" alt="Bhavana P C" class="team-avatar teal" />
-                <div class="team-info">
-                    <h4>Bhavana P C</h4>
-                    <div class="role">Senior Academic Counselor</div>
-                    <p>Specializes in Physical Education, B.Ed & M.Ed program guidance. 7+ years of experience in academic counselling.</p>
+                <div class="team-card reveal reveal-d3">
+                    <img src="img2.jpeg" alt="Anju Krishna PK" class="team-avatar teal" />
+                    <div class="team-info">
+                        <h4>Anju Krishna PK</h4>
+                        <div class="role">Administrative Officer</div>
+                        <p>Manages UG/PG department operations, student documentation, and admission lifecycle
+                            coordination across all programs.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="team-card reveal reveal-d1">
-                  <img src="img7.jpeg" alt="Vaishnavi" class="team-avatar teal" />
-                <div class="team-info">
-                    <h4>Vaishnavi</h4>
-                    <div class="role">Academic Counselor</div>
-                    <p>Guides students in UG program selection, scholarship opportunities, and career path planning. Known for empathetic student support.</p>
+                <!-- Row 2: Counselling Team -->
+                <div class="team-card reveal">
+                    <img src="img3.jpeg" alt="Bhavana P C" class="team-avatar teal" />
+                    <div class="team-info">
+                        <h4>Bhavana P C</h4>
+                        <div class="role">Senior Academic Counselor</div>
+                        <p>Specializes in Physical Education, B.Ed & M.Ed program guidance. 7+ years of experience in
+                            academic counselling.</p>
+                    </div>
+                </div>
+                <div class="team-card reveal reveal-d1">
+                    <img src="img7.jpeg" alt="Vaishnavi" class="team-avatar teal" />
+                    <div class="team-info">
+                        <h4>Vaishnavi</h4>
+                        <div class="role">Academic Counselor</div>
+                        <p>Guides students in UG program selection, scholarship opportunities, and career path planning.
+                            Known for empathetic student support.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
+    <!-- NEW: STAFF TESTIMONIALS SECTION -->
     <!-- NEW: STAFF TESTIMONIALS SECTION -->
     <section class="section testimonials-section">
         <div class="section-inner">
             <div style="text-align: center; margin-bottom: 32px">
                 <div class="section-tag teal reveal">✧ Voices of Excellence</div>
                 <h2 class="section-title reveal reveal-d1">What Our Team Says</h2>
-                <p class="section-sub reveal reveal-d2"  style="margin: 0 auto">Passion, dedication, and shared mission — from the people behind
+                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">Passion, dedication, and shared mission —
+                    from the people behind
                     Xynera</p>
             </div>
-            
+
             <div class="testimonials-grid">
-                      <div class="testimonial-card reveal reveal-d2">
+                <div class="testimonial-card reveal reveal-d2">
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">“The leadership at Xynera truly values innovation and transparency. I've
                         seen how our regional strategies directly improve student success rates. Proud to be part of
                         this growth story.”</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">VM</div>
+                        <img src="img4.jpeg" alt="Varsha M"
+                            style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;" />
                         <div>
                             <h5>Varsha M</h5><span>Regional Manager</span>
                         </div>
@@ -1311,7 +1353,8 @@
                         student-centric approach makes every counselling session meaningful. I take pride in guiding
                         students toward their dream careers.”</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">BP</div>
+                        <img src="img3.jpeg" alt="Bhavana P C"
+                            style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;" />
                         <div>
                             <h5>Bhavana P C</h5><span>Senior Academic Counselor</span>
                         </div>
@@ -1323,13 +1366,13 @@
                         Every day, I witness how honest admission counselling changes lives. The job guarantee and
                         scholarship initiatives are game-changers.”</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">AK</div>
+                        <img src="img2.jpeg" alt="Anju Krishna PK"
+                            style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;" />
                         <div>
                             <h5>Anju Krishna PK</h5><span>Administrative Officer</span>
                         </div>
                     </div>
                 </div>
-          
             </div>
         </div>
     </section>
