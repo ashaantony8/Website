@@ -364,37 +364,40 @@
     }
 
     /* FOOTER */
-    footer {
+     footer {
       background: var(--dark);
       color: rgba(255, 255, 255, 0.6);
-      padding: 4rem 1.5rem 2rem;
+      padding: 56px 20px 32px;
     }
 
     .footer-inner {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.5fr repeat(3, 1fr);
-      gap: 2rem;
-      margin-bottom: 2.5rem;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
     }
 
     .footer-brand {
-      font-size: .8rem;
-      line-height: 1.6;
-      margin-top: .8rem;
-      max-width: 260px;
+      font-size: 12px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 14px;
+      max-width: 280px;
     }
 
     .footer-col h4 {
-      font-size: .8rem;
-      letter-spacing: .1em;
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
       text-transform: uppercase;
-      color: white;
-      margin-bottom: 1.2rem;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 14px;
     }
 
     .footer-col ul {
@@ -402,120 +405,32 @@
     }
 
     .footer-col li {
-      margin-bottom: .6rem;
+      margin-bottom: 8px;
     }
 
     .footer-col a {
-      font-size: .8rem;
-      color: rgba(255, 255, 255, 0.55);
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
       text-decoration: none;
-    }
-
-    .footer-col a:hover {
-      color: white;
+      transition: color 0.2s;
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 1.8rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
-      font-size: .7rem;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: #25D366;
-      width: 54px;
-      height: 54px;
-      border-radius: 30px;
-      display: flex;
       align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-      transition: .2s;
-      z-index: 999;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s ease;
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.3);
+      font-family: 'Nunito', sans-serif;
     }
 
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media(max-width:860px) {
-      .contact-strip-inner {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media(max-width:640px) {
-      .courses-list-grid {
-        grid-template-columns: 1fr;
-        gap: 1.4rem;
-      }
-
-      .course-group {
-        padding: 1.3rem;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .footer-brand {
-        margin: 0 auto;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        align-items: center;
-        gap: .5rem;
-      }
-
-      .contact-strip-form {
-        padding: 1.5rem;
-      }
-
-      .inline-course-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media(max-width:480px) {
-      .page-hero {
-        padding: 3rem 1rem 3.5rem;
-      }
-
-      .section {
-        padding: 3rem 1rem;
-      }
-
-      .course-list li {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: .3rem;
-      }
-
-      .duration-badge,
-      .regular-badge {
-        align-self: flex-start;
-      }
-    }
   </style>
 </head>
 
@@ -872,11 +787,12 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
+ <footer>
     <div class="footer-inner">
       <div class="footer-grid">
-        <div><img src="logo1.png" alt="Xynera Global Education" style="height:105px;object-fit:contain;" />
-          <p class="footer-brand">Kerala's trusted admission counselling partner. 5000+ success stories.</p>
+        <div>
+          <img src="logo1.png" alt="Xynera Global & Xynera Global Education Network Logo" style="height: auto; max-width: 160px; width: 100%; object-fit: contain; opacity: 0.95;" />
+          <p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the right universities since 2023. 5000+ success stories and counting.</p>
         </div>
         <div class="footer-col">
           <h4>Navigate</h4>
@@ -884,7 +800,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="courses.html">Courses</a></li>
             <li><a href="index.html#universities">Universities</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li><a href="service.html">Services</a></li>
           </ul>
         </div>
@@ -902,13 +818,14 @@
           <h4>Contact</h4>
           <ul>
             <li><a href="tel:+919746495785">+91 97464 95785</a></li>
+            <li><a href="tel:+91974644785">+91 97464 44785</a></li>
             <li><a href="mailto:info@xynera.in">info@xynera.in</a></li>
-            <li><a href="#">Mannarkkad, Palakkad</a></li>
-            <li><a href="#">Kerala, India</a></li>
+            <li><a href="https://maps.app.goo.gl/CxYLBQ38boGhcc527" target="_blank">AVENUE PLAZA, Near MES Kalladi College</a></li>
+            <li><a href="#">Mannarkkad, Palakkad - 678583</a></li>
           </ul>
         </div>
       </div>
-      
+    </div>
   </footer>
 
   <a href="https://wa.me/919746495785" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
