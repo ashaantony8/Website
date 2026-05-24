@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         :root {
             --primary: #1627e7;
@@ -203,7 +205,6 @@
             gap: 24px;
         }
 
-        /* FIX: Responsive stats row - prevents overflow on mobile */
         .story-stat-row {
             display: flex;
             gap: 24px;
@@ -227,7 +228,6 @@
             color: white;
             line-height: 1.2;
             margin-bottom: 8px;
-            word-break: keep-all;
         }
 
         .story-stat-box .lbl {
@@ -236,8 +236,6 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             font-weight: 700;
-            line-height: 1.4;
-            word-break: break-word;
         }
 
         .story-stat-wide {
@@ -253,7 +251,6 @@
 
         .story-stat-wide .icon {
             font-size: 32px;
-            flex-shrink: 0;
         }
 
         .story-stat-wide .text strong {
@@ -281,34 +278,6 @@
             color: var(--text-soft);
             line-height: 1.8;
             margin-bottom: 16px;
-        }
-
-        .story-highlights {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 28px;
-        }
-
-        .story-hi {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .story-hi .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--teal);
-            flex-shrink: 0;
-        }
-
-        .story-hi span {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--dark);
         }
 
         /* MISSION & VISION SECTION */
@@ -345,7 +314,6 @@
         .mv-icon {
             font-size: 48px;
             margin-bottom: 24px;
-            display: inline-block;
         }
 
         .mission-card h3,
@@ -354,7 +322,6 @@
             font-weight: 800;
             color: var(--dark);
             margin-bottom: 20px;
-            letter-spacing: -0.3px;
         }
 
         .mission-card p,
@@ -454,80 +421,203 @@
             line-height: 1.65;
         }
 
+        /* CEO SECTION */
+        .premium-founder-section {
+            padding: 20px 24px;
+            background-color: #f5f4f0/10;
+            font-family: 'Inter', sans-serif;
+        }
 
+        .premium-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
 
-        /* MESSAGE CARDS (CEO + REGIONAL MANAGER) */
-        .message-grid {
+        .premium-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 48px;
+            gap: 12px;
+            grid-template-columns: 1.1fr 1fr;
+            border-radius: 44px;
+            overflow: hidden;
+            align-items: stretch;
         }
 
-        .message-card {
-            background: white;
-            border-radius: 28px;
-            padding: 36px 32px;
-            border: 1.5px solid var(--border);
-            transition: all 0.3s;
-            box-shadow: 0 8px 24px rgba(20, 17, 72, 0.04);
-        }
-
-        .message-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(22, 39, 231, 0.3);
-            box-shadow: 0 20px 35px rgba(20, 17, 72, 0.08);
-        }
-
-        .message-quote {
-            font-size: 42px;
-            line-height: 1;
-            color: var(--primary);
-            opacity: 0.3;
-            margin-bottom: 16px;
-        }
-
-        .message-text {
-            font-size: 15px;
-            line-height: 1.7;
-            color: var(--text);
-            margin-bottom: 20px;
-            font-style: normal;
-        }
-
-        .message-author {
+        .founder-image-block {
             display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-top: 24px;
-            border-top: 1px solid var(--border);
-            padding-top: 20px;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px 0 40px 40px;
         }
 
-        .message-author h4 {
+        .image-bg-wrapper {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            max-height: 520px;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            border-radius: 28px;
+            background: linear-gradient(145deg, #ffffff, #f0efe8);
+        }
+
+        .ceo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 0.4s ease;
+            border-radius: 28px;
+        }
+
+        .founder-info-footer {
+            margin-top: 28px;
+            padding-left: 8px;
+        }
+
+        .ceo-name {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--brand-dark, #0a0a0a);
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .ceo-title {
+            font-size: 13px;
+            color: var(--brand-blue, #1627e7);
+            font-weight: 700;
+            margin: 8px 0 4px 0;
+            text-transform: uppercase;
+        }
+
+        .founder-content-block {
+            margin: 30px 30px 30px 0;
+            padding: 18px 42px;
+            border-radius: 48px 32px 32px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .message-body p {
+            font-size: 15px;
+            line-height: 1.75;
+            color: #555555;
+            margin-bottom: 14px;
+        }
+
+        .signature-wrapper {
+            margin-top: 28px;
+            padding-top: 8px;
+        }
+
+        .signature-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand-blue, #1627e7), var(--brand-blue-light, #3a50ff));
+            border-radius: 3px;
+            margin-bottom: 12px;
+        }
+
+        .signature-name {
             font-size: 18px;
             font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 2px;
+            color: var(--brand-dark, #0a0a0a);
+            margin: 0 0 4px 0;
         }
 
-        .message-author .designation {
+        .signature-title {
             font-size: 12px;
-            color: var(--teal);
+            color: var(--brand-blue, #1627e7);
             font-weight: 600;
+            margin: 0;
+            text-transform: uppercase;
         }
 
-        /* TESTIMONIALS SECTION (staff) */
+        /* TEAM SECTION */
+        .team-section {
+            background: var(--bg, #f8f9fa);
+            padding: 80px 24px;
+        }
+
+        .team-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 54px;
+        }
+
+        .team-grid-5cols {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1.5px solid var(--border, #edf2f7);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-card:hover {
+            box-shadow: 0 20px 40px rgba(20, 17, 72, 0.08);
+            transform: translateY(-6px);
+            border-color: transparent;
+        }
+
+        .team-avatar {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .team-info {
+            padding: 20px 14px;
+            flex-grow: 1;
+        }
+
+        .team-info h4 {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--dark, #141148);
+            margin-bottom: 4px;
+        }
+
+        .team-info .role {
+            font-size: 12px;
+            color: var(--teal, #1627e7);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .team-info p {
+            font-size: 12.5px;
+            color: var(--text-soft, #718096);
+            line-height: 1.5;
+        }
+
+        /* TESTIMONIAL CAROUSEL */
         .testimonials-section {
             background: linear-gradient(135deg, #ffffff 0%, #fafaff 100%);
             border-top: 1px solid var(--border);
+            overflow: hidden;
         }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            margin-top: 56px;
+        .testimonials-carousel {
+            margin-top: 48px;
+            padding-bottom: 30px;
         }
 
         .testimonial-card {
@@ -537,6 +627,10 @@
             border: 1px solid var(--border);
             transition: all 0.25s;
             box-shadow: 0 6px 14px rgba(20, 17, 72, 0.02);
+            margin: 10px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .testimonial-card:hover {
@@ -558,25 +652,21 @@
             color: var(--text);
             margin-bottom: 24px;
             font-style: italic;
+            flex-grow: 1;
         }
 
         .testimonial-author {
             display: flex;
             align-items: center;
             gap: 14px;
+            margin-top: auto;
         }
 
-        .testimonial-avatar {
+        .testimonial-author img {
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-light), var(--dark));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 800;
-            font-size: 18px;
+            object-fit: cover;
         }
 
         .testimonial-author h5 {
@@ -590,15 +680,38 @@
             color: var(--text-soft);
         }
 
+        /* Swiper Custom */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--primary);
+            background: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .swiper-pagination-bullet {
+            background: var(--primary);
+            opacity: 0.3;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: var(--primary);
+        }
+
         /* CTA */
         .cta-banner {
-            background: linear-gradient(135deg,
-                    var(--primary) 0%,
-                    var(--dark) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
             padding: 80px 24px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
         .cta-banner h2 {
@@ -606,8 +719,6 @@
             font-weight: 900;
             color: white;
             margin-bottom: 16px;
-            position: relative;
-            z-index: 1;
         }
 
         .cta-banner p {
@@ -615,8 +726,6 @@
             color: rgba(255, 255, 255, 0.75);
             max-width: 480px;
             margin: 0 auto 36px;
-            position: relative;
-            z-index: 1;
         }
 
         .cta-btns {
@@ -624,8 +733,6 @@
             gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
         }
 
         .btn-white {
@@ -720,23 +827,6 @@
             color: white;
         }
 
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .footer-copy {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.3);
-            font-family: "Nunito", sans-serif;
-        }
-
-        /* WHATSAPP */
         .whatsapp-float {
             position: fixed;
             bottom: 28px;
@@ -758,13 +848,10 @@
             transform: scale(1.1);
         }
 
-        /* REVEAL */
         .reveal {
             opacity: 0;
             transform: translateY(24px);
-            transition:
-                opacity 0.7s ease,
-                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal.show {
@@ -772,539 +859,31 @@
             transform: translateY(0);
         }
 
-        .reveal-d1 {
-            transition-delay: 0.1s;
-        }
-
-        .reveal-d2 {
-            transition-delay: 0.2s;
-        }
-
-        .reveal-d3 {
-            transition-delay: 0.3s;
-        }
-
-        /* RESPONSIVE FIXES */
         @media (max-width: 1024px) {
-            .story-grid {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
-
-            .values-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .message-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
+            .story-grid { grid-template-columns: 1fr; gap: 48px; }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .premium-grid { grid-template-columns: 1fr; }
+            .founder-image-block { padding: 40px 40px 20px 40px; }
+            .team-grid-5cols { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .message-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline::before {
-                left: 0;
-            }
-
-            .timeline-item {
-                flex-direction: column;
-                gap: 12px;
-                padding-left: 28px;
-            }
-
-            .timeline-year {
-                text-align: left;
-                width: auto;
-            }
-
-            .timeline-dot {
-                position: absolute;
-                left: -8px;
-                top: 4px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .section {
-                padding: 60px 20px;
-            }
-
-            .story-visual {
-                padding: 32px 24px;
-            }
-
-            .story-stat-row {
-                gap: 16px;
-            }
-
-            .story-stat-box {
-                padding: 20px 12px;
-                min-width: 100px;
-            }
+            .values-grid { grid-template-columns: 1fr; }
+            .team-grid-5cols { grid-template-columns: 1fr; }
+            .mv-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .founder-content-block { margin: 0 24px 32px 24px; padding: 38px 32px; }
         }
 
         @media (max-width: 550px) {
-            .story-stat-row {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .story-stat-box {
-                width: 100%;
-            }
-
-            .story-stat-wide {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .mv-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .mission-card,
-            .vision-card {
-                padding: 32px 24px;
-            }
-
-            .mission-card h3,
-            .vision-card h3 {
-                font-size: 26px;
-            }
+            .story-stat-row { flex-direction: column; }
+            .story-stat-box { width: 100%; }
+            .founder-content-block { padding: 30px 24px; }
+            .ceo-name { font-size: 26px; }
+            .main-heading { font-size: 30px; }
         }
     </style>
-
-
-
-
-
-
-
-    <style>
-        /* Design System Colors */
-        :root {
-            --bg-light-gray: #f5f4f0;
-            --brand-dark: #0a0a0a;
-            --brand-blue: #1627e7;
-            --brand-blue-light: #3a50ff;
-            --text-muted: #555555;
-            --text-light: #777777;
-            --border-radius-card: 44px;
-            --border-radius-inner: 32px;
-        }
-
-        .premium-founder-section {
-            padding: 20px 24px;
-            background-color: #f5f4f0/10;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .premium-container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        /* Main Grid Framework */
-        .premium-grid {
-            display: grid;
-            gap: 12px;
-            grid-template-columns: 1.1fr 1fr;
-            /* background-color: var(--bg-light-gray); */
-            border-radius: var(--border-radius-card);
-            overflow: hidden;
-            align-items: stretch;
-            transition: all 0.3s ease;
-        }
-
-        /* Left Side - Image Setup */
-        .founder-image-block {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 40px 0 40px 40px;
-        }
-
-        .image-bg-wrapper {
-            width: 100%;
-            height: 100%;
-            min-height: 420px;
-            max-height: 520px;
-            display: flex;
-            align-items: flex-end;
-            overflow: hidden;
-            border-radius: 28px;
-            background: linear-gradient(145deg, #ffffff, #f0efe8);
-        }
-
-        .ceo-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            transition: transform 0.4s ease;
-            border-radius: 28px;
-        }
-
-        .founder-image-block:hover .ceo-image {
-            transform: scale(1.02);
-        }
-
-        /* Left Side Bottom Name Details */
-        .founder-info-footer {
-            margin-top: 28px;
-            padding-left: 8px;
-        }
-
-        .ceo-name {
-            font-size: 36px;
-            font-weight: 800;
-            color: var(--brand-dark);
-            margin: 0;
-            letter-spacing: -1px;
-            line-height: 1.2;
-        }
-
-        .ceo-title {
-            font-size: 13px;
-            color: var(--brand-blue);
-            font-weight: 700;
-            margin: 8px 0 4px 0;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .ceo-company {
-            font-size: 12px;
-            color: var(--text-light);
-            font-weight: 500;
-            margin: 0;
-        }
-
-        /* Right Side - Content Box */
-        .founder-content-block {
-
-            margin: 30px 30px 30px 0;
-            padding: 18px 42px;
-            border-radius: 48px 32px 32px 48px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            transition: all 0.3s ease;
-        }
-
-
-
-        .content-header-box {
-            margin-bottom: 28px;
-        }
-
-        .badge {
-            font-size: 12px;
-            text-transform: uppercase;
-            font-weight: 800;
-            color: var(--brand-blue);
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-            display: inline-block;
-            background: rgba(22, 39, 231, 0.08);
-            padding: 5px 14px;
-            border-radius: 30px;
-        }
-
-        .main-heading {
-            font-size: 44px;
-            font-weight: 900;
-            line-height: 1.1;
-            color: var(--brand-dark);
-            margin: 0;
-            letter-spacing: -1.5px;
-        }
-
-        .main-heading span {
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--brand-dark), var(--brand-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Message Text Styling */
-        .message-body p {
-            font-size: 15px;
-            line-height: 1.75;
-            color: var(--text-muted);
-            margin-bottom: 14px;
-        }
-
-        .message-body strong {
-            color: var(--brand-dark);
-            font-weight: 700;
-        }
-
-        /* Signature Section */
-        .signature-wrapper {
-            margin-top: 28px;
-            padding-top: 8px;
-        }
-
-        .signature-line {
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--brand-blue), var(--brand-blue-light));
-            border-radius: 3px;
-            margin-bottom: 12px;
-        }
-
-      
-
-        .signature-name {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--brand-dark);
-            margin: 0 0 4px 0;
-            letter-spacing: -0.3px;
-        }
-
-        .signature-title {
-            font-size: 12px;
-            color: var(--brand-blue);
-            font-weight: 600;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1030px) {
-            .premium-grid {
-                grid-template-columns: 1fr;
-                border-radius: 36px;
-
-            }
-
-            .founder-image-block {
-                padding: 40px 40px 20px 40px;
-            }
-
-            .image-bg-wrapper {
-                min-height: 380px;
-                max-height: 480px;
-            }
-
-            .ceo-name {
-                font-size: 32px;
-            }
-
-            .founder-content-block {
-                margin: 0 24px 32px 24px;
-                border-radius: 32px;
-                padding: 38px 32px;
-            }
-
-            .main-heading {
-                font-size: 38px;
-            }
-        }
-
-        @media (max-width: 550px) {
-            .premium-founder-section {
-                padding: 60px 16px;
-            }
-
-            .founder-image-block {
-                padding: 28px 28px 16px 28px;
-            }
-
-            .image-bg-wrapper {
-                min-height: 300px;
-            }
-
-            .ceo-name {
-                font-size: 26px;
-            }
-
-            .ceo-title {
-                font-size: 11px;
-            }
-
-            .founder-content-block {
-                margin: 0 16px 24px 16px;
-                padding: 30px 24px;
-            }
-
-            .main-heading {
-                font-size: 30px;
-                letter-spacing: -1px;
-            }
-
-            .badge {
-                font-size: 10px;
-            }
-
-            .message-body p {
-                font-size: 14px;
-                line-height: 1.7;
-            }
-
-            .signature-name {
-                font-size: 16px;
-            }
-        }
-
-
-        /*team section */
-        .team-section {
-            background: var(--bg, #f8f9fa);
-            padding: 80px 24px;
-        }
-
-        .team-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .team-header {
-            text-align: center;
-            margin-bottom: 54px;
-        }
-
-        .team-header .section-tag {
-            margin-bottom: 12px;
-            display: inline-block;
-        }
-
-        .team-header .section-title {
-            margin-bottom: 16px;
-            font-size: 32px;
-            font-weight: 800;
-        }
-
-        /* Desktop: 1 Row - 5 Columns */
-        .team-grid-5cols {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 18px;
-            align-items: stretch;
-        }
-
-        .team-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1.5px solid var(--border, #edf2f7);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .team-card:hover {
-            box-shadow: 0 20px 40px rgba(20, 17, 72, 0.08);
-            transform: translateY(-6px);
-            border-color: transparent;
-        }
-
-        .team-avatar {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            object-position: center top;
-            display: block;
-        }
-
-        .team-avatar.teal {
-            background: linear-gradient(135deg, rgba(22, 39, 231, 0.08), rgba(22, 39, 231, 0.04));
-        }
-
-        .team-info {
-            padding: 20px 14px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .team-info h4 {
-            font-size: 16px;
-            font-weight: 800;
-            color: var(--dark, #141148);
-            margin-bottom: 4px;
-        }
-
-        .team-info .role {
-            font-size: 12px;
-            color: var(--teal, #319795);
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: 0.2px;
-        }
-
-        .team-info p {
-            font-size: 12.5px;
-            color: var(--text-soft, #718096);
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        /* Tablet Media Query: 2 Columns */
-        @media (max-width: 874px) {
-            .team-grid-5cols {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
-            }
-
-            .team-avatar {
-                height: 280px;
-            }
-        }
-
-        /* Mobile Media Query: 1 Column */
-        @media (max-width: 600px) {
-            .team-grid-5cols {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 0 8px;
-            }
-
-            .team-avatar {
-                height: 300px;
-            }
-        }
-    </style>
-
 </head>
 
 <body>
@@ -1325,390 +904,114 @@
             <div class="story-grid">
                 <div class="story-visual reveal">
                     <div class="story-stat-row">
-                       <div class="story-stat-box">
-                            <div class="num">1000+</div>
-                            <div class="lbl">ADMISSIONS COMPLETED</div>
-                        </div>
-                        <div class="story-stat-box">
-                            <div class="num">30+</div>
-                            <div class="lbl">PARTNER UNIVERSITIES</div>
-                        </div>
+                        <div class="story-stat-box"><div class="num">1000+</div><div class="lbl">ADMISSIONS COMPLETED</div></div>
+                        <div class="story-stat-box"><div class="num">30+</div><div class="lbl">PARTNER UNIVERSITIES</div></div>
                     </div>
                     <div class="story-stat-row">
-                        <div class="story-stat-box">
-                            <div class="num">95%</div>
-                            <div class="lbl">ADMISSION SUCCESS RATE</div>
-                        </div>
-                        <div class="story-stat-box">
-                            <div class="num">4+</div>
-                            <div class="lbl">YEARS OF TRUST</div>
-                        </div>
+                        <div class="story-stat-box"><div class="num">95%</div><div class="lbl">ADMISSION SUCCESS RATE</div></div>
+                        <div class="story-stat-box"><div class="num">4+</div><div class="lbl">YEARS OF TRUST</div></div>
                     </div>
-                   
                     <div class="story-stat-row">
-                        <div class="story-stat-box">
-                            <div class="num">50+</div>
-                            <div class="lbl">EXPERT COUNSELORS</div>
-                        </div>
-                        <div class="story-stat-box">
-                            <div class="num">100%</div>
-                            <div class="lbl">STUDENT SATISFACTION</div>
-                        </div>
+                        <div class="story-stat-box"><div class="num">50+</div><div class="lbl">EXPERT COUNSELORS</div></div>
+                        <div class="story-stat-box"><div class="num">100%</div><div class="lbl">STUDENT SATISFACTION</div></div>
                     </div>
-                    <div class="story-stat-wide">
-                        <div class="icon">🏆</div>
-                        <div class="text"><strong>Kerala's #1 Admission Partner</strong><span>Trusted by students across
-                                Palakkad, Thrissur & beyond</span></div>
-                    </div>
+                    <div class="story-stat-wide"><div class="icon">🏆</div><div class="text"><strong>Kerala's #1 Admission Partner</strong><span>Trusted by students across Palakkad, Thrissur & beyond</span></div></div>
                 </div>
                 <div class="story-text reveal reveal-d1">
                     <div class="section-tag">Who We Are</div>
                     <h2 class="section-title">Born in Kerala, Built for Every Student's Dream</h2>
-                    <p class="lead">A forward thinking Educational institution dedicated to shaping future Global
-                        leaders through quality Education, innovation and international opportunities.</p>
-                    <p>Driven by our motto, <strong>"Learning Today, Leading Tomorrow,"</strong> we aim to inspire
-                        students to become confident learners, visionary thinkers, and responsible global professionals.
-                        Based in Mannarkkad, Palakkad. We are committed to creating an environment where ambition meets
-                        opportunity, empowering every student to unlock their true potential and achieve excellence in
-                        both education and career.</p>
-                    <p>At Xynera, integrity, commitment, innovation, and excellence are at the heart of everything we
-                        do. Through trusted guidance, strategic partnerships, and a passion for student success, we
-                        continue to build a platform that transforms aspirations into achievements on a global scale.
-                    </p>
-                    <p>We handle UG, PG, Diploma, and NIOS Programs across streams - Engineering, Arts, Commerce,
-                        Education (B.Ed, M.Ed), Management, Computer science and more. We assist students in exploring
-                        education opportunities in leading international destinations including the United Kingdom,
-                        Canada, Australia, New Zealand, Germany, Ireland and other globally recognized study
-                        destinations.</p>
-                    <p>Join Xynera Global Education and become part of a journey dedicated to knowledge, leadership, and
-                        international success.</p>
-                    
+                    <p class="lead">A forward thinking Educational institution dedicated to shaping future Global leaders through quality Education, innovation and international opportunities.</p>
+                    <p>Driven by our motto, <strong>"Learning Today, Leading Tomorrow,"</strong> we aim to inspire students to become confident learners, visionary thinkers, and responsible global professionals. Based in Mannarkkad, Palakkad.</p>
+                    <p>At Xynera, integrity, commitment, innovation, and excellence are at the heart of everything we do. Through trusted guidance, strategic partnerships, and a passion for student success, we continue to build a platform that transforms aspirations into achievements on a global scale.</p>
+                    <p>Join Xynera Global Education and become part of a journey dedicated to knowledge, leadership, and international success.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CEO + REGIONAL MANAGER MESSAGES -->
+    <!-- CEO SECTION -->
     <section class="premium-founder-section">
         <div style="text-align: center; margin-bottom: 32px">
-            <div class="section-tag teal reveal" style="margin-bottom: 15px; margin-top: 20px;">✦ Leadership Voice
-            </div>
-            <h2 class="section-title reveal reveal-d1">MESSAGE FROM
-                THE FOUNDER & CEO</h2>
+            <div class="section-tag teal reveal">✦ Leadership Voice</div>
+            <h2 class="section-title reveal reveal-d1">MESSAGE FROM THE FOUNDER & CEO</h2>
         </div>
         <div class="premium-container">
             <div class="premium-grid">
-
                 <div class="founder-image-block">
-                    <div class="image-bg-wrapper">
-                        <img src="img1.jpeg" alt="Sayyid Sinan Thangal P.M" class="ceo-image" />
-                    </div>
-                    <div class="founder-info-footer">
-                        <h2 class="ceo-name">Sayyid Sinan Thangal P.M</h2>
-                        <p class="ceo-title">Founder & Chief Executive Officer</p>
-                        <p class="ceo-company">Xynera Global Education</p>
-                    </div>
+                    <div class="image-bg-wrapper"><img src="img1.jpeg" alt="Sayyid Sinan Thangal P.M" class="ceo-image" /></div>
+                    <div class="founder-info-footer"><h2 class="ceo-name">Sayyid Sinan Thangal P.M</h2><p class="ceo-title">Founder & Chief Executive Officer</p><p class="ceo-company">Xynera Global Education</p></div>
                 </div>
-
                 <div class="founder-content-block">
-
-
-                    <div class="message-body">
-                        <p>In an era where education defines the future of individuals, industries, and nations,
-                            <strong>Xynera Global Education</strong> stands committed to shaping globally competent
-                            professionals and future leaders. Our vision is to bridge ambition with international
-                            opportunities through world-class educational guidance, innovation, and strategic learning
-                            pathways.
-                        </p>
-
-                        <p>At Xynera, we understand that modern education is no longer limited by borders. Students
-                            today aspire to achieve global exposure, internationally recognized qualifications, and
-                            careers that create meaningful impact. With this understanding, we have built an institution
-                            that prioritizes <strong>excellence, integrity, and transformational growth</strong>.</p>
-
-                        <p>Our commitment extends beyond admissions and academic support. We focus on empowering
-                            students
-                            with the confidence, skills, and global perspective required to succeed in an increasingly
-                            competitive world. Through strong institutional values, personalized guidance, and a
-                            student-centered approach, we strive to deliver an educational experience that inspires
-                            achievement and lifelong success.</p>
-                    </div>
-
-                    <div class="signature-wrapper">
-                        <div class="signature-line"></div>
-                        <div class="signature-text">
-                            <p class="signature-name">Sayyid Sinan Thangal P.M</p>
-                            <p class="signature-title">Chief Executive Officer (CEO)</p>
-                        </div>
-                    </div>
+                    <div class="message-body"><p>In an era where education defines the future of individuals, industries, and nations, <strong>Xynera Global Education</strong> stands committed to shaping globally competent professionals and future leaders. Our vision is to bridge ambition with international opportunities through world-class educational guidance.</p><p>At Xynera, we understand that modern education is no longer limited by borders. Students today aspire to achieve global exposure, internationally recognized qualifications, and careers that create meaningful impact.</p></div>
+                    <div class="signature-wrapper"><div class="signature-line"></div><div class="signature-text"><p class="signature-name">Sayyid Sinan Thangal P.M</p><p class="signature-title">Chief Executive Officer (CEO)</p></div></div>
                 </div>
-
             </div>
         </div>
     </section>
 
-
-
-    <!-- MISSION & VISION SECTION (existing) -->
+    <!-- MISSION & VISION -->
     <section class="section mission-vision-section" style="border-top: none;">
-        <div class="section-inner">
-            <div style="text-align: center; margin-bottom: 32px">
-                <div class="section-tag teal reveal">Our Compass</div>
-                <h2 class="section-title reveal reveal-d1">Mission & Vision</h2>
-            </div>
-            <div class="mv-grid">
-                <div class="mission-card reveal">
-                    <div class="mv-tag">✦ Our Purpose</div>
-                    <div class="mv-icon">🎓</div>
-                    <h3>Mission</h3>
-                    <p>To democratize quality higher education in India by providing transparent, ethical, and
-                        personalized admission counselling — ensuring every student finds the right academic path
-                        without confusion or hidden barriers.</p>
-                    <ul class="mv-list">
-                        <li><span>✅</span> Zero-pressure, student-first counselling</li>
-                        <li><span>✅</span> Bridge the gap between aspirations and affordable options</li>
-                        <li><span>✅</span> Empower students with job-linked programs & scholarships</li>
-                    </ul>
-                </div>
-                <div class="vision-card reveal reveal-d1">
-                    <div class="mv-tag">✨ Our North Star</div>
-                    <div class="mv-icon">🌍</div>
-                    <h3>Vision</h3>
-                    <p>To become Kerala's most loved and trusted education ecosystem — where no student is left behind
-                        because of lack of guidance. We envision a future where every graduate we support becomes a
-                        confident professional and a changemaker.</p>
-                    <ul class="mv-list">
-                        <li><span>🌟</span> 10,000+ career-ready students by 2028</li>
-                        <li><span>🌟</span> Expand to 50+ partner universities with exclusive pathways</li>
-                        <li><span>🌟</span> Launch community-driven mentorship hubs across rural Kerala</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <div class="section-inner"><div style="text-align: center; margin-bottom: 32px"><div class="section-tag teal reveal">Our Compass</div><h2 class="section-title reveal reveal-d1">Mission & Vision</h2></div>
+        <div class="mv-grid"><div class="mission-card reveal"><div class="mv-tag">✦ Our Purpose</div><div class="mv-icon">🎓</div><h3>Mission</h3><p>To democratize quality higher education in India by providing transparent, ethical, and personalized admission counselling — ensuring every student finds the right academic path without confusion or hidden barriers.</p><ul class="mv-list"><li><span>✅</span> Zero-pressure, student-first counselling</li><li><span>✅</span> Bridge the gap between aspirations and affordable options</li></ul></div><div class="vision-card reveal reveal-d1"><div class="mv-tag">✨ Our North Star</div><div class="mv-icon">🌍</div><h3>Vision</h3><p>To become Kerala's most loved and trusted education ecosystem — where no student is left behind because of lack of guidance. We envision a future where every graduate we support becomes a confident professional.</p><ul class="mv-list"><li><span>🌟</span> 10,000+ career-ready students by 2028</li><li><span>🌟</span> Expand to 50+ partner universities</li></ul></div></div></div>
     </section>
 
-    <!-- VALUES SECTION (existing) -->
-    <section class="section values-section">
-        <div class="section-inner">
-            <div style="text-align: center; margin-bottom: 48px">
-                <div class="section-tag teal reveal">Our Values</div>
-                <h2 class="section-title reveal reveal-d1">What Drives Everything We Do</h2>
-            </div>
-            <div class="values-grid">
-                <div class="value-card reveal"><span class="value-emoji">🎯</span>
-                    <h4>Student First, Always</h4>
-                    <p>Every decision we make starts with one question: what's best for the student? We never push a
-                        course or university that doesn't fit your goals.</p>
-                </div>
-                <div class="value-card reveal reveal-d1"><span class="value-emoji">🤝</span>
-                    <h4>Honest Guidance</h4>
-                    <p>We give you the full picture — fees, career scope, placement records, campus life — so you make a
-                        confident, informed decision.</p>
-                </div>
-                <div class="value-card reveal reveal-d2"><span class="value-emoji">⚡</span>
-                    <h4>Speed & Reliability</h4>
-                    <p>Admission deadlines wait for no one. Our team moves fast, responds quickly, and makes sure you
-                        never miss an opportunity.</p>
-                </div>
-                <div class="value-card reveal"><span class="value-emoji">💡</span>
-                    <h4>Expertise You Can Trust</h4>
-                    <p>Our counsellors have deep knowledge of courses, universities, eligibility, and scholarships — so
-                        you get advice that's actually useful.</p>
-                </div>
-                <div class="value-card reveal reveal-d1"><span class="value-emoji">🌍</span>
-                    <h4>Inclusive Access</h4>
-                    <p>Whether you're from a village in Palakkad or a city in Kerala, you deserve the same quality of
-                        guidance and the same opportunities.</p>
-                </div>
-                <div class="value-card reveal reveal-d2"><span class="value-emoji">📈</span>
-                    <h4>Long-Term Thinking</h4>
-                    <p>We're not just here to get you admitted — we're invested in your career success. We think about
-                        your future, not just your enrollment.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- VALUES -->
+    <section class="section values-section"><div class="section-inner"><div style="text-align: center; margin-bottom: 48px"><div class="section-tag teal reveal">Our Values</div><h2 class="section-title reveal reveal-d1">What Drives Everything We Do</h2></div><div class="values-grid"><div class="value-card reveal"><span class="value-emoji">🎯</span><h4>Student First, Always</h4><p>Every decision we make starts with one question: what's best for the student?</p></div><div class="value-card reveal reveal-d1"><span class="value-emoji">🤝</span><h4>Honest Guidance</h4><p>We give you the full picture — fees, career scope, placement records — so you make a confident decision.</p></div><div class="value-card reveal reveal-d2"><span class="value-emoji">⚡</span><h4>Speed & Reliability</h4><p>Our team moves fast, responds quickly, and makes sure you never miss an opportunity.</p></div></div></div></section>
 
-    <!-- TEAM SECTION (existing) -->
-    <div class="team-section">
-        <div class="team-container">
-            <div class="team-header">
-                <div class="section-tag teal reveal">Executive Directorate</div>
-                <h2 class="section-title reveal reveal-d1">Our core team</h2>
-                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">Meet the dedicated professionals behind
-                    Xynera Global's success</p>
-            </div>
+    <!-- TEAM SECTION -->
+    <div class="team-section"><div class="team-container"><div class="team-header"><div class="section-tag teal reveal">Executive Directorate</div><h2 class="section-title reveal reveal-d1">Our core team</h2><p class="section-sub reveal reveal-d2" style="margin: 0 auto">Meet the dedicated professionals behind Xynera Global's success</p></div><div class="team-grid team-grid-5cols"><div class="team-card reveal"><img src="img4.jpeg" alt="Varsha M" class="team-avatar teal" /><div class="team-info"><h4>Varsha M</h4><div class="role">Business Development Head</div><p>Drives business expansion, university partnerships, and strategic growth across Kerala.</p></div></div><div class="team-card reveal reveal-d1"><img src="img6.jpeg" alt="Varaha" class="team-avatar teal" /><div class="team-info"><h4>Varaha O</h4><div class="role">Business Development Manager</div><p>Leads new market development, counsellor training, and regional outreach programs.</p></div></div><div class="team-card reveal reveal-d2"><img src="img2.jpeg" alt="Anju Krishna PK" class="team-avatar teal" /><div class="team-info"><h4>Anju Krishna PK</h4><div class="role">Administrative Officer</div><p>Manages UG/PG department operations, student documentation, and lifecycle coordination.</p></div></div><div class="team-card reveal reveal-d3"><img src="img3.jpeg" alt="Bhavana P C" class="team-avatar teal" /><div class="team-info"><h4>Bhavana P C</h4><div class="role">Senior Counselor</div><p>Specializes in Physical Education, B.Ed & M.Ed guidance with 5+ years experience.</p></div></div><div class="team-card reveal reveal-d4"><img src="img7.jpeg" alt="Vaishnavi" class="team-avatar teal" /><div class="team-info"><h4>Vaishnavi</h4><div class="role">Academic Counselor</div><p>Guides students in UG program selection, scholarship opportunities, and career path planning.</p></div></div></div></div></div>
 
-            <div class="team-grid team-grid-5cols">
-
-                <div class="team-card reveal reveal-d1">
-                    <img src="img4.jpeg" alt="Varsha M" class="team-avatar teal" />
-                    <div class="team-info">
-                        <h4>Varsha M</h4>
-                        <div class="role">Regional Manager</div>
-                        <p>Oversees zonal operations and ensures smooth admission workflows across Kerala.</p>
-                    </div>
-                </div>
-
-                <div class="team-card reveal reveal-d2">
-                    <img src="img6.jpeg" alt="Varaha" class="team-avatar teal" />
-                    <div class="team-info">
-                        <h4>Varaha O</h4>
-                        <div class="role">Branch Manager</div>
-                        <p>Manages day-to-day branch operations, student relations, and team coordination.</p>
-                    </div>
-                </div>
-
-                <div class="team-card reveal reveal-d3">
-                    <img src="img2.jpeg" alt="Anju Krishna PK" class="team-avatar teal" />
-                    <div class="team-info">
-                        <h4>Anju Krishna PK</h4>
-                        <div class="role">Administrative Officer</div>
-                        <p>Manages UG/PG department operations, student documentation, and lifecycle coordination.</p>
-                    </div>
-                </div>
-
-                <div class="team-card reveal reveal-d4">
-                    <img src="img3.jpeg" alt="Bhavana P C" class="team-avatar teal" />
-                    <div class="team-info">
-                        <h4>Bhavana P C</h4>
-                        <div class="role">Senior Counselor</div>
-                        <p>Specializes in Physical Education, B.Ed & M.Ed program guidance with 7+ years experience.</p>
-                    </div>
-                </div>
-
-                <div class="team-card reveal reveal-d5">
-                    <img src="img7.jpeg" alt="Vaishnavi" class="team-avatar teal" />
-                    <div class="team-info">
-                        <h4>Vaishnavi</h4>
-                        <div class="role">Academic Counselor</div>
-                        <p>Guides students in UG program selection, scholarship opportunities, and career path planning.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-   
-
-
-    <!-- NEW: STAFF TESTIMONIALS SECTION -->
+    <!-- TESTIMONIAL CAROUSEL -->
     <section class="section testimonials-section">
         <div class="section-inner">
             <div style="text-align: center; margin-bottom: 32px">
                 <div class="section-tag teal reveal">✧ Voices of Excellence</div>
                 <h2 class="section-title reveal reveal-d1">What Our Team Says</h2>
-                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">Passion, dedication, and shared mission —
-                    from the people behind
-                    Xynera</p>
+                <p class="section-sub reveal reveal-d2" style="margin: 0 auto">Passion, dedication, and shared mission — from the people behind Xynera</p>
             </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card reveal reveal-d2">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">“The leadership at Xynera truly values innovation and transparency. I've
-                        seen how our regional strategies directly improve student success rates. Proud to be part of
-                        this growth story.”</p>
-                    <div class="testimonial-author">
-                        <img src="img4.jpeg" alt="Varsha M"
-                            style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;" />
-                        <div>
-                            <h5>Varsha M</h5><span>Regional Manager</span>
-                        </div>
-                    </div>
+            <div class="testimonials-carousel swiper reveal">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">“The leadership at Xynera truly values innovation and transparency. I've seen how our business development strategies directly improve student success rates. Proud to be part of this growth story.”</p><div class="testimonial-author"><img src="img4.jpeg" alt="Varsha M" /><div><h5>Varsha M</h5><span>Business Development Head</span></div></div></div></div>
+                    <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">“Working at Xynera has been transformative. The culture of integrity and student-centric approach makes every counselling session meaningful. I take pride in guiding students toward their dream careers.”</p><div class="testimonial-author"><img src="img3.jpeg" alt="Bhavana P C" /><div><h5>Bhavana P C</h5><span>Senior Academic Counselor</span></div></div></div></div>
+                    <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">“Xynera empowers us with the right tools and university partnerships. Every day, I witness how honest admission counselling changes lives. The job guarantee and scholarship initiatives are game-changers.”</p><div class="testimonial-author"><img src="img2.jpeg" alt="Anju Krishna PK" /><div><h5>Anju Krishna PK</h5><span>Administrative Officer</span></div></div></div></div>
+                    <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">“Developing new markets is exciting when you have a brand like Xynera behind you. The support for business expansion and student-first approach makes our work truly rewarding.”</p><div class="testimonial-author"><img src="img6.jpeg" alt="Varaha O" /><div><h5>Varaha O</h5><span>Business Development Manager</span></div></div></div></div>
+                    <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">“Seeing the joy in students' eyes when they secure admission to their dream college is priceless. Xynera gives me the platform to make a real difference every single day.”</p><div class="testimonial-author"><img src="img7.jpeg" alt="Vaishnavi" /><div><h5>Vaishnavi</h5><span>Academic Counselor</span></div></div></div></div>
                 </div>
-                <div class="testimonial-card reveal">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">“Working at Xynera has been transformative. The culture of integrity and
-                        student-centric approach makes every counselling session meaningful. I take pride in guiding
-                        students toward their dream careers.”</p>
-                    <div class="testimonial-author">
-                        <img src="img3.jpeg" alt="Bhavana P C"
-                            style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;" />
-                        <div>
-                            <h5>Bhavana P C</h5><span>Senior Academic Counselor</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card reveal reveal-d1">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">“Xynera empowers us with the right tools and university partnerships.
-                        Every day, I witness how honest admission counselling changes lives. The job guarantee and
-                        scholarship initiatives are game-changers.”</p>
-                    <div class="testimonial-author">
-                        <img src="img2.jpeg" alt="Anju Krishna PK"
-                            style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;" />
-                        <div>
-                            <h5>Anju Krishna PK</h5><span>Administrative Officer</span>
-                        </div>
-                    </div>
-                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <div class="cta-banner">
-        <h2>Ready to Find Your Perfect College?</h2>
-        <p>Talk to our counsellors for free — no pressure, no sales pitch, just honest guidance.</p>
-        <div class="cta-btns"><a href="index.html#contactus" class="btn-white">📋 Book Free Counselling</a><a
-                href="https://wa.me/919746495785" class="btn-ghost">💬 WhatsApp Us</a></div>
-    </div>
+    <div class="cta-banner"><h2>Ready to Find Your Perfect College?</h2><p>Talk to our counsellors for free — no pressure, no sales pitch, just honest guidance.</p><div class="cta-btns"><a href="index.html#contactus" class="btn-white">📋 Book Free Counselling</a><a href="https://wa.me/919746495785" class="btn-ghost">💬 WhatsApp Us</a></div></div>
 
     <!-- FOOTER -->
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-grid">
-                <div><img src="logo1.png" alt="Xynera Global & Xynera Global Education Network Logo"
-                        style="height: auto; max-width: 180px; width: 100%; object-fit: contain; opacity: 0.95;" />
-                    <p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the
-                        right universities since 2023. 5000+ success stories and counting.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Navigate</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="index.html#universities">Universities</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="service.html">Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Programs</h4>
-                    <ul>
-                        <li><a href="courses.html">BCA Programs</a></li>
-                        <li><a href="courses.html">B.Ed / M.Ed</a></li>
-                        <li><a href="courses.html">MBA / MCA</a></li>
-                        <li><a href="courses.html">NIOS Programs</a></li>
-                        <li><a href="courses.html">Distance Learning</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="tel:+919746495785">+91 97464 95785</a></li>
-                        <li><a href="mailto:info@xynera.in">info@xynera.in</a></li>
-                        <li><a href="#">Mannarkkad, Palakkad</a></li>
-                        <li><a href="#">Kerala, India</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer><div class="footer-inner"><div class="footer-grid"><div><img src="logo1.png" alt="Xynera Logo" style="height: auto; max-width: 180px;" /><p class="footer-brand">Kerala's trusted admission counselling partner. Connecting students with the right universities since 2023.</p></div><div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="courses.html">Courses</a></li><li><a href="index.html#universities">Universities</a></li><li><a href="about.html">About Us</a></li></ul></div><div class="footer-col"><h4>Programs</h4><ul><li><a href="courses.html">BCA Programs</a></li><li><a href="courses.html">B.Ed / M.Ed</a></li><li><a href="courses.html">MBA / MCA</a></li><li><a href="courses.html">NIOS Programs</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+919746495785">+91 97464 95785</a></li><li><a href="mailto:info@xynera.in">info@xynera.in</a></li><li><a href="#">Mannarkkad, Palakkad</a></li></ul></div></div></div></footer>
 
-    <a href="https://wa.me/919746495785" target="_blank" class="whatsapp-float" title="Chat on WhatsApp"><svg width="28"
-            height="28" viewBox="0 0 24 24" fill="white">
-            <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-        </svg></a>
+    <a href="https://wa.me/919746495785" target="_blank" class="whatsapp-float" title="Chat on WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg></a>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         (function loadHeader() {
-            fetch('header.html').then(response => { if (!response.ok) throw new Error('Header not found'); return response.text(); }).then(html => { document.getElementById('global-header-placeholder').innerHTML = html; const scripts = document.querySelectorAll('#global-header-placeholder script'); scripts.forEach(oldScript => { const newScript = document.createElement('script'); if (oldScript.src) newScript.src = oldScript.src; else newScript.textContent = oldScript.textContent; document.body.appendChild(newScript); }); const currentPage = 'about'; document.querySelectorAll('[data-page]').forEach(el => { if (el.dataset.page === currentPage) el.classList.add('active'); }); }).catch(err => console.warn('Header could not be loaded.', err));
+            fetch('header.html').then(response => { if (!response.ok) throw new Error('Header not found'); return response.text(); }).then(html => { document.getElementById('global-header-placeholder').innerHTML = html; const currentPage = 'about'; document.querySelectorAll('[data-page]').forEach(el => { if (el.dataset.page === currentPage) el.classList.add('active'); }); }).catch(err => console.warn('Header could not be loaded.', err));
         })();
+
+        // Initialize Swiper Carousel
+        new Swiper('.testimonials-carousel', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 24,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 24 },
+                1024: { slidesPerView: 3, spaceBetween: 32 }
+            }
+        });
+
         const observer = new IntersectionObserver((entries) => entries.forEach(el => { if (el.isIntersecting) el.target.classList.add("show"); }), { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
         document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
     </script>
